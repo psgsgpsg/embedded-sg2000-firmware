@@ -1,0 +1,1194 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     12/Jan/2012  04:01:41 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\RTC.c   #
+#    Command line =  "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\RTC.c" #
+#                     -D USE_STDPERIPH_DRIVER -D STM32F2XX -D                 #
+#                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                   #
+#                    RTC_CLOCK_SOURCE_LSE -lC "F:\묵작업\[ NewDTG             #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\" #
+#                     -lA "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\E #
+#                    WARM\STM3220F_EVAL\List\" -o "F:\묵작업\[ NewDTG         #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\"  #
+#                    --no_cse --no_unroll --no_inline --no_code_motion        #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M3 -e --fpu=None            #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.0\arm\INC\c\DLib_Config_Full.h" -I           #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\" -I "F:\묵작업\[ NewDTG                              #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\CoreSupport\" -I "F:\묵작업\[ NewDTG               #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\DeviceSupport\ST\STM32F2xx\" -I "F:\묵작업\[       #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librari #
+#                    es\STM32F2xx_StdPeriph_Driver\inc\" -I "F:\묵작업\[      #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utiliti #
+#                    es\STM32_EVAL\" -I "F:\묵작업\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\Common\" -I "F:\묵작업\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\STM3220F_EVAL\" -I "F:\묵작업\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_OTG_Driver\inc\" -I "F:\묵작업\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Core\inc\" -I "F:\묵작업\[ NewDTG   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Class\msc\inc\" -I "F:\묵작업\[     #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\" -I   #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\Usb\Inc\" -I "F:\묵작업\[ NewDTG                      #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\src\" -I      #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Core\inc\" -I     #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Class\MSC\inc\"   #
+#                    -I "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWA #
+#                    RM\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\in #
+#                    c\" -Ol --use_c++_inline                                 #
+#    List file    =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\List\RTC.lst                                #
+#    Object file  =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\Obj\RTC.o                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\RTC.c
+      1          
+      2          #include "main.h"
+      3          #include "RTC.h"
+      4          #include "Log.h"
+      5          #include "Ems_System.h"
+      6          
+
+   \                                 In section .data, align 4
+      7          u32 DaysToMonth[13] = {
+   \                     DaysToMonth:
+   \   00000000   000000001F00       DC32 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365
+   \              00003B000000
+   \              5A0000007800
+   \              000097000000
+   \              B5000000D400
+   \              0000F3000000
+   \              110100003001
+   \              00004E010000
+   \              6D010000    
+      8             0,31,59,90,120,151,181,212,243,273,304,334,365
+      9          };
+     10          
+
+   \                                 In section .bss, align 4
+     11          RTC_InitTypeDef RTC_InitStructure;
+   \                     RTC_InitStructure:
+   \   00000000                      DS8 12
+
+   \                                 In section .bss, align 4
+     12          RTC_TimeTypeDef RTC_TimeStructure;
+   \                     RTC_TimeStructure:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     13          RTC_DateTypeDef RTC_DateStructure;
+   \                     RTC_DateStructure:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     14          RTC_TimeTypeDef  RTC_TimeStampStructure;
+   \                     RTC_TimeStampStructure:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     15          RTC_DateTypeDef  RTC_TimeStampDateStructure;
+   \                     RTC_TimeStampDateStructure:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     16          __IO uint32_t AsynchPrediv = 0, SynchPrediv = 0;
+   \                     AsynchPrediv:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+   \                     SynchPrediv:
+   \   00000000                      DS8 4
+     17          
+
+   \                                 In section .bss, align 4
+     18          TM_Struct SYSTEM_TIME;
+   \                     SYSTEM_TIME:
+   \   00000000                      DS8 36
+
+   \                                 In section .bss, align 4
+     19          u32 SYSTEM_TIME_BINARY;
+   \                     SYSTEM_TIME_BINARY:
+   \   00000000                      DS8 4
+
+   \                                 In section .text, align 2, keep-with-next
+     20          void RTC_Config(void)
+     21          {
+   \                     RTC_Config:
+   \   00000000   80B5               PUSH     {R7,LR}
+     22            /* Enable the PWR clock */
+     23            RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+   \   00000002   0121               MOVS     R1,#+1
+   \   00000004   5FF08050           MOVS     R0,#+268435456
+   \   00000008   ........           BL       RCC_APB1PeriphClockCmd
+     24          
+     25            /* Allow access to RTC */
+     26            PWR_BackupAccessCmd(ENABLE);
+   \   0000000C   0120               MOVS     R0,#+1
+   \   0000000E   ........           BL       PWR_BackupAccessCmd
+     27          
+     28          #if defined (RTC_CLOCK_SOURCE_LSI)  /* LSI used as RTC source clock*/
+     29          /* The RTC Clock may varies due to LSI frequency dispersion. */
+     30            /* Enable the LSI OSC */ 
+     31            RCC_LSICmd(ENABLE);
+     32          
+     33            /* Wait till LSI is ready */  
+     34            while(RCC_GetFlagStatus(RCC_FLAG_LSIRDY) == RESET)
+     35            {
+     36            }
+     37          
+     38            /* Select the RTC Clock Source */
+     39            RCC_RTCCLKConfig(RCC_RTCCLKSource_LSI);
+     40          
+     41            SynchPrediv = 0xFF;
+     42            AsynchPrediv = 0x7F;
+     43          
+     44          #elif defined (RTC_CLOCK_SOURCE_LSE) /* LSE used as RTC source clock */
+     45            /* Enable the LSE OSC */
+     46            RCC_LSEConfig(RCC_LSE_ON);
+   \   00000012   0120               MOVS     R0,#+1
+   \   00000014   ........           BL       RCC_LSEConfig
+     47          
+     48            /* Wait till LSE is ready */  
+     49            while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET)
+   \                     ??RTC_Config_0:
+   \   00000018   4120               MOVS     R0,#+65
+   \   0000001A   ........           BL       RCC_GetFlagStatus
+   \   0000001E   0028               CMP      R0,#+0
+   \   00000020   FAD0               BEQ.N    ??RTC_Config_0
+     50            {
+     51            }
+     52          
+     53            /* Select the RTC Clock Source */
+     54            RCC_RTCCLKConfig(RCC_RTCCLKSource_LSE);
+   \   00000022   4FF48070           MOV      R0,#+256
+   \   00000026   ........           BL       RCC_RTCCLKConfig
+     55          
+     56            SynchPrediv = 0xFF;
+   \   0000002A   ........           LDR.W    R0,??DataTable21
+   \   0000002E   FF21               MOVS     R1,#+255
+   \   00000030   0160               STR      R1,[R0, #+0]
+     57            AsynchPrediv = 0x7F;
+   \   00000032   ........           LDR.W    R0,??DataTable21_1
+   \   00000036   7F21               MOVS     R1,#+127
+   \   00000038   0160               STR      R1,[R0, #+0]
+     58              
+     59          #else
+     60            #error Please select the RTC Clock source inside the main.c file
+     61          #endif /* RTC_CLOCK_SOURCE_LSI */
+     62          
+     63            /* Enable the RTC Clock */
+     64            RCC_RTCCLKCmd(ENABLE);
+   \   0000003A   0120               MOVS     R0,#+1
+   \   0000003C   ........           BL       RCC_RTCCLKCmd
+     65          
+     66            /* Wait for RTC APB registers synchronisation */
+     67            RTC_WaitForSynchro();
+   \   00000040   ........           BL       RTC_WaitForSynchro
+     68          
+     69            /* Enable The TimeStamp */
+     70            RTC_TimeStampCmd(RTC_TimeStampEdge_Falling, ENABLE);    
+   \   00000044   0121               MOVS     R1,#+1
+   \   00000046   0820               MOVS     R0,#+8
+   \   00000048   ........           BL       RTC_TimeStampCmd
+     71          }
+   \   0000004C   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     72          void RTC_Setting(void)
+     73          {  
+   \                     RTC_Setting:
+   \   00000000   80B5               PUSH     {R7,LR}
+     74            if (RTC_ReadBackupRegister(RTC_BKP_DR0) != 0x32F2)
+   \   00000002   0020               MOVS     R0,#+0
+   \   00000004   ........           BL       RTC_ReadBackupRegister
+   \   00000008   43F2F221           MOVW     R1,#+13042
+   \   0000000C   8842               CMP      R0,R1
+   \   0000000E   1ED0               BEQ.N    ??RTC_Setting_0
+     75            {
+     76              /* RTC configuration  */
+     77              RTC_Config();
+   \   00000010   ........           BL       RTC_Config
+     78          
+     79              /* Configure the RTC data register and RTC prescaler */
+     80              RTC_InitStructure.RTC_AsynchPrediv = AsynchPrediv;
+   \   00000014   ........           LDR.W    R0,??DataTable21_2
+   \   00000018   ........           LDR.W    R1,??DataTable21_1
+   \   0000001C   0968               LDR      R1,[R1, #+0]
+   \   0000001E   4160               STR      R1,[R0, #+4]
+     81              RTC_InitStructure.RTC_SynchPrediv = SynchPrediv;
+   \   00000020   ........           LDR.W    R0,??DataTable21_2
+   \   00000024   ........           LDR.W    R1,??DataTable21
+   \   00000028   0968               LDR      R1,[R1, #+0]
+   \   0000002A   8160               STR      R1,[R0, #+8]
+     82              RTC_InitStructure.RTC_HourFormat = RTC_HourFormat_24;
+   \   0000002C   ........           LDR.W    R0,??DataTable21_2
+   \   00000030   0021               MOVS     R1,#+0
+   \   00000032   0160               STR      R1,[R0, #+0]
+     83             
+     84              /* Check on RTC init */
+     85              if (RTC_Init(&RTC_InitStructure) == ERROR)
+   \   00000034   ........           LDR.W    R0,??DataTable21_2
+   \   00000038   ........           BL       RTC_Init
+   \   0000003C   0028               CMP      R0,#+0
+   \   0000003E   03D1               BNE.N    ??RTC_Setting_1
+     86              {
+     87                printf("\n\r        /!\\***** RTC Prescaler Config failed ********/!\\ \n");
+   \   00000040   ........           ADR.W    R0,`?<Constant "\\n\\r        /!\\\\***** RT...">`
+   \   00000044   ........           BL       printf
+     88              }
+     89          
+     90              /* Configure the time register */
+     91              RTC_TimeRegulate(); 
+   \                     ??RTC_Setting_1:
+   \   00000048   ........           BL       RTC_TimeRegulate
+   \   0000004C   28E0               B.N      ??RTC_Setting_2
+     92            }
+     93            else
+     94            {
+     95              /* Check if the Power On Reset flag is set */
+     96              if (RCC_GetFlagStatus(RCC_FLAG_PORRST) != RESET)
+   \                     ??RTC_Setting_0:
+   \   0000004E   7B20               MOVS     R0,#+123
+   \   00000050   ........           BL       RCC_GetFlagStatus
+   \   00000054   0028               CMP      R0,#+0
+   \   00000056   04D0               BEQ.N    ??RTC_Setting_3
+     97              {
+     98                printf(" Power On Reset occurred....\r\n");
+   \   00000058   ........           ADR.W    R0,`?<Constant " Power On Reset occur...">`
+   \   0000005C   ........           BL       printf
+   \   00000060   08E0               B.N      ??RTC_Setting_4
+     99              }
+    100              /* Check if the Pin Reset flag is set */
+    101              else if (RCC_GetFlagStatus(RCC_FLAG_PINRST) != RESET)
+   \                     ??RTC_Setting_3:
+   \   00000062   7A20               MOVS     R0,#+122
+   \   00000064   ........           BL       RCC_GetFlagStatus
+   \   00000068   0028               CMP      R0,#+0
+   \   0000006A   03D0               BEQ.N    ??RTC_Setting_4
+    102              {
+    103                printf(" External Reset occurred....\r\n");
+   \   0000006C   ........           ADR.W    R0,`?<Constant " External Reset occur...">`
+   \   00000070   ........           BL       printf
+    104              }
+    105          
+    106              printf(" No need to configure RTC....\r\n");
+   \                     ??RTC_Setting_4:
+   \   00000074   ........           ADR.W    R0,`?<Constant " No need to configure...">`
+   \   00000078   ........           BL       printf
+    107              
+    108              /* Enable the PWR clock */
+    109              RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
+   \   0000007C   0121               MOVS     R1,#+1
+   \   0000007E   5FF08050           MOVS     R0,#+268435456
+   \   00000082   ........           BL       RCC_APB1PeriphClockCmd
+    110          
+    111              /* Allow access to RTC */
+    112              PWR_BackupAccessCmd(ENABLE);
+   \   00000086   0120               MOVS     R0,#+1
+   \   00000088   ........           BL       PWR_BackupAccessCmd
+    113          
+    114              /* Wait for RTC APB registers synchronisation */
+    115              RTC_WaitForSynchro();
+   \   0000008C   ........           BL       RTC_WaitForSynchro
+    116          
+    117              /* Clear the RTC Alarm Flag */
+    118              RTC_ClearFlag(RTC_FLAG_ALRAF);
+   \   00000090   4FF48070           MOV      R0,#+256
+   \   00000094   ........           BL       RTC_ClearFlag
+    119          
+    120              /* Clear the EXTI Line 17 Pending bit (Connected internally to RTC Alarm) */
+    121              EXTI_ClearITPendingBit(EXTI_Line17);
+   \   00000098   5FF40030           MOVS     R0,#+131072
+   \   0000009C   ........           BL       EXTI_ClearITPendingBit
+    122          
+    123              /* Display the RTC Time/Date and TimeStamp Time/Date */
+    124          //    RTC_TimeShow();
+    125          //    RTC_DateShow();
+    126          //    RTC_TimeStampShow();
+    127            }   
+    128            
+    129          }
+   \                     ??RTC_Setting_2:
+   \   000000A0   01BD               POP      {R0,PC}          ;; return
+    130          
+
+   \                                 In section .text, align 2, keep-with-next
+    131          void RTC_AddDay(void)
+    132          {
+   \                     RTC_AddDay:
+   \   00000000   80B5               PUSH     {R7,LR}
+    133            RTC_TimeStructure.RTC_Hours = 23;
+   \   00000002   ....               LDR.N    R0,??DataTable21_3
+   \   00000004   1721               MOVS     R1,#+23
+   \   00000006   0170               STRB     R1,[R0, #+0]
+    134            RTC_TimeStructure.RTC_Minutes = 59;
+   \   00000008   ....               LDR.N    R0,??DataTable21_3
+   \   0000000A   3B21               MOVS     R1,#+59
+   \   0000000C   4170               STRB     R1,[R0, #+1]
+    135            RTC_TimeStructure.RTC_Seconds = 59;        
+   \   0000000E   ....               LDR.N    R0,??DataTable21_3
+   \   00000010   3B21               MOVS     R1,#+59
+   \   00000012   8170               STRB     R1,[R0, #+2]
+    136            if(RTC_SetTime(RTC_Format_BIN, &RTC_TimeStructure) == ERROR)
+   \   00000014   ....               LDR.N    R1,??DataTable21_3
+   \   00000016   0020               MOVS     R0,#+0
+   \   00000018   ........           BL       RTC_SetTime
+   \   0000001C   0028               CMP      R0,#+0
+   \   0000001E   04D1               BNE.N    ??RTC_AddDay_0
+    137            {
+    138              printf("\n>> !! RTC Set Time failed. !! <<\r\n");
+   \   00000020   ........           ADR.W    R0,`?<Constant "\\n>> !! RTC Set Time f...">`
+   \   00000024   ........           BL       printf
+   \   00000028   08E0               B.N      ??RTC_AddDay_1
+    139            } 
+    140            else
+    141            {
+    142              printf(">> !! RTC Set Time success. !! <<\r\n");
+   \                     ??RTC_AddDay_0:
+   \   0000002A   ........           ADR.W    R0,`?<Constant ">> !! RTC Set Time su...">`
+   \   0000002E   ........           BL       printf
+    143              RTC_WriteBackupRegister(RTC_BKP_DR0, 0x32F2);
+   \   00000032   43F2F221           MOVW     R1,#+13042
+   \   00000036   0020               MOVS     R0,#+0
+   \   00000038   ........           BL       RTC_WriteBackupRegister
+    144            }  
+    145          }
+   \                     ??RTC_AddDay_1:
+   \   0000003C   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    146          void RTC_TimeRegulate(void)
+    147          {
+   \                     RTC_TimeRegulate:
+   \   00000000   80B5               PUSH     {R7,LR}
+    148          
+    149          //  RTC_TimeStructure.RTC_Hours = 23;
+    150          //  RTC_TimeStructure.RTC_Minutes = 50;
+    151          //  RTC_TimeStructure.RTC_Seconds = 30;  
+    152            if(RTC_SetTime(RTC_Format_BIN, &RTC_TimeStructure) == ERROR)
+   \   00000002   ....               LDR.N    R1,??DataTable21_3
+   \   00000004   0020               MOVS     R0,#+0
+   \   00000006   ........           BL       RTC_SetTime
+   \   0000000A   0028               CMP      R0,#+0
+   \   0000000C   04D1               BNE.N    ??RTC_TimeRegulate_0
+    153            {
+    154              printf("\n>> !! RTC Set Time failed. !! <<\r\n");
+   \   0000000E   ........           ADR.W    R0,`?<Constant "\\n>> !! RTC Set Time f...">`
+   \   00000012   ........           BL       printf
+   \   00000016   08E0               B.N      ??RTC_TimeRegulate_1
+    155            } 
+    156            else
+    157            {
+    158              printf(">> !! RTC Set Time success. !! <<\r\n");
+   \                     ??RTC_TimeRegulate_0:
+   \   00000018   ........           ADR.W    R0,`?<Constant ">> !! RTC Set Time su...">`
+   \   0000001C   ........           BL       printf
+    159          //    RTC_TimeShow();
+    160              // Indicator for the RTC configuration //
+    161              RTC_WriteBackupRegister(RTC_BKP_DR0, 0x32F2);
+   \   00000020   43F2F221           MOVW     R1,#+13042
+   \   00000024   0020               MOVS     R0,#+0
+   \   00000026   ........           BL       RTC_WriteBackupRegister
+    162            }
+    163          //RTC_DateStructure.RTC_Date = 4;
+    164          //RTC_DateStructure.RTC_Month = 10;
+    165          //RTC_DateStructure.RTC_Year = 11;
+    166            if(RTC_SetDate(RTC_Format_BIN, &RTC_DateStructure) == ERROR)
+   \                     ??RTC_TimeRegulate_1:
+   \   0000002A   ....               LDR.N    R1,??DataTable21_4
+   \   0000002C   0020               MOVS     R0,#+0
+   \   0000002E   ........           BL       RTC_SetDate
+   \   00000032   0028               CMP      R0,#+0
+   \   00000034   04D1               BNE.N    ??RTC_TimeRegulate_2
+    167            {
+    168              printf("\n>> !! RTC Set Date failed. !! <<\r\n");
+   \   00000036   ........           ADR.W    R0,`?<Constant "\\n>> !! RTC Set Date f...">`
+   \   0000003A   ........           BL       printf
+   \   0000003E   08E0               B.N      ??RTC_TimeRegulate_3
+    169            } 
+    170            else
+    171            {
+    172              printf(">> !! RTC Set Date success. !! <<\r\n");
+   \                     ??RTC_TimeRegulate_2:
+   \   00000040   ........           ADR.W    R0,`?<Constant ">> !! RTC Set Date su...">`
+   \   00000044   ........           BL       printf
+    173          //    RTC_DateShow();
+    174              // Indicator for the RTC configuration 
+    175              RTC_WriteBackupRegister(RTC_BKP_DR0, 0x32F2);
+   \   00000048   43F2F221           MOVW     R1,#+13042
+   \   0000004C   0020               MOVS     R0,#+0
+   \   0000004E   ........           BL       RTC_WriteBackupRegister
+    176            }  
+    177          
+    178          }
+   \                     ??RTC_TimeRegulate_3:
+   \   00000052   01BD               POP      {R0,PC}          ;; return
+    179          
+    180          /**
+    181            * @brief  Display the current time on the Hyperterminal.
+    182            * @param  None
+    183            * @retval None
+    184            */
+
+   \                                 In section .text, align 2, keep-with-next
+    185          void RTC_TimeShow(void)
+    186          {
+   \                     RTC_TimeShow:
+   \   00000000   80B5               PUSH     {R7,LR}
+    187               static uint8_t OldSec = 0;
+    188               static u16 RTC_Timer;
+    189               
+    190               // 과속 체크 0.1초 마다 진행
+    191               if(!CheckTimeOver(100,RTC_Timer))
+   \   00000002   ....               LDR.N    R0,??DataTable21_5
+   \   00000004   0188               LDRH     R1,[R0, #+0]
+   \   00000006   6420               MOVS     R0,#+100
+   \   00000008   ........           BL       CheckTimeOver
+   \   0000000C   0028               CMP      R0,#+0
+   \   0000000E   62D0               BEQ.N    ??RTC_TimeShow_0
+    192                    return;      
+    193               RTC_Timer = MS_TIMER;  	// 타이머 5	   
+   \                     ??RTC_TimeShow_1:
+   \   00000010   ....               LDR.N    R0,??DataTable21_6  ;; 0x40000c00
+   \   00000012   ........           BL       TIM_GetCounter
+   \   00000016   ....               LDR.N    R1,??DataTable21_5
+   \   00000018   0880               STRH     R0,[R1, #+0]
+    194               
+    195          	//u32 TimeTest;
+    196          	/* Get the current Time and Date */
+    197          	RTC_GetTime(RTC_Format_BIN, &RTC_TimeStructure);
+   \   0000001A   ....               LDR.N    R1,??DataTable21_3
+   \   0000001C   0020               MOVS     R0,#+0
+   \   0000001E   ........           BL       RTC_GetTime
+    198          	RTC_GetDate(RTC_Format_BIN, &RTC_DateStructure);
+   \   00000022   ....               LDR.N    R1,??DataTable21_4
+   \   00000024   0020               MOVS     R0,#+0
+   \   00000026   ........           BL       RTC_GetDate
+    199          
+    200          	//RTC_DateStructure.RTC_Year 는 두자리만 나오기 때문에 년도를 더해줘야해한다.
+    201          	
+    202          	SYSTEM_TIME.tm_year = RTC_DateStructure.RTC_Year + 2000;
+   \   0000002A   ....               LDR.N    R0,??DataTable21_4
+   \   0000002C   C078               LDRB     R0,[R0, #+3]
+   \   0000002E   10F5FA60           ADDS     R0,R0,#+2000
+   \   00000032   ....               LDR.N    R1,??DataTable21_7
+   \   00000034   4861               STR      R0,[R1, #+20]
+    203          	SYSTEM_TIME.tm_mon = RTC_DateStructure.RTC_Month;
+   \   00000036   ....               LDR.N    R0,??DataTable21_7
+   \   00000038   ....               LDR.N    R1,??DataTable21_4
+   \   0000003A   4978               LDRB     R1,[R1, #+1]
+   \   0000003C   0161               STR      R1,[R0, #+16]
+    204          	SYSTEM_TIME.tm_mday = RTC_DateStructure.RTC_Date;
+   \   0000003E   ....               LDR.N    R0,??DataTable21_7
+   \   00000040   ....               LDR.N    R1,??DataTable21_4
+   \   00000042   8978               LDRB     R1,[R1, #+2]
+   \   00000044   C160               STR      R1,[R0, #+12]
+    205          	SYSTEM_TIME.tm_hour = RTC_TimeStructure.RTC_Hours;
+   \   00000046   ....               LDR.N    R0,??DataTable21_7
+   \   00000048   ....               LDR.N    R1,??DataTable21_3
+   \   0000004A   0978               LDRB     R1,[R1, #+0]
+   \   0000004C   8160               STR      R1,[R0, #+8]
+    206          	SYSTEM_TIME.tm_min = RTC_TimeStructure.RTC_Minutes;
+   \   0000004E   ....               LDR.N    R0,??DataTable21_7
+   \   00000050   ....               LDR.N    R1,??DataTable21_3
+   \   00000052   4978               LDRB     R1,[R1, #+1]
+   \   00000054   4160               STR      R1,[R0, #+4]
+    207          	SYSTEM_TIME.tm_sec = RTC_TimeStructure.RTC_Seconds;	
+   \   00000056   ....               LDR.N    R0,??DataTable21_3
+   \   00000058   8078               LDRB     R0,[R0, #+2]
+   \   0000005A   ....               LDR.N    R1,??DataTable21_7
+   \   0000005C   0860               STR      R0,[R1, #+0]
+    208               SYSTEM_TIME_BINARY = RTC_DateToBinary(&SYSTEM_TIME);
+   \   0000005E   ....               LDR.N    R0,??DataTable21_7
+   \   00000060   ........           BL       RTC_DateToBinary
+   \   00000064   ....               LDR.N    R1,??DataTable21_8
+   \   00000066   0860               STR      R0,[R1, #+0]
+    209          	//  printf("\r= Current Time Display =\n");
+    210          	//  printf("  The current time is :  %0.2d:%0.2d:%0.2d \r\n", RTC_TimeStructure.RTC_Hours, RTC_TimeStructure.RTC_Minutes, RTC_TimeStructure.RTC_Seconds);
+    211            /* Unfreeze the RTC DR Register */
+    212          	(void)RTC->DR;
+   \   00000068   ....               LDR.N    R0,??DataTable21_9  ;; 0x40002804
+   \   0000006A   0068               LDR      R0,[R0, #+0]
+    213               // RTC를 이용하여 1초 타이머 만들기
+    214               if(OldSec != SYSTEM_TIME.tm_sec)
+   \   0000006C   ....               LDR.N    R1,??DataTable21_10
+   \   0000006E   0978               LDRB     R1,[R1, #+0]
+   \   00000070   ....               LDR.N    R2,??DataTable21_7
+   \   00000072   1268               LDR      R2,[R2, #+0]
+   \   00000074   9142               CMP      R1,R2
+   \   00000076   11D0               BEQ.N    ??RTC_TimeShow_2
+    215               {
+    216          
+    217                    m_sec = 0;
+   \   00000078   ....               LDR.N    R0,??DataTable21_11
+   \   0000007A   0021               MOVS     R1,#+0
+   \   0000007C   0180               STRH     R1,[R0, #+0]
+    218                    if(Timer_1Sec == 0xffff)
+   \   0000007E   ....               LDR.N    R0,??DataTable21_12
+   \   00000080   0088               LDRH     R0,[R0, #+0]
+   \   00000082   4FF6FF71           MOVW     R1,#+65535
+   \   00000086   8842               CMP      R0,R1
+   \   00000088   03D1               BNE.N    ??RTC_TimeShow_3
+    219                         Timer_1Sec = 0;
+   \   0000008A   ....               LDR.N    R0,??DataTable21_12
+   \   0000008C   0021               MOVS     R1,#+0
+   \   0000008E   0180               STRH     R1,[R0, #+0]
+   \   00000090   04E0               B.N      ??RTC_TimeShow_2
+    220                    else
+    221                         Timer_1Sec++; 
+   \                     ??RTC_TimeShow_3:
+   \   00000092   ....               LDR.N    R0,??DataTable21_12
+   \   00000094   0088               LDRH     R0,[R0, #+0]
+   \   00000096   401C               ADDS     R0,R0,#+1
+   \   00000098   ....               LDR.N    R1,??DataTable21_12
+   \   0000009A   0880               STRH     R0,[R1, #+0]
+    222               }
+    223               OldSec = SYSTEM_TIME.tm_sec;
+   \                     ??RTC_TimeShow_2:
+   \   0000009C   ....               LDR.N    R0,??DataTable21_10
+   \   0000009E   ....               LDR.N    R1,??DataTable21_7
+   \   000000A0   0968               LDR      R1,[R1, #+0]
+   \   000000A2   0170               STRB     R1,[R0, #+0]
+    224               if(SYSTEM_TIME.tm_year < 2010)
+   \   000000A4   ....               LDR.N    R0,??DataTable21_7
+   \   000000A6   4069               LDR      R0,[R0, #+20]
+   \   000000A8   40F2DA71           MOVW     R1,#+2010
+   \   000000AC   8842               CMP      R0,R1
+   \   000000AE   12DA               BGE.N    ??RTC_TimeShow_4
+    225               {
+    226                    RTC_DateStructure.RTC_Date = 4;
+   \   000000B0   ....               LDR.N    R0,??DataTable21_4
+   \   000000B2   0421               MOVS     R1,#+4
+   \   000000B4   8170               STRB     R1,[R0, #+2]
+    227                    RTC_DateStructure.RTC_Month = 10;
+   \   000000B6   ....               LDR.N    R0,??DataTable21_4
+   \   000000B8   0A21               MOVS     R1,#+10
+   \   000000BA   4170               STRB     R1,[R0, #+1]
+    228                    RTC_DateStructure.RTC_Year = 11;
+   \   000000BC   ....               LDR.N    R0,??DataTable21_4
+   \   000000BE   0B21               MOVS     R1,#+11
+   \   000000C0   C170               STRB     R1,[R0, #+3]
+    229                    
+    230                    if(RTC_SetDate(RTC_Format_BIN, &RTC_DateStructure) == ERROR)          
+   \   000000C2   ....               LDR.N    R1,??DataTable21_4
+   \   000000C4   0020               MOVS     R0,#+0
+   \   000000C6   ........           BL       RTC_SetDate
+   \   000000CA   0028               CMP      R0,#+0
+   \   000000CC   03D1               BNE.N    ??RTC_TimeShow_4
+    231                    {
+    232                         printf("\n>> !! RTC Set Date failed. !! <<\r\n");
+   \   000000CE   ........           ADR.W    R0,`?<Constant "\\n>> !! RTC Set Date f...">`
+   \   000000D2   ........           BL       printf
+    233                    }
+    234               }
+    235          }
+   \                     ??RTC_TimeShow_4:
+   \                     ??RTC_TimeShow_0:
+   \   000000D6   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .bss, align 1
+   \                     ??OldSec:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 2
+   \                     ??RTC_Timer:
+   \   00000000                      DS8 2
+    236          
+    237          /**0
+    238            * @brief  Display the current date on the Hyperterminal.
+    239            * @param  None
+    240            * @retval None
+    241            */
+
+   \                                 In section .text, align 2, keep-with-next
+    242          void RTC_DateShow(void)
+    243          {
+   \                     RTC_DateShow:
+   \   00000000   80B5               PUSH     {R7,LR}
+    244            /* Get the current Date */
+    245            RTC_GetDate(RTC_Format_BIN, &RTC_DateStructure);
+   \   00000002   ....               LDR.N    R1,??DataTable21_4
+   \   00000004   0020               MOVS     R0,#+0
+   \   00000006   ........           BL       RTC_GetDate
+    246            printf("= Current Date Display =\r\n");
+   \   0000000A   ........           ADR.W    R0,`?<Constant "= Current Date Displa...">`
+   \   0000000E   ........           BL       printf
+    247            printf("(WeekDay-Date-Month-Year)%0.2d-%0.2d-%0.2d-%0.2d \r\n", RTC_DateStructure.RTC_WeekDay, RTC_DateStructure.RTC_Date, RTC_DateStructure.RTC_Month, RTC_DateStructure.RTC_Year);
+   \   00000012   ....               LDR.N    R0,??DataTable21_4
+   \   00000014   C078               LDRB     R0,[R0, #+3]
+   \   00000016   0090               STR      R0,[SP, #+0]
+   \   00000018   ....               LDR.N    R0,??DataTable21_4
+   \   0000001A   4378               LDRB     R3,[R0, #+1]
+   \   0000001C   ....               LDR.N    R0,??DataTable21_4
+   \   0000001E   8278               LDRB     R2,[R0, #+2]
+   \   00000020   ....               LDR.N    R0,??DataTable21_4
+   \   00000022   0178               LDRB     R1,[R0, #+0]
+   \   00000024   ........           ADR.W    R0,`?<Constant "(WeekDay-Date-Month-Y...">`
+   \   00000028   ........           BL       printf
+    248          }
+   \   0000002C   01BD               POP      {R0,PC}          ;; return
+    249          
+    250          
+    251          /**
+    252            * @brief  Display the current TimeStamp (time and date) on the Hyperterminal.
+    253            * @param  None
+    254            * @retval None
+    255            */
+
+   \                                 In section .text, align 2, keep-with-next
+    256          void RTC_TimeStampShow(void)
+    257          {
+   \                     RTC_TimeStampShow:
+   \   00000000   80B5               PUSH     {R7,LR}
+    258            /* Get the current TimeStamp */
+    259            RTC_GetTimeStamp(RTC_Format_BIN, &RTC_TimeStampStructure, &RTC_TimeStampDateStructure);
+   \   00000002   ....               LDR.N    R2,??DataTable21_13
+   \   00000004   ....               LDR.N    R1,??DataTable21_14
+   \   00000006   0020               MOVS     R0,#+0
+   \   00000008   ........           BL       RTC_GetTimeStamp
+    260            printf("\r=TimeStamp Display (Time and Date)=\n");
+   \   0000000C   ........           ADR.W    R0,`?<Constant "\\r=TimeStamp Display (...">`
+   \   00000010   ........           BL       printf
+    261            printf("\n\r (Hour-Minute-Second):%0.2d:%0.2d:%0.2d \n", RTC_TimeStampStructure.RTC_Hours, RTC_TimeStampStructure.RTC_Minutes, RTC_TimeStampStructure.RTC_Seconds);
+   \   00000014   ....               LDR.N    R0,??DataTable21_14
+   \   00000016   8378               LDRB     R3,[R0, #+2]
+   \   00000018   ....               LDR.N    R0,??DataTable21_14
+   \   0000001A   4278               LDRB     R2,[R0, #+1]
+   \   0000001C   ....               LDR.N    R0,??DataTable21_14
+   \   0000001E   0178               LDRB     R1,[R0, #+0]
+   \   00000020   ........           ADR.W    R0,`?<Constant "\\n\\r (Hour-Minute-Secon...">`
+   \   00000024   ........           BL       printf
+    262            printf("\n\r (WeekDay-Date-Month):%0.2d-%0.2d-%0.2d \n", RTC_TimeStampDateStructure.RTC_WeekDay, RTC_TimeStampDateStructure.RTC_Date, RTC_TimeStampDateStructure.RTC_Month);
+   \   00000028   ....               LDR.N    R0,??DataTable21_13
+   \   0000002A   4378               LDRB     R3,[R0, #+1]
+   \   0000002C   ....               LDR.N    R0,??DataTable21_13
+   \   0000002E   8278               LDRB     R2,[R0, #+2]
+   \   00000030   ....               LDR.N    R0,??DataTable21_13
+   \   00000032   0178               LDRB     R1,[R0, #+0]
+   \   00000034   ........           ADR.W    R0,`?<Constant "\\n\\r (WeekDay-Date-Mont...">`
+   \   00000038   ........           BL       printf
+    263          }
+   \   0000003C   01BD               POP      {R0,PC}          ;; return
+    264          
+
+   \                                 In section .text, align 2, keep-with-next
+    265          u32 RTC_DateToBinary(TM_Struct *datetime) 
+    266          {
+   \                     RTC_DateToBinary:
+   \   00000000   10B4               PUSH     {R4}
+    267             u32 iday;
+    268             u32 val;
+    269          
+    270             iday = 365 * (datetime->tm_year - 1970) + DaysToMonth[datetime->tm_mon-1] + (datetime->tm_mday - 1);
+   \   00000002   4169               LDR      R1,[R0, #+20]
+   \   00000004   A1F2B271           SUBW     R1,R1,#+1970
+   \   00000008   40F26D12           MOVW     R2,#+365
+   \   0000000C   0369               LDR      R3,[R0, #+16]
+   \   0000000E   ....               LDR.N    R4,??DataTable21_15
+   \   00000010   14EB8303           ADDS     R3,R4,R3, LSL #+2
+   \   00000014   53F8043C           LDR      R3,[R3, #-4]
+   \   00000018   02FB0131           MLA      R1,R2,R1,R3
+   \   0000001C   C268               LDR      R2,[R0, #+12]
+   \   0000001E   521E               SUBS     R2,R2,#+1
+   \   00000020   5118               ADDS     R1,R2,R1
+    271             iday = iday + (datetime->tm_year - 1969) / 4;
+   \   00000022   4269               LDR      R2,[R0, #+20]
+   \   00000024   A2F2B172           SUBW     R2,R2,#+1969
+   \   00000028   0423               MOVS     R3,#+4
+   \   0000002A   92FBF3F2           SDIV     R2,R2,R3
+   \   0000002E   5118               ADDS     R1,R2,R1
+    272             if ((datetime->tm_mon > 2) && ((datetime->tm_year % 4) == 0)) {
+   \   00000030   0269               LDR      R2,[R0, #+16]
+   \   00000032   032A               CMP      R2,#+3
+   \   00000034   08DB               BLT.N    ??RTC_DateToBinary_0
+   \   00000036   4269               LDR      R2,[R0, #+20]
+   \   00000038   0423               MOVS     R3,#+4
+   \   0000003A   92FBF3F4           SDIV     R4,R2,R3
+   \   0000003E   04FB1324           MLS      R4,R4,R3,R2
+   \   00000042   002C               CMP      R4,#+0
+   \   00000044   00D1               BNE.N    ??RTC_DateToBinary_0
+    273                iday++;
+   \   00000046   491C               ADDS     R1,R1,#+1
+    274             }
+    275             val = datetime->tm_sec + 60 * datetime->tm_min + 3600 * (datetime->tm_hour + 24 * iday);
+   \                     ??RTC_DateToBinary_0:
+   \   00000048   0268               LDR      R2,[R0, #+0]
+   \   0000004A   4368               LDR      R3,[R0, #+4]
+   \   0000004C   3C24               MOVS     R4,#+60
+   \   0000004E   04FB0322           MLA      R2,R4,R3,R2
+   \   00000052   8068               LDR      R0,[R0, #+8]
+   \   00000054   1823               MOVS     R3,#+24
+   \   00000056   03FB0100           MLA      R0,R3,R1,R0
+   \   0000005A   4FF46161           MOV      R1,#+3600
+   \   0000005E   01FB0020           MLA      R0,R1,R0,R2
+    276             return val;
+   \   00000062   10BC               POP      {R4}
+   \   00000064   7047               BX       LR               ;; return
+    277          }
+    278          
+
+   \                                 In section .text, align 2, keep-with-next
+    279          void RTC_BinaryToDate(u32 binary,TM_Struct *datetime) 
+    280          {
+   \                     RTC_BinaryToDate:
+   \   00000000   2DE9F041           PUSH     {R4-R8,LR}
+    281             u32 hour;
+    282             u32 day;
+    283             u32 minute;
+    284             u32 second;
+    285             u32 month;
+    286             u32 year;
+    287               
+    288             u32 whole_minutes;
+    289             u32 whole_hours;
+    290             u32 whole_days;
+    291             u32 whole_days_since_1968;
+    292             u32 leap_year_periods;
+    293             u32 days_since_current_lyear;
+    294             u32 whole_years;
+    295             u32 days_since_first_of_year;
+    296             u32 days_to_month;
+    297             u32 day_of_week;
+    298          
+    299             whole_minutes = binary / 60;
+   \   00000004   3C22               MOVS     R2,#+60
+   \   00000006   B0FBF2F2           UDIV     R2,R0,R2
+    300             second = binary - (60 * whole_minutes);                 // leftover seconds
+   \   0000000A   3C23               MOVS     R3,#+60
+   \   0000000C   03FB1200           MLS      R0,R3,R2,R0
+    301          
+    302             whole_hours  = whole_minutes / 60;
+   \   00000010   3C23               MOVS     R3,#+60
+   \   00000012   B2FBF3F4           UDIV     R4,R2,R3
+    303             minute = whole_minutes - (60 * whole_hours);            // leftover minutes
+   \   00000016   3C23               MOVS     R3,#+60
+   \   00000018   03FB1422           MLS      R2,R3,R4,R2
+    304          
+    305             whole_days   = whole_hours / 24;
+   \   0000001C   1823               MOVS     R3,#+24
+   \   0000001E   B4FBF3F3           UDIV     R3,R4,R3
+    306             hour         = whole_hours - (24 * whole_days);         // leftover hours
+   \   00000022   1825               MOVS     R5,#+24
+   \   00000024   05FB1344           MLS      R4,R5,R3,R4
+    307                  
+    308             whole_days_since_1968 = whole_days + 365 + 366;
+   \   00000028   03F2DB25           ADDW     R5,R3,#+731
+    309             leap_year_periods = whole_days_since_1968 / ((4 * 365) + 1);
+   \   0000002C   40F2B556           MOVW     R6,#+1461
+   \   00000030   B5FBF6F6           UDIV     R6,R5,R6
+    310          
+    311             days_since_current_lyear = whole_days_since_1968 % ((4 * 365) + 1);
+   \   00000034   40F2B557           MOVW     R7,#+1461
+   \   00000038   B5FBF7FC           UDIV     R12,R5,R7
+   \   0000003C   07FB1C57           MLS      R7,R7,R12,R5
+    312                  
+    313             // if days are after a current leap year then add a leap year period
+    314             if ((days_since_current_lyear >= (31 + 29))) {
+   \   00000040   3C2F               CMP      R7,#+60
+   \   00000042   00D3               BCC.N    ??RTC_BinaryToDate_0
+    315                leap_year_periods++;
+   \   00000044   761C               ADDS     R6,R6,#+1
+    316             }
+    317             whole_years = (whole_days_since_1968 - leap_year_periods) / 365;
+   \                     ??RTC_BinaryToDate_0:
+   \   00000046   B5EB060C           SUBS     R12,R5,R6
+   \   0000004A   40F26D1E           MOVW     LR,#+365
+   \   0000004E   BCFBFEFC           UDIV     R12,R12,LR
+    318             days_since_first_of_year = whole_days_since_1968 - (whole_years * 365) - leap_year_periods;
+   \   00000052   40F26D1E           MOVW     LR,#+365
+   \   00000056   0EFB1C55           MLS      R5,LR,R12,R5
+   \   0000005A   AD1B               SUBS     R5,R5,R6
+    319          
+    320             if ((days_since_current_lyear <= 365) && (days_since_current_lyear >= 60)) {
+   \   0000005C   B7F13C06           SUBS     R6,R7,#+60
+   \   00000060   B6F5997F           CMP      R6,#+306
+   \   00000064   00D2               BCS.N    ??RTC_BinaryToDate_1
+    321                days_since_first_of_year++;
+   \   00000066   6D1C               ADDS     R5,R5,#+1
+    322             }
+    323             year = whole_years + 68;        
+   \                     ??RTC_BinaryToDate_1:
+   \   00000068   1CF14406           ADDS     R6,R12,#+68
+    324          
+    325             // setup for a search for what month it is based on how many days have past
+    326             //   within the current year
+    327             month = 13;
+   \   0000006C   0D27               MOVS     R7,#+13
+    328             days_to_month = 366;
+   \   0000006E   4FF4B77C           MOV      R12,#+366
+   \   00000072   13E0               B.N      ??RTC_BinaryToDate_2
+    329             while (days_since_first_of_year < days_to_month) {
+    330                 month--;
+   \                     ??RTC_BinaryToDate_3:
+   \   00000074   7F1E               SUBS     R7,R7,#+1
+    331                 days_to_month = DaysToMonth[month-1];
+   \   00000076   ........           LDR.W    R12,??DataTable21_15
+   \   0000007A   1CEB870C           ADDS     R12,R12,R7, LSL #+2
+   \   0000007E   5CF804CC           LDR      R12,[R12, #-4]
+    332                 if ((month > 2) && ((year % 4) == 0)) {
+   \   00000082   032F               CMP      R7,#+3
+   \   00000084   0AD3               BCC.N    ??RTC_BinaryToDate_2
+   \   00000086   5FF0040E           MOVS     LR,#+4
+   \   0000008A   B6FBFEF8           UDIV     R8,R6,LR
+   \   0000008E   08FB1E68           MLS      R8,R8,LR,R6
+   \   00000092   B8F1000F           CMP      R8,#+0
+   \   00000096   01D1               BNE.N    ??RTC_BinaryToDate_2
+    333                     days_to_month++;
+   \   00000098   1CF1010C           ADDS     R12,R12,#+1
+    334                  }
+    335             }
+   \                     ??RTC_BinaryToDate_2:
+   \   0000009C   6545               CMP      R5,R12
+   \   0000009E   E9D3               BCC.N    ??RTC_BinaryToDate_3
+    336             day = days_since_first_of_year - days_to_month + 1;
+   \   000000A0   B5EB0C0C           SUBS     R12,R5,R12
+   \   000000A4   1CF1010C           ADDS     R12,R12,#+1
+    337          
+    338             day_of_week = (whole_days  + 4) % 7;
+   \   000000A8   1B1D               ADDS     R3,R3,#+4
+   \   000000AA   5FF0070E           MOVS     LR,#+7
+   \   000000AE   B3FBFEF8           UDIV     R8,R3,LR
+   \   000000B2   0EFB1833           MLS      R3,LR,R8,R3
+    339          
+    340             datetime->tm_yday = 
+    341             days_since_first_of_year;      /* days since January 1 - [0,365]       */
+   \   000000B6   CD61               STR      R5,[R1, #+28]
+    342             datetime->tm_sec  = second;        /* seconds after the minute - [0,59]    */
+   \   000000B8   0860               STR      R0,[R1, #+0]
+    343             datetime->tm_min  = minute;        /* minutes after the hour - [0,59]      */
+   \   000000BA   4A60               STR      R2,[R1, #+4]
+    344             datetime->tm_hour = hour;          /* hours since midnight - [0,23]        */
+   \   000000BC   8C60               STR      R4,[R1, #+8]
+    345             datetime->tm_mday = day;           /* day of the month - [1,31]            */
+   \   000000BE   C1F80CC0           STR      R12,[R1, #+12]
+    346             datetime->tm_wday = day_of_week;   /* days since Sunday - [0,6]            */
+   \   000000C2   8B61               STR      R3,[R1, #+24]
+    347             datetime->tm_mon  = month;         /* months since January - [0,11]        */
+   \   000000C4   0F61               STR      R7,[R1, #+16]
+    348          	// 2011 년일 경우 111로 데이터가 저장된다.
+    349             // 이렇게 저장 될경우 복원시 데이터 오류
+    350             datetime->tm_year = year + 1900;          /* years since 1900                     */
+   \   000000C6   06F26C70           ADDW     R0,R6,#+1900
+   \   000000CA   4861               STR      R0,[R1, #+20]
+    351          }
+   \   000000CC   BDE8F081           POP      {R4-R8,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21:
+   \   00000000   ........           DC32     SynchPrediv
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_1:
+   \   00000000   ........           DC32     AsynchPrediv
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_2:
+   \   00000000   ........           DC32     RTC_InitStructure
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_3:
+   \   00000000   ........           DC32     RTC_TimeStructure
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_4:
+   \   00000000   ........           DC32     RTC_DateStructure
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_5:
+   \   00000000   ........           DC32     ??RTC_Timer
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_6:
+   \   00000000   000C0040           DC32     0x40000c00
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_7:
+   \   00000000   ........           DC32     SYSTEM_TIME
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_8:
+   \   00000000   ........           DC32     SYSTEM_TIME_BINARY
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_9:
+   \   00000000   04280040           DC32     0x40002804
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_10:
+   \   00000000   ........           DC32     ??OldSec
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_11:
+   \   00000000   ........           DC32     m_sec
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_12:
+   \   00000000   ........           DC32     Timer_1Sec
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_13:
+   \   00000000   ........           DC32     RTC_TimeStampDateStructure
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_14:
+   \   00000000   ........           DC32     RTC_TimeStampStructure
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable21_15:
+   \   00000000   ........           DC32     DaysToMonth
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\n\\r        /!\\\\***** RT...">`:
+   \   00000000                      ; Initializer data, 64 bytes
+   \   00000000   0A0D20202020       DC8 10, 13, 32, 32, 32, 32, 32, 32, 32, 32
+   \              20202020    
+   \   0000000A   2F215C2A2A2A       DC8 47, 33, 92, 42, 42, 42, 42, 42, 32, 82
+   \              2A2A2052    
+   \   00000014   544320507265       DC8 84, 67, 32, 80, 114, 101, 115, 99, 97, 108
+   \              7363616C    
+   \   0000001E   657220436F6E       DC8 101, 114, 32, 67, 111, 110, 102, 105, 103, 32
+   \              66696720    
+   \   00000028   6661696C6564       DC8 102, 97, 105, 108, 101, 100, 32, 42, 42, 42
+   \              202A2A2A    
+   \   00000032   2A2A2A2A2A2F       DC8 42, 42, 42, 42, 42, 47, 33, 92, 32, 10
+   \              215C200A    
+   \   0000003C   00000000           DC8 0, 0, 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant " Power On Reset occur...">`:
+   \   00000000                      ; Initializer data, 32 bytes
+   \   00000000   20506F776572       DC8 32, 80, 111, 119, 101, 114, 32, 79, 110, 32
+   \              204F6E20    
+   \   0000000A   526573657420       DC8 82, 101, 115, 101, 116, 32, 111, 99, 99, 117
+   \              6F636375    
+   \   00000014   727265642E2E       DC8 114, 114, 101, 100, 46, 46, 46, 46, 13, 10
+   \              2E2E0D0A    
+   \   0000001E   0000               DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant " External Reset occur...">`:
+   \   00000000                      ; Initializer data, 32 bytes
+   \   00000000   204578746572       DC8 32, 69, 120, 116, 101, 114, 110, 97, 108, 32
+   \              6E616C20    
+   \   0000000A   526573657420       DC8 82, 101, 115, 101, 116, 32, 111, 99, 99, 117
+   \              6F636375    
+   \   00000014   727265642E2E       DC8 114, 114, 101, 100, 46, 46, 46, 46, 13, 10
+   \              2E2E0D0A    
+   \   0000001E   0000               DC8 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant " No need to configure...">`:
+   \   00000000                      ; Initializer data, 32 bytes
+   \   00000000   204E6F206E65       DC8 32, 78, 111, 32, 110, 101, 101, 100, 32, 116
+   \              65642074    
+   \   0000000A   6F20636F6E66       DC8 111, 32, 99, 111, 110, 102, 105, 103, 117, 114
+   \              69677572    
+   \   00000014   65205254432E       DC8 101, 32, 82, 84, 67, 46, 46, 46, 46, 13
+   \              2E2E2E0D    
+   \   0000001E   0A00               DC8 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\n>> !! RTC Set Time f...">`:
+   \   00000000                      ; Initializer data, 36 bytes
+   \   00000000   0A3E3E202121       DC8 10, 62, 62, 32, 33, 33, 32, 82, 84, 67
+   \              20525443    
+   \   0000000A   205365742054       DC8 32, 83, 101, 116, 32, 84, 105, 109, 101, 32
+   \              696D6520    
+   \   00000014   6661696C6564       DC8 102, 97, 105, 108, 101, 100, 46, 32, 33, 33
+   \              2E202121    
+   \   0000001E   203C3C0D0A00       DC8 32, 60, 60, 13, 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant ">> !! RTC Set Time su...">`:
+   \   00000000                      ; Initializer data, 36 bytes
+   \   00000000   3E3E20212120       DC8 62, 62, 32, 33, 33, 32, 82, 84, 67, 32
+   \              52544320    
+   \   0000000A   536574205469       DC8 83, 101, 116, 32, 84, 105, 109, 101, 32, 115
+   \              6D652073    
+   \   00000014   756363657373       DC8 117, 99, 99, 101, 115, 115, 46, 32, 33, 33
+   \              2E202121    
+   \   0000001E   203C3C0D0A00       DC8 32, 60, 60, 13, 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\n>> !! RTC Set Date f...">`:
+   \   00000000                      ; Initializer data, 36 bytes
+   \   00000000   0A3E3E202121       DC8 10, 62, 62, 32, 33, 33, 32, 82, 84, 67
+   \              20525443    
+   \   0000000A   205365742044       DC8 32, 83, 101, 116, 32, 68, 97, 116, 101, 32
+   \              61746520    
+   \   00000014   6661696C6564       DC8 102, 97, 105, 108, 101, 100, 46, 32, 33, 33
+   \              2E202121    
+   \   0000001E   203C3C0D0A00       DC8 32, 60, 60, 13, 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant ">> !! RTC Set Date su...">`:
+   \   00000000                      ; Initializer data, 36 bytes
+   \   00000000   3E3E20212120       DC8 62, 62, 32, 33, 33, 32, 82, 84, 67, 32
+   \              52544320    
+   \   0000000A   536574204461       DC8 83, 101, 116, 32, 68, 97, 116, 101, 32, 115
+   \              74652073    
+   \   00000014   756363657373       DC8 117, 99, 99, 101, 115, 115, 46, 32, 33, 33
+   \              2E202121    
+   \   0000001E   203C3C0D0A00       DC8 32, 60, 60, 13, 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "= Current Date Displa...">`:
+   \   00000000                      ; Initializer data, 28 bytes
+   \   00000000   3D2043757272       DC8 61, 32, 67, 117, 114, 114, 101, 110, 116, 32
+   \              656E7420    
+   \   0000000A   446174652044       DC8 68, 97, 116, 101, 32, 68, 105, 115, 112, 108
+   \              6973706C    
+   \   00000014   6179203D0D0A       DC8 97, 121, 32, 61, 13, 10, 0, 0
+   \              0000        
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "(WeekDay-Date-Month-Y...">`:
+   \   00000000                      ; Initializer data, 52 bytes
+   \   00000000   285765656B44       DC8 40, 87, 101, 101, 107, 68, 97, 121, 45, 68
+   \              61792D44    
+   \   0000000A   6174652D4D6F       DC8 97, 116, 101, 45, 77, 111, 110, 116, 104, 45
+   \              6E74682D    
+   \   00000014   596561722925       DC8 89, 101, 97, 114, 41, 37, 48, 46, 50, 100
+   \              302E3264    
+   \   0000001E   2D25302E3264       DC8 45, 37, 48, 46, 50, 100, 45, 37, 48, 46
+   \              2D25302E    
+   \   00000028   32642D25302E       DC8 50, 100, 45, 37, 48, 46, 50, 100, 32, 13
+   \              3264200D    
+   \   00000032   0A00               DC8 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\r=TimeStamp Display (...">`:
+   \   00000000                      ; Initializer data, 40 bytes
+   \   00000000   0D3D54696D65       DC8 13, 61, 84, 105, 109, 101, 83, 116, 97, 109
+   \              5374616D    
+   \   0000000A   702044697370       DC8 112, 32, 68, 105, 115, 112, 108, 97, 121, 32
+   \              6C617920    
+   \   00000014   2854696D6520       DC8 40, 84, 105, 109, 101, 32, 97, 110, 100, 32
+   \              616E6420    
+   \   0000001E   44617465293D       DC8 68, 97, 116, 101, 41, 61, 10, 0, 0, 0
+   \              0A000000    
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\n\\r (Hour-Minute-Secon...">`:
+   \   00000000                      ; Initializer data, 44 bytes
+   \   00000000   0A0D2028486F       DC8 10, 13, 32, 40, 72, 111, 117, 114, 45, 77
+   \              75722D4D    
+   \   0000000A   696E7574652D       DC8 105, 110, 117, 116, 101, 45, 83, 101, 99, 111
+   \              5365636F    
+   \   00000014   6E64293A2530       DC8 110, 100, 41, 58, 37, 48, 46, 50, 100, 58
+   \              2E32643A    
+   \   0000001E   25302E32643A       DC8 37, 48, 46, 50, 100, 58, 37, 48, 46, 50
+   \              25302E32    
+   \   00000028   64200A00           DC8 100, 32, 10, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "\\n\\r (WeekDay-Date-Mont...">`:
+   \   00000000                      ; Initializer data, 44 bytes
+   \   00000000   0A0D20285765       DC8 10, 13, 32, 40, 87, 101, 101, 107, 68, 97
+   \              656B4461    
+   \   0000000A   792D44617465       DC8 121, 45, 68, 97, 116, 101, 45, 77, 111, 110
+   \              2D4D6F6E    
+   \   00000014   7468293A2530       DC8 116, 104, 41, 58, 37, 48, 46, 50, 100, 45
+   \              2E32642D    
+   \   0000001E   25302E32642D       DC8 37, 48, 46, 50, 100, 45, 37, 48, 46, 50
+   \              25302E32    
+   \   00000028   64200A00           DC8 100, 32, 10, 0
+    352           
+
+   Maximum stack usage in bytes:
+
+     Function          .cstack
+     --------          -------
+     RTC_AddDay             8
+     RTC_BinaryToDate      24
+     RTC_Config             8
+     RTC_DateShow           8
+     RTC_DateToBinary       4
+     RTC_Setting            8
+     RTC_TimeRegulate       8
+     RTC_TimeShow           8
+     RTC_TimeStampShow      8
+
+
+   Section sizes:
+
+     Function/Label                            Bytes
+     --------------                            -----
+     DaysToMonth                                 52
+     RTC_InitStructure                           12
+     RTC_TimeStructure                            4
+     RTC_DateStructure                            4
+     RTC_TimeStampStructure                       4
+     RTC_TimeStampDateStructure                   4
+     AsynchPrediv                                 4
+     SynchPrediv                                  4
+     SYSTEM_TIME                                 36
+     SYSTEM_TIME_BINARY                           4
+     RTC_Config                                  78
+     RTC_Setting                                162
+     RTC_AddDay                                  62
+     RTC_TimeRegulate                            84
+     RTC_TimeShow                               216
+     OldSec                                       1
+     RTC_Timer                                    2
+     RTC_DateShow                                46
+     RTC_TimeStampShow                           62
+     RTC_DateToBinary                           102
+     RTC_BinaryToDate                           208
+     ??DataTable21                                4
+     ??DataTable21_1                              4
+     ??DataTable21_2                              4
+     ??DataTable21_3                              4
+     ??DataTable21_4                              4
+     ??DataTable21_5                              4
+     ??DataTable21_6                              4
+     ??DataTable21_7                              4
+     ??DataTable21_8                              4
+     ??DataTable21_9                              4
+     ??DataTable21_10                             4
+     ??DataTable21_11                             4
+     ??DataTable21_12                             4
+     ??DataTable21_13                             4
+     ??DataTable21_14                             4
+     ??DataTable21_15                             4
+     ?<Constant "\n\r        /!\\***** RT...">   64
+     ?<Constant " Power On Reset occur...">      32
+     ?<Constant " External Reset occur...">      32
+     ?<Constant " No need to configure...">      32
+     ?<Constant "\n>> !! RTC Set Time f...">     36
+     ?<Constant ">> !! RTC Set Time su...">      36
+     ?<Constant "\n>> !! RTC Set Date f...">     36
+     ?<Constant ">> !! RTC Set Date su...">      36
+     ?<Constant "= Current Date Displa...">      28
+     ?<Constant "(WeekDay-Date-Month-Y...">      52
+     ?<Constant "\r=TimeStamp Display (...">     40
+     ?<Constant "\n\r (Hour-Minute-Secon...">    44
+     ?<Constant "\n\r (WeekDay-Date-Mont...">    44
+
+ 
+    79 bytes in section .bss
+    52 bytes in section .data
+ 1 596 bytes in section .text
+ 
+ 1 596 bytes of CODE memory
+   131 bytes of DATA memory
+
+Errors: none
+Warnings: none

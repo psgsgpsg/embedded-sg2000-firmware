@@ -1,0 +1,1291 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     12/Jan/2012  04:01:45 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Voice.c #
+#    Command line =  "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Voice. #
+#                    c" -D USE_STDPERIPH_DRIVER -D STM32F2XX -D               #
+#                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                   #
+#                    RTC_CLOCK_SOURCE_LSE -lC "F:\묵작업\[ NewDTG             #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\" #
+#                     -lA "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\E #
+#                    WARM\STM3220F_EVAL\List\" -o "F:\묵작업\[ NewDTG         #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\"  #
+#                    --no_cse --no_unroll --no_inline --no_code_motion        #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M3 -e --fpu=None            #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.0\arm\INC\c\DLib_Config_Full.h" -I           #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\" -I "F:\묵작업\[ NewDTG                              #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\CoreSupport\" -I "F:\묵작업\[ NewDTG               #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\DeviceSupport\ST\STM32F2xx\" -I "F:\묵작업\[       #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librari #
+#                    es\STM32F2xx_StdPeriph_Driver\inc\" -I "F:\묵작업\[      #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utiliti #
+#                    es\STM32_EVAL\" -I "F:\묵작업\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\Common\" -I "F:\묵작업\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\STM3220F_EVAL\" -I "F:\묵작업\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_OTG_Driver\inc\" -I "F:\묵작업\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Core\inc\" -I "F:\묵작업\[ NewDTG   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Class\msc\inc\" -I "F:\묵작업\[     #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\" -I   #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\Usb\Inc\" -I "F:\묵작업\[ NewDTG                      #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\src\" -I      #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Core\inc\" -I     #
+#                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Class\MSC\inc\"   #
+#                    -I "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWA #
+#                    RM\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\in #
+#                    c\" -Ol --use_c++_inline                                 #
+#    List file    =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\List\Voice.lst                              #
+#    Object file  =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\Obj\Voice.o                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Voice.c
+      1          #include "Voice.h"
+      2          #include "main.h"
+      3          #include "spi_flash.h"
+      4          //#include "usbh_usr.h"
+      5          
+      6          
+
+   \                                 In section .bss, align 4
+      7          u8 Voice_Stack[VOICE_MAX_COUNT + 1];
+   \                     Voice_Stack:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 1
+      8          u8 Voice_Stack_Count;
+   \                     Voice_Stack_Count:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+      9          u8 Voice_Error_Out;
+   \                     Voice_Error_Out:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 4
+     10          u8 SerilaFlash_Info[3];
+   \                     SerilaFlash_Info:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     11          u32 Flash_Size;
+   \                     Flash_Size:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     12          u32 MaxAddress;
+   \                     MaxAddress:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     13          u32 IDAddrPos;
+   \                     IDAddrPos:
+   \   00000000                      DS8 4
+     14          
+
+   \                                 In section .text, align 2, keep-with-next
+     15          void Voice_Config(void)
+     16          {
+   \                     Voice_Config:
+   \   00000000   00B5               PUSH     {LR}
+   \   00000002   83B0               SUB      SP,SP,#+12
+     17              GPIO_InitTypeDef GPIO_InitStructure;
+     18            // 음성칩 포트 초기화 
+     19              RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE);
+   \   00000004   0121               MOVS     R1,#+1
+   \   00000006   2020               MOVS     R0,#+32
+   \   00000008   ........           BL       RCC_AHB1PeriphClockCmd
+     20              GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_8 | GPIO_Pin_9 ;
+   \   0000000C   4FF45070           MOV      R0,#+832
+   \   00000010   0090               STR      R0,[SP, #+0]
+     21              GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;  
+   \   00000012   0020               MOVS     R0,#+0
+   \   00000014   8DF80600           STRB     R0,[SP, #+6]
+     22              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+   \   00000018   0120               MOVS     R0,#+1
+   \   0000001A   8DF80400           STRB     R0,[SP, #+4]
+     23              GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP ;
+   \   0000001E   0120               MOVS     R0,#+1
+   \   00000020   8DF80700           STRB     R0,[SP, #+7]
+     24              GPIO_Init(GPIOF, &GPIO_InitStructure);
+   \   00000024   00A9               ADD      R1,SP,#+0
+   \   00000026   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000002A   ........           BL       GPIO_Init
+     25          
+     26              GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7 ;      // Busy
+   \   0000002E   8020               MOVS     R0,#+128
+   \   00000030   0090               STR      R0,[SP, #+0]
+     27              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+   \   00000032   0020               MOVS     R0,#+0
+   \   00000034   8DF80400           STRB     R0,[SP, #+4]
+     28              GPIO_Init(GPIOF, &GPIO_InitStructure);  
+   \   00000038   00A9               ADD      R1,SP,#+0
+   \   0000003A   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000003E   ........           BL       GPIO_Init
+     29            
+     30              VOICE_CSB_SEL_LOW();         // 0 : Command 모드 1: SerialFlahs Access 모드   
+   \   00000042   4021               MOVS     R1,#+64
+   \   00000044   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000048   ........           BL       GPIO_ResetBits
+     31              VOICE_SELECT_HIGH();    // 0 : Standalone 모드 1 : MCU 모드 
+   \   0000004C   4FF40071           MOV      R1,#+512
+   \   00000050   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000054   ........           BL       GPIO_SetBits
+     32           
+     33          }
+   \   00000058   07BD               POP      {R0-R2,PC}       ;; return
+     34          
+
+   \                                 In section .text, align 2, keep-with-next
+     35          void SerialFlash_Start(void)
+     36          {
+   \                     SerialFlash_Start:
+   \   00000000   80B5               PUSH     {R7,LR}
+     37               VOICE_CSB_SEL_HIGH();     
+   \   00000002   4021               MOVS     R1,#+64
+   \   00000004   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000008   ........           BL       GPIO_SetBits
+     38          }
+   \   0000000C   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     39          void SerialFlash_End(void)
+     40          {
+   \                     SerialFlash_End:
+   \   00000000   80B5               PUSH     {R7,LR}
+     41               VOICE_CSB_SEL_LOW();
+   \   00000002   4021               MOVS     R1,#+64
+   \   00000004   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000008   ........           BL       GPIO_ResetBits
+     42          }
+   \   0000000C   01BD               POP      {R0,PC}          ;; return
+     43          
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          u32 SFmax_addr(u8 MemoryCapacity)
+     46          {
+     47          	u32 max_addr;
+     48          	switch(MemoryCapacity-0x10) {
+   \                     SFmax_addr:
+   \   00000000   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000002   1038               SUBS     R0,R0,#+16
+   \   00000004   0028               CMP      R0,#+0
+   \   00000006   0CD0               BEQ.N    ??SFmax_addr_0
+   \   00000008   0228               CMP      R0,#+2
+   \   0000000A   10D0               BEQ.N    ??SFmax_addr_1
+   \   0000000C   0CD3               BCC.N    ??SFmax_addr_2
+   \   0000000E   0428               CMP      R0,#+4
+   \   00000010   13D0               BEQ.N    ??SFmax_addr_3
+   \   00000012   0FD3               BCC.N    ??SFmax_addr_4
+   \   00000014   0628               CMP      R0,#+6
+   \   00000016   16D0               BEQ.N    ??SFmax_addr_5
+   \   00000018   12D3               BCC.N    ??SFmax_addr_6
+   \   0000001A   0828               CMP      R0,#+8
+   \   0000001C   19D0               BEQ.N    ??SFmax_addr_7
+   \   0000001E   15D3               BCC.N    ??SFmax_addr_8
+   \   00000020   1AE0               B.N      ??SFmax_addr_9
+     49          		case 0: max_addr = 0x00010000;	//512k
+   \                     ??SFmax_addr_0:
+   \   00000022   5FF48030           MOVS     R0,#+65536
+     50          				break;
+   \   00000026   18E0               B.N      ??SFmax_addr_10
+     51          		case 1: max_addr = 0x00020000;	//1M
+   \                     ??SFmax_addr_2:
+   \   00000028   5FF40030           MOVS     R0,#+131072
+     52          				break;
+   \   0000002C   15E0               B.N      ??SFmax_addr_10
+     53          		case 2: max_addr = 0x00040000;	//2M
+   \                     ??SFmax_addr_1:
+   \   0000002E   5FF48020           MOVS     R0,#+262144
+     54          				break;
+   \   00000032   12E0               B.N      ??SFmax_addr_10
+     55          		case 3: max_addr = 0x00080000;	//4M
+   \                     ??SFmax_addr_4:
+   \   00000034   5FF40020           MOVS     R0,#+524288
+     56          				break;
+   \   00000038   0FE0               B.N      ??SFmax_addr_10
+     57          		case 4: max_addr = 0x00100000;	//8M
+   \                     ??SFmax_addr_3:
+   \   0000003A   5FF48010           MOVS     R0,#+1048576
+     58          				break;
+   \   0000003E   0CE0               B.N      ??SFmax_addr_10
+     59          		case 5: max_addr = 0x00200000;	//16M
+   \                     ??SFmax_addr_6:
+   \   00000040   5FF40010           MOVS     R0,#+2097152
+     60          				break;
+   \   00000044   09E0               B.N      ??SFmax_addr_10
+     61          		case 6: max_addr = 0x00400000;	//32M
+   \                     ??SFmax_addr_5:
+   \   00000046   5FF48000           MOVS     R0,#+4194304
+     62          				break;
+   \   0000004A   06E0               B.N      ??SFmax_addr_10
+     63          		case 7: max_addr = 0x00800000;	//64M
+   \                     ??SFmax_addr_8:
+   \   0000004C   5FF40000           MOVS     R0,#+8388608
+     64          				break;
+   \   00000050   03E0               B.N      ??SFmax_addr_10
+     65          		case 8: max_addr = 0x01000000;	//128M
+   \                     ??SFmax_addr_7:
+   \   00000052   5FF08070           MOVS     R0,#+16777216
+     66          				break;
+   \   00000056   00E0               B.N      ??SFmax_addr_10
+     67          		default : max_addr = 0;
+   \                     ??SFmax_addr_9:
+   \   00000058   0020               MOVS     R0,#+0
+     68          	}
+     69          	return max_addr;
+   \                     ??SFmax_addr_10:
+   \   0000005A   7047               BX       LR               ;; return
+     70          }
+     71          
+
+   \                                 In section .text, align 2, keep-with-next
+     72          u8 SFcapacity(u8 MemoryCapacity)
+     73          {
+     74          	u8 capacity;
+     75          	switch(MemoryCapacity-0x10) {
+   \                     SFcapacity:
+   \   00000000   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000002   1038               SUBS     R0,R0,#+16
+   \   00000004   0028               CMP      R0,#+0
+   \   00000006   0CD0               BEQ.N    ??SFcapacity_0
+   \   00000008   0228               CMP      R0,#+2
+   \   0000000A   0ED0               BEQ.N    ??SFcapacity_1
+   \   0000000C   0BD3               BCC.N    ??SFcapacity_2
+   \   0000000E   0428               CMP      R0,#+4
+   \   00000010   0FD0               BEQ.N    ??SFcapacity_3
+   \   00000012   0CD3               BCC.N    ??SFcapacity_4
+   \   00000014   0628               CMP      R0,#+6
+   \   00000016   10D0               BEQ.N    ??SFcapacity_5
+   \   00000018   0DD3               BCC.N    ??SFcapacity_6
+   \   0000001A   0828               CMP      R0,#+8
+   \   0000001C   11D0               BEQ.N    ??SFcapacity_7
+   \   0000001E   0ED3               BCC.N    ??SFcapacity_8
+   \   00000020   11E0               B.N      ??SFcapacity_9
+     76          		case 0: capacity = 1;	//512k
+   \                     ??SFcapacity_0:
+   \   00000022   0120               MOVS     R0,#+1
+     77          				break;
+   \   00000024   10E0               B.N      ??SFcapacity_10
+     78          		case 1: capacity = 2;	//1M
+   \                     ??SFcapacity_2:
+   \   00000026   0220               MOVS     R0,#+2
+     79          				break;
+   \   00000028   0EE0               B.N      ??SFcapacity_10
+     80          		case 2: capacity = 3;	//2M
+   \                     ??SFcapacity_1:
+   \   0000002A   0320               MOVS     R0,#+3
+     81          				break;
+   \   0000002C   0CE0               B.N      ??SFcapacity_10
+     82          		case 3: capacity = 4;	//4M
+   \                     ??SFcapacity_4:
+   \   0000002E   0420               MOVS     R0,#+4
+     83          				break;
+   \   00000030   0AE0               B.N      ??SFcapacity_10
+     84          		case 4: capacity = 5;	//8M
+   \                     ??SFcapacity_3:
+   \   00000032   0520               MOVS     R0,#+5
+     85          				break;
+   \   00000034   08E0               B.N      ??SFcapacity_10
+     86          		case 5: capacity = 6;	//16M
+   \                     ??SFcapacity_6:
+   \   00000036   0620               MOVS     R0,#+6
+     87          				break;
+   \   00000038   06E0               B.N      ??SFcapacity_10
+     88          		case 6: capacity = 7;	//32M
+   \                     ??SFcapacity_5:
+   \   0000003A   0720               MOVS     R0,#+7
+     89          				break;
+   \   0000003C   04E0               B.N      ??SFcapacity_10
+     90          		case 7: capacity = 8;	//64M
+   \                     ??SFcapacity_8:
+   \   0000003E   0820               MOVS     R0,#+8
+     91          				break;
+   \   00000040   02E0               B.N      ??SFcapacity_10
+     92          		case 8: capacity = 9;	//128M
+   \                     ??SFcapacity_7:
+   \   00000042   0920               MOVS     R0,#+9
+     93          				break;
+   \   00000044   00E0               B.N      ??SFcapacity_10
+     94          		default : capacity = 0;
+   \                     ??SFcapacity_9:
+   \   00000046   0020               MOVS     R0,#+0
+     95          	}
+     96          	return capacity;
+   \                     ??SFcapacity_10:
+   \   00000048   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000004A   7047               BX       LR               ;; return
+     97          }
+     98          
+
+   \                                 In section .text, align 2, keep-with-next
+     99          u8 SerialFlash_status_register(void)
+    100          {
+   \                     SerialFlash_status_register:
+   \   00000000   10B5               PUSH     {R4,LR}
+    101          	u8 Data;				
+    102               
+    103               VOICE_CSB_LOW();
+   \   00000002   4FF48071           MOV      R1,#+256
+   \   00000006   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    104               
+    105          	sFLASH_SendByte(F_RDSR);
+   \   0000000E   0520               MOVS     R0,#+5
+   \   00000010   ........           BL       sFLASH_SendByte
+    106          	Data = sFLASH_SendByte(0);
+   \   00000014   0020               MOVS     R0,#+0
+   \   00000016   ........           BL       sFLASH_SendByte
+   \   0000001A   0400               MOVS     R4,R0
+    107               
+    108               VOICE_CSB_HIGH();
+   \   0000001C   4FF48071           MOV      R1,#+256
+   \   00000020   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000024   ........           BL       GPIO_SetBits
+    109          	return Data;
+   \   00000028   2000               MOVS     R0,R4
+   \   0000002A   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002C   10BD               POP      {R4,PC}          ;; return
+    110          }
+
+   \                                 In section .text, align 2, keep-with-next
+    111          void SerialFlash_busy_check()
+    112          {
+   \                     SerialFlash_busy_check:
+   \   00000000   80B5               PUSH     {R7,LR}
+    113          	u8 Rdata;
+    114          	do { 
+    115                    IWDG_ReloadCounter(); 
+   \                     ??SerialFlash_busy_check_0:
+   \   00000002   ........           BL       IWDG_ReloadCounter
+    116          		Rdata = SerialFlash_status_register();
+   \   00000006   ........           BL       SerialFlash_status_register
+    117          	} while ((Rdata&F_WIP));
+   \   0000000A   C007               LSLS     R0,R0,#+31
+   \   0000000C   F9D4               BMI.N    ??SerialFlash_busy_check_0
+    118          }
+   \   0000000E   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void SerialFlash_write_enable(void)
+    120          {
+   \                     SerialFlash_write_enable:
+   \   00000000   80B5               PUSH     {R7,LR}
+    121               VOICE_CSB_LOW();
+   \   00000002   4FF48071           MOV      R1,#+256
+   \   00000006   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    122          	sFLASH_SendByte(F_WREN);
+   \   0000000E   0620               MOVS     R0,#+6
+   \   00000010   ........           BL       sFLASH_SendByte
+    123               VOICE_CSB_HIGH();
+   \   00000014   4FF48071           MOV      R1,#+256
+   \   00000018   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000001C   ........           BL       GPIO_SetBits
+    124          }
+   \   00000020   01BD               POP      {R0,PC}          ;; return
+    125          
+    126          
+
+   \                                 In section .text, align 2, keep-with-next
+    127          void SerialFlash_Write_status_register(u8 Data)
+    128          {
+   \                     SerialFlash_Write_status_register:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    129               VOICE_CSB_LOW();
+   \   00000004   4FF48071           MOV      R1,#+256
+   \   00000008   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000000C   ........           BL       GPIO_ResetBits
+    130          //	SerialFlash_Start();
+    131          	sFLASH_SendByte(F_WRSR);
+   \   00000010   0120               MOVS     R0,#+1
+   \   00000012   ........           BL       sFLASH_SendByte
+    132          	Data = sFLASH_SendByte(Data);
+   \   00000016   2000               MOVS     R0,R4
+   \   00000018   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001A   ........           BL       sFLASH_SendByte
+   \   0000001E   0400               MOVS     R4,R0
+    133               VOICE_CSB_HIGH();
+   \   00000020   4FF48071           MOV      R1,#+256
+   \   00000024   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000028   ........           BL       GPIO_SetBits
+    134          }
+   \   0000002C   10BD               POP      {R4,PC}          ;; return
+    135          
+
+   \                                 In section .text, align 2, keep-with-next
+    136          void SerialFlash_Read_Program(u32 Addr)
+    137          {
+   \                     SerialFlash_Read_Program:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    138               SerialFlash_busy_check();
+   \   00000004   ........           BL       SerialFlash_busy_check
+    139          //	SerialFlash_Start();     
+    140               VOICE_CSB_LOW();     
+   \   00000008   4FF48071           MOV      R1,#+256
+   \   0000000C   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000010   ........           BL       GPIO_ResetBits
+    141               sFLASH_SendByte(F_READ);      
+   \   00000014   0320               MOVS     R0,#+3
+   \   00000016   ........           BL       sFLASH_SendByte
+    142          	sFLASH_SendByte((Addr>>16)&0xff);	// A23~A16
+   \   0000001A   200C               LSRS     R0,R4,#+16
+   \   0000001C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001E   ........           BL       sFLASH_SendByte
+    143          	sFLASH_SendByte((Addr>>8)&0xff);	// A15~A8
+   \   00000022   200A               LSRS     R0,R4,#+8
+   \   00000024   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000026   ........           BL       sFLASH_SendByte
+    144          	sFLASH_SendByte((Addr)&0xff);		// A7~A0     
+   \   0000002A   2000               MOVS     R0,R4
+   \   0000002C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002E   ........           BL       sFLASH_SendByte
+    145          }
+   \   00000032   10BD               POP      {R4,PC}          ;; return
+    146          
+
+   \                                 In section .text, align 2, keep-with-next
+    147          void SFchip_erase(void)
+    148          {    
+   \                     SFchip_erase:
+   \   00000000   80B5               PUSH     {R7,LR}
+    149               SerialFlash_write_enable();     
+   \   00000002   ........           BL       SerialFlash_write_enable
+    150               VOICE_CSB_LOW();
+   \   00000006   4FF48071           MOV      R1,#+256
+   \   0000000A   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   0000000E   ........           BL       GPIO_ResetBits
+    151          	sFLASH_SendByte(F_CE);
+   \   00000012   C720               MOVS     R0,#+199
+   \   00000014   ........           BL       sFLASH_SendByte
+    152               VOICE_CSB_HIGH();
+   \   00000018   4FF48071           MOV      R1,#+256
+   \   0000001C   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000020   ........           BL       GPIO_SetBits
+    153          }
+   \   00000024   01BD               POP      {R0,PC}          ;; return
+    154          
+
+   \                                 In section .text, align 2, keep-with-next
+    155          void SerialFlash_Program( u32 Addr )
+    156          {
+   \                     SerialFlash_Program:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    157               SerialFlash_write_enable();
+   \   00000004   ........           BL       SerialFlash_write_enable
+    158               VOICE_CSB_LOW();
+   \   00000008   4FF48071           MOV      R1,#+256
+   \   0000000C   ........           LDR.W    R0,??DataTable17  ;; 0x40021400
+   \   00000010   ........           BL       GPIO_ResetBits
+    159               sFLASH_SendByte(F_PP);           
+   \   00000014   0220               MOVS     R0,#+2
+   \   00000016   ........           BL       sFLASH_SendByte
+    160          	sFLASH_SendByte((Addr>>16)&0xff);	// A23~A16
+   \   0000001A   200C               LSRS     R0,R4,#+16
+   \   0000001C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001E   ........           BL       sFLASH_SendByte
+    161          	sFLASH_SendByte((Addr>>8)&0xff);	// A15~A8
+   \   00000022   200A               LSRS     R0,R4,#+8
+   \   00000024   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000026   ........           BL       sFLASH_SendByte
+    162          	sFLASH_SendByte((Addr)&0xff);		// A7~A0  
+   \   0000002A   2000               MOVS     R0,R4
+   \   0000002C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002E   ........           BL       sFLASH_SendByte
+    163          
+    164          }
+   \   00000032   10BD               POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    165          void SerialFlash_ProgramWirte_Start(void)
+    166          {
+   \                     SerialFlash_ProgramWirte_Start:
+   \   00000000   80B5               PUSH     {R7,LR}
+    167               /* 읽기 위해서 해야할는것은 CSB_SEl을 셋하고
+    168                 CSB 를 명령어마다 로우 하이로 바꿔가면서 라이팅해야한다
+    169                라이팅 전에는 반드시 Write_Enable을 하고 Buzy체크를 해줘야한다*/
+    170               
+    171          	SerialFlash_Start();      
+   \   00000002   ........           BL       SerialFlash_Start
+    172               SerialFlash_write_enable();
+   \   00000006   ........           BL       SerialFlash_write_enable
+    173               SerialFlash_busy_check();
+   \   0000000A   ........           BL       SerialFlash_busy_check
+    174               SerialFlash_Write_status_register(0);
+   \   0000000E   0020               MOVS     R0,#+0
+   \   00000010   ........           BL       SerialFlash_Write_status_register
+    175               SerialFlash_busy_check();    // 비지 체크
+   \   00000014   ........           BL       SerialFlash_busy_check
+    176               SFchip_erase();      // 플래시지우기     
+   \   00000018   ........           BL       SFchip_erase
+    177            
+    178          }
+   \   0000001C   01BD               POP      {R0,PC}          ;; return
+    179           
+
+   \                                 In section .text, align 2, keep-with-next
+    180          void SerialFlash_ProgramWirte_End(void)
+    181          {
+   \                     SerialFlash_ProgramWirte_End:
+   \   00000000   80B5               PUSH     {R7,LR}
+    182               SerialFlash_Write_status_register(0x3C);          // Write Protect
+   \   00000002   3C20               MOVS     R0,#+60
+   \   00000004   ........           BL       SerialFlash_Write_status_register
+    183               SerialFlash_busy_check();    // 비지 체크
+   \   00000008   ........           BL       SerialFlash_busy_check
+    184               SerialFlash_End();
+   \   0000000C   ........           BL       SerialFlash_End
+    185          }
+   \   00000010   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    186          void SerialFlash_ReadID(void)
+    187          {
+   \                     SerialFlash_ReadID:
+   \   00000000   10B5               PUSH     {R4,LR}
+    188               u8 Result = 0;     
+   \   00000002   0024               MOVS     R4,#+0
+    189          //   u32 Address;
+    190          //   u8 i;
+    191          //   u8 TempBuffer[256];
+    192               SerialFlash_Start();
+   \   00000004   ........           BL       SerialFlash_Start
+    193               VOICE_CSB_LOW();
+   \   00000008   4FF48071           MOV      R1,#+256
+   \   0000000C   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000E   ........           BL       GPIO_ResetBits
+    194               sFLASH_SendByte(F_RDID);
+   \   00000012   9F20               MOVS     R0,#+159
+   \   00000014   ........           BL       sFLASH_SendByte
+    195               
+    196               SerilaFlash_Info[0] = sFLASH_SendByte(0);
+   \   00000018   0020               MOVS     R0,#+0
+   \   0000001A   ........           BL       sFLASH_SendByte
+   \   0000001E   ....               LDR.N    R1,??DataTable17_1
+   \   00000020   0870               STRB     R0,[R1, #+0]
+    197               SerilaFlash_Info[1] = sFLASH_SendByte(0);
+   \   00000022   0020               MOVS     R0,#+0
+   \   00000024   ........           BL       sFLASH_SendByte
+   \   00000028   ....               LDR.N    R1,??DataTable17_1
+   \   0000002A   4870               STRB     R0,[R1, #+1]
+    198               SerilaFlash_Info[2] = sFLASH_SendByte(0);       
+   \   0000002C   0020               MOVS     R0,#+0
+   \   0000002E   ........           BL       sFLASH_SendByte
+   \   00000032   ....               LDR.N    R1,??DataTable17_1
+   \   00000034   8870               STRB     R0,[R1, #+2]
+    199               VOICE_CSB_HIGH();
+   \   00000036   4FF48071           MOV      R1,#+256
+   \   0000003A   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000003C   ........           BL       GPIO_SetBits
+    200               
+    201          //     
+    202          //     VOICE_CSB_LOW();
+    203          //     Address = 0;
+    204          //     SerialFlash_Read_Program(Address);
+    205          //     for(i = 0 ; i < 255; i+= 1)
+    206          //     {
+    207          //          TempBuffer[i] = SerialFlash_Read_8bit();
+    208          //     }   
+    209          //     VOICE_CSB_HIGH();
+    210                
+    211               SerialFlash_End();
+   \   00000040   ........           BL       SerialFlash_End
+    212               Flash_Size = SFcapacity(SerilaFlash_Info[2]);
+   \   00000044   ....               LDR.N    R0,??DataTable17_1
+   \   00000046   8078               LDRB     R0,[R0, #+2]
+   \   00000048   ........           BL       SFcapacity
+   \   0000004C   ....               LDR.N    R1,??DataTable17_2
+   \   0000004E   0860               STR      R0,[R1, #+0]
+    213               MaxAddress = SFmax_addr(SerilaFlash_Info[2]);     
+   \   00000050   ....               LDR.N    R0,??DataTable17_1
+   \   00000052   8078               LDRB     R0,[R0, #+2]
+   \   00000054   ........           BL       SFmax_addr
+   \   00000058   ....               LDR.N    R1,??DataTable17_3
+   \   0000005A   0860               STR      R0,[R1, #+0]
+    214          
+    215               VOICE_CSB_LOW();
+   \   0000005C   4FF48071           MOV      R1,#+256
+   \   00000060   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000062   ........           BL       GPIO_ResetBits
+    216               
+    217               Result = sFLASH_SendByte(0x70);        
+   \   00000066   7020               MOVS     R0,#+112
+   \   00000068   ........           BL       sFLASH_SendByte
+   \   0000006C   0400               MOVS     R4,R0
+    218               Result = sFLASH_SendByte(0x00);        
+   \   0000006E   0020               MOVS     R0,#+0
+   \   00000070   ........           BL       sFLASH_SendByte
+   \   00000074   0400               MOVS     R4,R0
+    219               
+    220               VOICE_CSB_HIGH();     
+   \   00000076   4FF48071           MOV      R1,#+256
+   \   0000007A   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000007C   ........           BL       GPIO_SetBits
+    221               if(Result == 0xaa)
+   \   00000080   E4B2               UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   00000082   AA2C               CMP      R4,#+170
+   \   00000084   06D1               BNE.N    ??SerialFlash_ReadID_0
+    222               {
+    223                    IDAddrPos = (SFmax_addr(SerilaFlash_Info[2]) - 1) - 0xff + 0x04;	// FC1001이 저장된 위치 (일종의 flag임)         
+   \   00000086   ....               LDR.N    R0,??DataTable17_1
+   \   00000088   8078               LDRB     R0,[R0, #+2]
+   \   0000008A   ........           BL       SFmax_addr
+   \   0000008E   FC38               SUBS     R0,R0,#+252
+   \   00000090   ....               LDR.N    R1,??DataTable17_4
+   \   00000092   0860               STR      R0,[R1, #+0]
+    224               }
+    225              
+    226          }
+   \                     ??SerialFlash_ReadID_0:
+   \   00000094   10BD               POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    227          void Register_Write(u8 Command,u8 data)
+    228          {
+   \                     Register_Write:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+   \   00000002   0400               MOVS     R4,R0
+   \   00000004   0D00               MOVS     R5,R1
+    229              VOICE_CSB_LOW();
+   \   00000006   4FF48071           MOV      R1,#+256
+   \   0000000A   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000C   ........           BL       GPIO_ResetBits
+    230            
+    231              sFLASH_SendByte(Command);        // Read / 볼륨 읽기
+   \   00000010   2000               MOVS     R0,R4
+   \   00000012   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   ........           BL       sFLASH_SendByte
+    232              sFLASH_SendByte(data);        // Read / 더미  
+   \   00000018   2800               MOVS     R0,R5
+   \   0000001A   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001C   ........           BL       sFLASH_SendByte
+    233              
+    234              VOICE_CSB_HIGH();
+   \   00000020   4FF48071           MOV      R1,#+256
+   \   00000024   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000026   ........           BL       GPIO_SetBits
+    235          }
+   \   0000002A   31BD               POP      {R0,R4,R5,PC}    ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    236          void SerialFlash_Write_8bit(u8 Data)
+    237          {
+   \                     SerialFlash_Write_8bit:
+   \   00000000   80B5               PUSH     {R7,LR}
+    238               sFLASH_SendByte (Data);     
+   \   00000002   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000004   ........           BL       sFLASH_SendByte
+    239          }
+   \   00000008   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    240          u8 SerialFlash_Read_8bit(void)
+    241          {
+   \                     SerialFlash_Read_8bit:
+   \   00000000   80B5               PUSH     {R7,LR}
+    242               return sFLASH_SendByte (0);     
+   \   00000002   0020               MOVS     R0,#+0
+   \   00000004   ........           BL       sFLASH_SendByte
+   \   00000008   02BD               POP      {R1,PC}          ;; return
+    243          }
+    244          
+    245          
+
+   \                                 In section .text, align 2, keep-with-next
+    246          u8 Register_Read(u8 Command)
+    247          {
+   \                     Register_Read:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    248               u8 Result;
+    249               VOICE_CSB_LOW();
+   \   00000004   4FF48071           MOV      R1,#+256
+   \   00000008   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    250               
+    251               sFLASH_SendByte(Command | 0x40);        // Read / 볼륨 읽기
+   \   0000000E   54F04000           ORRS     R0,R4,#0x40
+   \   00000012   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   ........           BL       sFLASH_SendByte
+    252               Result = sFLASH_SendByte(0);        // Read / 더미  
+   \   00000018   0020               MOVS     R0,#+0
+   \   0000001A   ........           BL       sFLASH_SendByte
+   \   0000001E   0400               MOVS     R4,R0
+    253               
+    254               VOICE_CSB_HIGH();
+   \   00000020   4FF48071           MOV      R1,#+256
+   \   00000024   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000026   ........           BL       GPIO_SetBits
+    255               return Result;
+   \   0000002A   2000               MOVS     R0,R4
+   \   0000002C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002E   10BD               POP      {R4,PC}          ;; return
+    256          }
+    257          
+
+   \                                 In section .text, align 2, keep-with-next
+    258          u8 Void_Get_Voulme(void)
+    259          {
+   \                     Void_Get_Voulme:
+   \   00000000   10B5               PUSH     {R4,LR}
+    260              u8 Result = 0;
+   \   00000002   0024               MOVS     R4,#+0
+    261              VOICE_CSB_LOW();
+   \   00000004   4FF48071           MOV      R1,#+256
+   \   00000008   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    262            
+    263              Result = sFLASH_SendByte(0x44);        // Read / 볼륨 읽기
+   \   0000000E   4420               MOVS     R0,#+68
+   \   00000010   ........           BL       sFLASH_SendByte
+   \   00000014   0400               MOVS     R4,R0
+    264              Result = sFLASH_SendByte(0x00);        // Read / 더미  
+   \   00000016   0020               MOVS     R0,#+0
+   \   00000018   ........           BL       sFLASH_SendByte
+   \   0000001C   0400               MOVS     R4,R0
+    265              
+    266              VOICE_CSB_HIGH();
+   \   0000001E   4FF48071           MOV      R1,#+256
+   \   00000022   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000024   ........           BL       GPIO_SetBits
+    267            
+    268              return Result;
+   \   00000028   2000               MOVS     R0,R4
+   \   0000002A   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002C   10BD               POP      {R4,PC}          ;; return
+    269          }
+    270          
+    271          
+
+   \                                 In section .text, align 2, keep-with-next
+    272          void Voice_Play(unsigned char Byte)
+    273          {
+   \                     Voice_Play:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    274          
+    275              VOICE_CSB_LOW();
+   \   00000004   4FF48071           MOV      R1,#+256
+   \   00000008   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    276          
+    277              sFLASH_SendByte(0x03);        // Write / Decoding 된 데이타
+   \   0000000E   0320               MOVS     R0,#+3
+   \   00000010   ........           BL       sFLASH_SendByte
+    278              sFLASH_SendByte(Byte);        // 출력될 위치
+   \   00000014   2000               MOVS     R0,R4
+   \   00000016   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   ........           BL       sFLASH_SendByte
+    279              
+    280              VOICE_CSB_HIGH();    
+   \   0000001C   4FF48071           MOV      R1,#+256
+   \   00000020   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000022   ........           BL       GPIO_SetBits
+    281          
+    282          }
+   \   00000026   10BD               POP      {R4,PC}          ;; return
+    283          
+
+   \                                 In section .text, align 2, keep-with-next
+    284          void Voice_Init(void)
+    285          {
+   \                     Voice_Init:
+   \   00000000   80B5               PUSH     {R7,LR}
+    286              VOICE_CSB_LOW();
+   \   00000002   4FF48071           MOV      R1,#+256
+   \   00000006   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000008   ........           BL       GPIO_ResetBits
+    287            
+    288              sFLASH_SendByte(0x01);        // Write / Sysconfig 초기화
+   \   0000000C   0120               MOVS     R0,#+1
+   \   0000000E   ........           BL       sFLASH_SendByte
+    289              
+    290              // 0x08 = ReadID 읽기 - 초기에 한번 설정해 줘야 한다.
+    291              // 0x02 = Index 메모리 읽기 설정
+    292              // 0x01 = External 메모리 읽기 설정
+    293              
+    294              sFLASH_SendByte(0x08);        // Write / ReadID를 걸어주기 
+   \   00000012   0820               MOVS     R0,#+8
+   \   00000014   ........           BL       sFLASH_SendByte
+    295              VOICE_CSB_HIGH();    
+   \   00000018   4FF48071           MOV      R1,#+256
+   \   0000001C   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000001E   ........           BL       GPIO_SetBits
+    296              
+    297              VOICE_CSB_LOW();    
+   \   00000022   4FF48071           MOV      R1,#+256
+   \   00000026   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000028   ........           BL       GPIO_ResetBits
+    298              sFLASH_SendByte(0x07);        // Write / LED 초기화
+   \   0000002C   0720               MOVS     R0,#+7
+   \   0000002E   ........           BL       sFLASH_SendByte
+    299              sFLASH_SendByte(0x00);        // Write /   
+   \   00000032   0020               MOVS     R0,#+0
+   \   00000034   ........           BL       sFLASH_SendByte
+    300             
+    301              VOICE_CSB_HIGH();
+   \   00000038   4FF48071           MOV      R1,#+256
+   \   0000003C   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000003E   ........           BL       GPIO_SetBits
+    302              
+    303              SerialFlash_ReadID();     
+   \   00000042   ........           BL       SerialFlash_ReadID
+    304          }
+   \   00000046   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    305          void Voice_LowSet_Volume(unsigned char Byte)
+    306          {
+   \                     Voice_LowSet_Volume:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    307                VOICE_CSB_LOW();
+   \   00000004   4FF48071           MOV      R1,#+256
+   \   00000008   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   0000000A   ........           BL       GPIO_ResetBits
+    308          
+    309                sFLASH_SendByte(0x04);        // Write / 볼륨설정
+   \   0000000E   0420               MOVS     R0,#+4
+   \   00000010   ........           BL       sFLASH_SendByte
+    310                sFLASH_SendByte(Byte);        // 크기 [0x12-6db] ~ [0x56-96db]
+   \   00000014   2000               MOVS     R0,R4
+   \   00000016   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   ........           BL       sFLASH_SendByte
+    311              
+    312                VOICE_CSB_HIGH(); 
+   \   0000001C   4FF48071           MOV      R1,#+256
+   \   00000020   ....               LDR.N    R0,??DataTable17  ;; 0x40021400
+   \   00000022   ........           BL       GPIO_SetBits
+    313          }
+   \   00000026   10BD               POP      {R4,PC}          ;; return
+    314          
+
+   \                                 In section .text, align 2, keep-with-next
+    315          void Voice_Set_Volume(unsigned char Byte)
+    316          {
+   \                     Voice_Set_Volume:
+   \   00000000   80B5               PUSH     {R7,LR}
+    317          	switch(Byte)
+   \   00000002   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000004   0028               CMP      R0,#+0
+   \   00000006   3BD0               BEQ.N    ??Voice_Set_Volume_0
+   \   00000008   0A28               CMP      R0,#+10
+   \   0000000A   35D0               BEQ.N    ??Voice_Set_Volume_1
+   \   0000000C   1428               CMP      R0,#+20
+   \   0000000E   2FD0               BEQ.N    ??Voice_Set_Volume_2
+   \   00000010   1E28               CMP      R0,#+30
+   \   00000012   29D0               BEQ.N    ??Voice_Set_Volume_3
+   \   00000014   2828               CMP      R0,#+40
+   \   00000016   23D0               BEQ.N    ??Voice_Set_Volume_4
+   \   00000018   3228               CMP      R0,#+50
+   \   0000001A   1DD0               BEQ.N    ??Voice_Set_Volume_5
+   \   0000001C   3C28               CMP      R0,#+60
+   \   0000001E   17D0               BEQ.N    ??Voice_Set_Volume_6
+   \   00000020   4628               CMP      R0,#+70
+   \   00000022   11D0               BEQ.N    ??Voice_Set_Volume_7
+   \   00000024   5028               CMP      R0,#+80
+   \   00000026   0BD0               BEQ.N    ??Voice_Set_Volume_8
+   \   00000028   5A28               CMP      R0,#+90
+   \   0000002A   05D0               BEQ.N    ??Voice_Set_Volume_9
+   \   0000002C   6428               CMP      R0,#+100
+   \   0000002E   2BD1               BNE.N    ??Voice_Set_Volume_10
+    318          	{
+    319          		case 100:
+    320          		{
+    321          			Voice_LowSet_Volume(0x12);
+   \                     ??Voice_Set_Volume_11:
+   \   00000030   1220               MOVS     R0,#+18
+   \   00000032   ........           BL       Voice_LowSet_Volume
+    322          			break;
+   \   00000036   2AE0               B.N      ??Voice_Set_Volume_12
+    323          		}
+    324          		case 90:
+    325          		{
+    326          			Voice_LowSet_Volume(0x14);
+   \                     ??Voice_Set_Volume_9:
+   \   00000038   1420               MOVS     R0,#+20
+   \   0000003A   ........           BL       Voice_LowSet_Volume
+    327          			break;
+   \   0000003E   26E0               B.N      ??Voice_Set_Volume_12
+    328          		}
+    329          		case 80:
+    330          		{
+    331          			Voice_LowSet_Volume(0x16);
+   \                     ??Voice_Set_Volume_8:
+   \   00000040   1620               MOVS     R0,#+22
+   \   00000042   ........           BL       Voice_LowSet_Volume
+    332          			break;
+   \   00000046   22E0               B.N      ??Voice_Set_Volume_12
+    333          		}
+    334          		case 70:
+    335          		{
+    336          			Voice_LowSet_Volume(0x18);
+   \                     ??Voice_Set_Volume_7:
+   \   00000048   1820               MOVS     R0,#+24
+   \   0000004A   ........           BL       Voice_LowSet_Volume
+    337          			break;
+   \   0000004E   1EE0               B.N      ??Voice_Set_Volume_12
+    338          		}
+    339          		case 60:
+    340          		{
+    341          			Voice_LowSet_Volume(0x1A);
+   \                     ??Voice_Set_Volume_6:
+   \   00000050   1A20               MOVS     R0,#+26
+   \   00000052   ........           BL       Voice_LowSet_Volume
+    342          			break;
+   \   00000056   1AE0               B.N      ??Voice_Set_Volume_12
+    343          		}
+    344          		case 50:
+    345          		{
+    346          			Voice_LowSet_Volume(0x1C);
+   \                     ??Voice_Set_Volume_5:
+   \   00000058   1C20               MOVS     R0,#+28
+   \   0000005A   ........           BL       Voice_LowSet_Volume
+    347          			break;
+   \   0000005E   16E0               B.N      ??Voice_Set_Volume_12
+    348          		}
+    349          		case 40:
+    350          		{
+    351          			Voice_LowSet_Volume(0x1E);
+   \                     ??Voice_Set_Volume_4:
+   \   00000060   1E20               MOVS     R0,#+30
+   \   00000062   ........           BL       Voice_LowSet_Volume
+    352          			break;
+   \   00000066   12E0               B.N      ??Voice_Set_Volume_12
+    353          		}
+    354          		case 30:
+    355          		{
+    356          			Voice_LowSet_Volume(0x20);
+   \                     ??Voice_Set_Volume_3:
+   \   00000068   2020               MOVS     R0,#+32
+   \   0000006A   ........           BL       Voice_LowSet_Volume
+    357          			break;
+   \   0000006E   0EE0               B.N      ??Voice_Set_Volume_12
+    358          		}
+    359          		case 20:
+    360          		{
+    361          			Voice_LowSet_Volume(0x22);
+   \                     ??Voice_Set_Volume_2:
+   \   00000070   2220               MOVS     R0,#+34
+   \   00000072   ........           BL       Voice_LowSet_Volume
+    362          			break;
+   \   00000076   0AE0               B.N      ??Voice_Set_Volume_12
+    363          		}		
+    364          		case 10:
+    365          		{
+    366          			Voice_LowSet_Volume(0x24);
+   \                     ??Voice_Set_Volume_1:
+   \   00000078   2420               MOVS     R0,#+36
+   \   0000007A   ........           BL       Voice_LowSet_Volume
+    367          			break;
+   \   0000007E   06E0               B.N      ??Voice_Set_Volume_12
+    368          		}
+    369          		case 0:
+    370          		{
+    371          			Voice_LowSet_Volume(0x57);
+   \                     ??Voice_Set_Volume_0:
+   \   00000080   5720               MOVS     R0,#+87
+   \   00000082   ........           BL       Voice_LowSet_Volume
+    372          			break;
+   \   00000086   02E0               B.N      ??Voice_Set_Volume_12
+    373          		}	
+    374          		default:
+    375          		{
+    376          			Voice_LowSet_Volume(0x12);
+   \                     ??Voice_Set_Volume_10:
+   \   00000088   1220               MOVS     R0,#+18
+   \   0000008A   ........           BL       Voice_LowSet_Volume
+    377          			break;
+    378          		}
+    379          	}
+    380          }
+   \                     ??Voice_Set_Volume_12:
+   \   0000008E   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+    381          void Voice_OutAdd(unsigned char Byte)
+    382          {
+    383          	if(Voice_Stack_Count < VOICE_MAX_COUNT)
+   \                     Voice_OutAdd:
+   \   00000000   ....               LDR.N    R1,??DataTable17_5
+   \   00000002   0978               LDRB     R1,[R1, #+0]
+   \   00000004   0229               CMP      R1,#+2
+   \   00000006   08D2               BCS.N    ??Voice_OutAdd_0
+    384          		Voice_Stack[ Voice_Stack_Count++ ] = Byte;	
+   \   00000008   ....               LDR.N    R1,??DataTable17_5
+   \   0000000A   0978               LDRB     R1,[R1, #+0]
+   \   0000000C   ....               LDR.N    R2,??DataTable17_6
+   \   0000000E   8854               STRB     R0,[R1, R2]
+   \   00000010   ....               LDR.N    R0,??DataTable17_5
+   \   00000012   0078               LDRB     R0,[R0, #+0]
+   \   00000014   401C               ADDS     R0,R0,#+1
+   \   00000016   ....               LDR.N    R1,??DataTable17_5
+   \   00000018   0870               STRB     R0,[R1, #+0]
+    385          }
+   \                     ??Voice_OutAdd_0:
+   \   0000001A   7047               BX       LR               ;; return
+    386          
+
+   \                                 In section .text, align 2, keep-with-next
+    387          void Voice_Process(void)
+    388          {
+   \                     Voice_Process:
+   \   00000000   80B5               PUSH     {R7,LR}
+    389          	static u16 Voice_Timer = 0;     
+    390               u8 i;    
+    391          
+    392               if(Voice_Error_Out != 0)
+   \   00000002   ....               LDR.N    R0,??DataTable17_7
+   \   00000004   0078               LDRB     R0,[R0, #+0]
+   \   00000006   0028               CMP      R0,#+0
+   \   00000008   1AD0               BEQ.N    ??Voice_Process_0
+    393               {
+    394          		if(!CheckTimeOver(200,Voice_Timer))
+   \   0000000A   ....               LDR.N    R0,??DataTable17_8
+   \   0000000C   0188               LDRH     R1,[R0, #+0]
+   \   0000000E   C820               MOVS     R0,#+200
+   \   00000010   ........           BL       CheckTimeOver
+   \   00000014   0028               CMP      R0,#+0
+   \   00000016   3AD0               BEQ.N    ??Voice_Process_1
+    395          			return;      
+    396          		Voice_Timer = MS_TIMER;  	// 타이머 5          
+   \                     ??Voice_Process_2:
+   \   00000018   ....               LDR.N    R0,??DataTable17_9  ;; 0x40000c00
+   \   0000001A   ........           BL       TIM_GetCounter
+   \   0000001E   ....               LDR.N    R1,??DataTable17_8
+   \   00000020   0880               STRH     R0,[R1, #+0]
+    397                    Voice_Play(VOICE_CLICK);
+   \   00000022   0A20               MOVS     R0,#+10
+   \   00000024   ........           BL       Voice_Play
+    398                    Voice_Error_Out++;
+   \   00000028   ....               LDR.N    R0,??DataTable17_7
+   \   0000002A   0078               LDRB     R0,[R0, #+0]
+   \   0000002C   401C               ADDS     R0,R0,#+1
+   \   0000002E   ....               LDR.N    R1,??DataTable17_7
+   \   00000030   0870               STRB     R0,[R1, #+0]
+    399                    if(Voice_Error_Out > 4)
+   \   00000032   ....               LDR.N    R0,??DataTable17_7
+   \   00000034   0078               LDRB     R0,[R0, #+0]
+   \   00000036   0528               CMP      R0,#+5
+   \   00000038   02D3               BCC.N    ??Voice_Process_0
+    400                         Voice_Error_Out = 0;
+   \   0000003A   ....               LDR.N    R0,??DataTable17_7
+   \   0000003C   0021               MOVS     R1,#+0
+   \   0000003E   0170               STRB     R1,[R0, #+0]
+    401               }
+    402               
+    403          	if(Voice_Stack_Count > 0)
+   \                     ??Voice_Process_0:
+   \   00000040   ....               LDR.N    R0,??DataTable17_5
+   \   00000042   0078               LDRB     R0,[R0, #+0]
+   \   00000044   0128               CMP      R0,#+1
+   \   00000046   22D3               BCC.N    ??Voice_Process_3
+    404          	{
+    405          		if(!CheckTimeOver(2000,Voice_Timer))
+   \   00000048   ....               LDR.N    R0,??DataTable17_8
+   \   0000004A   0188               LDRH     R1,[R0, #+0]
+   \   0000004C   4FF4FA60           MOV      R0,#+2000
+   \   00000050   ........           BL       CheckTimeOver
+   \   00000054   0028               CMP      R0,#+0
+   \   00000056   1AD0               BEQ.N    ??Voice_Process_1
+    406          			return;      
+    407          		Voice_Timer = MS_TIMER;  	// 타이머 5			
+   \                     ??Voice_Process_4:
+   \   00000058   ....               LDR.N    R0,??DataTable17_9  ;; 0x40000c00
+   \   0000005A   ........           BL       TIM_GetCounter
+   \   0000005E   ....               LDR.N    R1,??DataTable17_8
+   \   00000060   0880               STRH     R0,[R1, #+0]
+    408          		Voice_Play( Voice_Stack[0] );
+   \   00000062   ....               LDR.N    R0,??DataTable17_6
+   \   00000064   0078               LDRB     R0,[R0, #+0]
+   \   00000066   ........           BL       Voice_Play
+    409                    for( i = 0 ; i < VOICE_MAX_COUNT; i++)
+   \   0000006A   0020               MOVS     R0,#+0
+   \   0000006C   07E0               B.N      ??Voice_Process_5
+    410                    {               
+    411                         Voice_Stack[i] = Voice_Stack[i+1];
+   \                     ??Voice_Process_6:
+   \   0000006E   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000070   ....               LDR.N    R1,??DataTable17_6
+   \   00000072   4118               ADDS     R1,R0,R1
+   \   00000074   4978               LDRB     R1,[R1, #+1]
+   \   00000076   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000078   ....               LDR.N    R2,??DataTable17_6
+   \   0000007A   8154               STRB     R1,[R0, R2]
+    412                    }                         
+   \   0000007C   401C               ADDS     R0,R0,#+1
+   \                     ??Voice_Process_5:
+   \   0000007E   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000080   0228               CMP      R0,#+2
+   \   00000082   F4D3               BCC.N    ??Voice_Process_6
+    413                    Voice_Stack_Count --;
+   \   00000084   ....               LDR.N    R0,??DataTable17_5
+   \   00000086   0078               LDRB     R0,[R0, #+0]
+   \   00000088   401E               SUBS     R0,R0,#+1
+   \   0000008A   ....               LDR.N    R1,??DataTable17_5
+   \   0000008C   0870               STRB     R0,[R1, #+0]
+    414          	}
+    415          }
+   \                     ??Voice_Process_3:
+   \                     ??Voice_Process_1:
+   \   0000008E   01BD               POP      {R0,PC}          ;; return
+
+   \                                 In section .bss, align 2
+   \                     ??Voice_Timer:
+   \   00000000                      DS8 2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17:
+   \   00000000   00140240           DC32     0x40021400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_1:
+   \   00000000   ........           DC32     SerilaFlash_Info
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_2:
+   \   00000000   ........           DC32     Flash_Size
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_3:
+   \   00000000   ........           DC32     MaxAddress
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_4:
+   \   00000000   ........           DC32     IDAddrPos
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_5:
+   \   00000000   ........           DC32     Voice_Stack_Count
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_6:
+   \   00000000   ........           DC32     Voice_Stack
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_7:
+   \   00000000   ........           DC32     Voice_Error_Out
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_8:
+   \   00000000   ........           DC32     ??Voice_Timer
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable17_9:
+   \   00000000   000C0040           DC32     0x40000c00
+
+   Maximum stack usage in bytes:
+
+     Function                       .cstack
+     --------                       -------
+     Register_Read                       8
+     Register_Write                     16
+     SFcapacity                          0
+     SFchip_erase                        8
+     SFmax_addr                          0
+     SerialFlash_End                     8
+     SerialFlash_Program                 8
+     SerialFlash_ProgramWirte_End        8
+     SerialFlash_ProgramWirte_Start      8
+     SerialFlash_ReadID                  8
+     SerialFlash_Read_8bit               8
+     SerialFlash_Read_Program            8
+     SerialFlash_Start                   8
+     SerialFlash_Write_8bit              8
+     SerialFlash_Write_status_register
+                                         8
+     SerialFlash_busy_check              8
+     SerialFlash_status_register         8
+     SerialFlash_write_enable            8
+     Voice_Config                       16
+     Voice_Init                          8
+     Voice_LowSet_Volume                 8
+     Voice_OutAdd                        0
+     Voice_Play                          8
+     Voice_Process                       8
+     Voice_Set_Volume                    8
+     Void_Get_Voulme                     8
+
+
+   Section sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     Voice_Stack                       4
+     Voice_Stack_Count                 1
+     Voice_Error_Out                   1
+     SerilaFlash_Info                  4
+     Flash_Size                        4
+     MaxAddress                        4
+     IDAddrPos                         4
+     Voice_Config                     90
+     SerialFlash_Start                14
+     SerialFlash_End                  14
+     SFmax_addr                       92
+     SFcapacity                       76
+     SerialFlash_status_register      46
+     SerialFlash_busy_check           16
+     SerialFlash_write_enable         34
+     SerialFlash_Write_status_register
+                                      46
+     SerialFlash_Read_Program         52
+     SFchip_erase                     38
+     SerialFlash_Program              52
+     SerialFlash_ProgramWirte_Start   30
+     SerialFlash_ProgramWirte_End     18
+     SerialFlash_ReadID              150
+     Register_Write                   44
+     SerialFlash_Write_8bit           10
+     SerialFlash_Read_8bit            10
+     Register_Read                    48
+     Void_Get_Voulme                  46
+     Voice_Play                       40
+     Voice_Init                       72
+     Voice_LowSet_Volume              40
+     Voice_Set_Volume                144
+     Voice_OutAdd                     28
+     Voice_Process                   144
+     Voice_Timer                       2
+     ??DataTable17                     4
+     ??DataTable17_1                   4
+     ??DataTable17_2                   4
+     ??DataTable17_3                   4
+     ??DataTable17_4                   4
+     ??DataTable17_5                   4
+     ??DataTable17_6                   4
+     ??DataTable17_7                   4
+     ??DataTable17_8                   4
+     ??DataTable17_9                   4
+
+ 
+    24 bytes in section .bss
+ 1 434 bytes in section .text
+ 
+ 1 434 bytes of CODE memory
+    24 bytes of DATA memory
+
+Errors: none
+Warnings: none
