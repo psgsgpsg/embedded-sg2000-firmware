@@ -1,0 +1,306 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     16/May/2011  15:10:23 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\usbd_usr.c                                  #
+#    Command line =  "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\usbd_usr.c" -D USE_STDPERIPH_DRIVER -D     #
+#                    STM32F2XX -D USE_STM3220F_EVAL -D USE_USB_OTG_FS -D      #
+#                    USE_ULPI_PHY -lC "D:\¹¬ÀÛ¾÷\[ NewDTG                     #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\List\" -lA "D:\¹¬ÀÛ¾÷\[ NewDTG             #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\List\" -o "D:\¹¬ÀÛ¾÷\[ NewDTG              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\Obj\" --no_cse --no_unroll --no_inline     #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
+#                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
+#                    Systems\Embedded Workbench 6.0\arm\INC\c\DLib_Config_Ful #
+#                    l.h" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\CMSIS\CM3\CoreSupport\" -I            #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\CMSIS\CM3\DeviceS #
+#                    upport\ST\STM32F2xx\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG             #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32F2xx_StdPeriph_Driver\inc\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\Common #
+#                    \" -I "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib #
+#                    _V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx #
+#                    _StdPeriph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\ #
+#                    STM3220F_EVAL\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                   #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_OTG_Driver\inc\" -I         #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\STM32_USB_Device_ #
+#                    Library\Core\inc\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_Device_Library\Class\msc\in #
+#                    c\" -Ol --use_c++_inline                                 #
+#    List file    =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\List\usbd_usr.lst       #
+#    Object file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\Obj\usbd_usr.o          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\usbd_usr.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    usbd_usr.c
+      4            * @author  MCD Application Team
+      5            * @version V0.0.1
+      6            * @date    11/12/2010
+      7            * @brief   This file includes the user application layer
+      8            ******************************************************************************
+      9            * @copy
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
+     19            */ 
+     20          
+     21          /* Includes ------------------------------------------------------------------*/
+     22          #include "usbd_usr.h"
+     23          #include <stdio.h>
+     24          /** @addtogroup USBD_USER
+     25            * @{
+     26            */
+     27          
+     28          /** @addtogroup USBD_MSC_DEMO_USER_CALLBACKS
+     29            * @{
+     30            */
+     31            
+     32          /** @defgroup USBD_USR 
+     33            * @brief    This file includes the user application layer
+     34            * @{
+     35            */ 
+     36          
+     37          /** @defgroup USBD_USR_Private_TypesDefinitions
+     38            * @{
+     39            */ 
+     40          /**
+     41            * @}
+     42            */ 
+     43          
+     44          
+     45          /** @defgroup USBD_USR_Private_Defines
+     46            * @{
+     47            */ 
+     48          /**
+     49            * @}
+     50            */ 
+     51          
+     52          
+     53          /** @defgroup USBD_USR_Private_Macros
+     54            * @{
+     55            */ 
+     56          /**
+     57            * @}
+     58            */ 
+     59          
+     60          
+     61          /** @defgroup USBD_USR_Private_Variables
+     62            * @{
+     63            */ 
+     64          /*  Points to the DEVICE_PROP structure of current device */
+     65          /*  The purpose of this register is to speed up the execution */
+     66          
+
+   \                                 In section .data, align 4
+     67          USBD_Usr_cb_TypeDef USR_cb =
+   \                     USR_cb:
+   \   00000000   ............       DC32 USBD_USR_Init, USBD_USR_DeviceReset, USBD_USR_DeviceConfigured
+   \              ............
+   \   0000000C   ............       DC32 USBD_USR_DeviceSuspended, USBD_USR_DeviceResumed
+   \              ....        
+     68          {
+     69            USBD_USR_Init,
+     70            USBD_USR_DeviceReset,
+     71            USBD_USR_DeviceConfigured,
+     72            USBD_USR_DeviceSuspended,
+     73            USBD_USR_DeviceResumed,
+     74          };
+     75          
+     76          /**
+     77            * @}
+     78            */
+     79          
+     80          /** @defgroup USBD_USR_Private_Constants
+     81            * @{
+     82            */ 
+     83          
+     84          #define USER_INFORMATION1  "INFO : Single Lun configuration" 
+     85          #define USER_INFORMATION2  "INFO : microSD is used"
+     86          /**
+     87            * @}
+     88            */
+     89          
+     90          
+     91          
+     92          /** @defgroup USBD_USR_Private_FunctionPrototypes
+     93            * @{
+     94            */ 
+     95          /**
+     96            * @}
+     97            */ 
+     98          
+     99          
+    100          /** @defgroup USBD_USR_Private_Functions
+    101            * @{
+    102            */ 
+    103          
+    104          /**
+    105          * @brief  Displays the message on LCD on device lib initialization
+    106          * @param  None
+    107          * @retval None
+    108          */
+
+   \                                 In section .text, align 2, keep-with-next
+    109          void USBD_USR_Init(void)
+    110          {
+    111            /* Initialize LEDs */
+    112          
+    113           
+    114          }
+   \                     USBD_USR_Init:
+   \   00000000   7047               BX       LR               ;; return
+    115          
+    116          /**
+    117          * @brief  Displays the message on LCD on device reset event
+    118          * @param  speed : device speed
+    119          * @retval None
+    120          */
+
+   \                                 In section .text, align 2, keep-with-next
+    121          void USBD_USR_DeviceReset (uint8_t speed)
+    122          {
+    123            
+    124          }
+   \                     USBD_USR_DeviceReset:
+   \   00000000   7047               BX       LR               ;; return
+    125          
+    126          
+    127          /**
+    128          * @brief  Displays the message on LCD on device config event
+    129          * @param  None
+    130          * @retval Staus
+    131          */
+
+   \                                 In section .text, align 2, keep-with-next
+    132          void USBD_USR_DeviceConfigured (void)
+    133          {
+    134          
+    135          }
+   \                     USBD_USR_DeviceConfigured:
+   \   00000000   7047               BX       LR               ;; return
+    136          /**
+    137          * @brief  Displays the message on LCD on device suspend event 
+    138          * @param  None
+    139          * @retval None
+    140          */
+
+   \                                 In section .text, align 2, keep-with-next
+    141          void USBD_USR_DeviceSuspended(void)
+    142          {
+    143          
+    144          }
+   \                     USBD_USR_DeviceSuspended:
+   \   00000000   7047               BX       LR               ;; return
+    145          
+    146          
+    147          /**
+    148          * @brief  Displays the message on LCD on device resume event
+    149          * @param  None
+    150          * @retval None
+    151          */
+
+   \                                 In section .text, align 2, keep-with-next
+    152          void USBD_USR_DeviceResumed(void)
+    153          {
+    154          
+    155          }
+   \                     USBD_USR_DeviceResumed:
+   \   00000000   7047               BX       LR               ;; return
+    156          
+    157          /**
+    158            * @}
+    159            */ 
+    160          
+    161          /**
+    162            * @}
+    163            */ 
+    164          
+    165          /**
+    166            * @}
+    167            */
+    168          
+    169          /**
+    170            * @}
+    171            */
+    172          
+    173          /******************* (C) COPYRIGHT 2010 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+     Function                  .cstack
+     --------                  -------
+     USBD_USR_DeviceConfigured      0
+     USBD_USR_DeviceReset           0
+     USBD_USR_DeviceResumed         0
+     USBD_USR_DeviceSuspended       0
+     USBD_USR_Init                  0
+
+
+   Section sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     USR_cb                      20
+     USBD_USR_Init                2
+     USBD_USR_DeviceReset         2
+     USBD_USR_DeviceConfigured    2
+     USBD_USR_DeviceSuspended     2
+     USBD_USR_DeviceResumed       2
+
+ 
+ 20 bytes in section .data
+ 10 bytes in section .text
+ 
+ 10 bytes of CODE memory
+ 20 bytes of DATA memory
+
+Errors: none
+Warnings: none

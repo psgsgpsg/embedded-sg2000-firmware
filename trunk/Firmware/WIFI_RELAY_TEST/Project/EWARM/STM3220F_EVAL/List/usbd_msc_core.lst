@@ -1,0 +1,762 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     16/May/2011  15:08:17 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Libraries\STM32_USB_Devi #
+#                    ce_Library\Class\msc\src\usbd_msc_core.c                 #
+#    Command line =  "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Libraries\STM32_USB_Dev #
+#                    ice_Library\Class\msc\src\usbd_msc_core.c" -D            #
+#                    USE_STDPERIPH_DRIVER -D STM32F2XX -D USE_STM3220F_EVAL   #
+#                    -D USE_USB_OTG_FS -D USE_ULPI_PHY -lC "D:\¹¬ÀÛ¾÷\[       #
+#                    NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_S #
+#                    tdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template #
+#                    \EWARM\STM3220F_EVAL\List\" -lA "D:\¹¬ÀÛ¾÷\[ NewDTG      #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\List\" -o "D:\¹¬ÀÛ¾÷\[ NewDTG              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\Obj\" --no_cse --no_unroll --no_inline     #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
+#                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
+#                    Systems\Embedded Workbench 6.0\arm\INC\c\DLib_Config_Ful #
+#                    l.h" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\CMSIS\CM3\CoreSupport\" -I            #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\CMSIS\CM3\DeviceS #
+#                    upport\ST\STM32F2xx\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG             #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32F2xx_StdPeriph_Driver\inc\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\Common #
+#                    \" -I "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib #
+#                    _V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx #
+#                    _StdPeriph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\ #
+#                    STM3220F_EVAL\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                   #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_OTG_Driver\inc\" -I         #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\STM32_USB_Device_ #
+#                    Library\Core\inc\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_Device_Library\Class\msc\in #
+#                    c\" -Ol --use_c++_inline                                 #
+#    List file    =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\List\usbd_msc_core.lst  #
+#    Object file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\Obj\usbd_msc_core.o     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Libraries\STM32_USB_Device_Library\Class\msc\src\usbd_msc_core.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    usbd_msc_core.c
+      4            * @author  MCD Application Team
+      5            * @version V0.0.1
+      6            * @date    11/12/2010
+      7            * @brief   This file provides all the MSC core functions.
+      8            ******************************************************************************
+      9            * @copy
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
+     19            */ 
+     20          
+     21          /* Includes ------------------------------------------------------------------*/
+     22          #include "usbd_msc_mem.h"
+     23          #include "usbd_msc_core.h"
+     24          #include "usbd_msc_bot.h"
+     25          #include "usbd_desc.h"
+     26          #include "usbd_req.h"
+     27          
+     28          
+     29          /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
+     30            * @{
+     31            */
+     32          
+     33          
+     34          /** @defgroup MSC_CORE 
+     35            * @brief Mass storage core module
+     36            * @{
+     37            */ 
+     38          
+     39          /** @defgroup MSC_CORE_Private_TypesDefinitions
+     40            * @{
+     41            */ 
+     42          /**
+     43            * @}
+     44            */ 
+     45          
+     46          
+     47          /** @defgroup MSC_CORE_Private_Defines
+     48            * @{
+     49            */ 
+     50          
+     51          /**
+     52            * @}
+     53            */ 
+     54          
+     55          
+     56          /** @defgroup MSC_CORE_Private_Macros
+     57            * @{
+     58            */ 
+     59          /**
+     60            * @}
+     61            */ 
+     62          
+     63          
+     64          /** @defgroup MSC_CORE_Private_FunctionPrototypes
+     65            * @{
+     66            */ 
+     67          uint8_t  USBD_MSC_Init (void  *pdev, 
+     68                                      uint8_t cfgidx);
+     69          
+     70          uint8_t  USBD_MSC_DeInit (void  *pdev, 
+     71                                        uint8_t cfgidx);
+     72          
+     73          uint8_t  USBD_MSC_Setup (void  *pdev, 
+     74                                       USB_SETUP_REQ *req);
+     75          
+     76          uint8_t  USBD_MSC_DataIn (void  *pdev, 
+     77                                        uint8_t epnum);
+     78          
+     79          
+     80          uint8_t  USBD_MSC_DataOut (void  *pdev, 
+     81                                         uint8_t epnum);
+     82          
+     83          uint8_t USBD_MSC_CfgDesc[USB_MSC_CONFIG_DESC_SIZ];
+     84          
+     85          #ifdef USB_OTG_HS_CORE  
+     86          uint8_t USBD_MSC_OtherCfgDesc[USB_MSC_CONFIG_DESC_SIZ];
+     87          #endif
+     88          /**
+     89            * @}
+     90            */ 
+     91          
+     92          
+     93          /** @defgroup MSC_CORE_Private_Variables
+     94            * @{
+     95            */ 
+     96          
+     97          
+
+   \                                 In section .data, align 4
+     98          USBD_Class_cb_TypeDef  MSC_cb = 
+   \                     MSC_cb:
+   \   00000000   ............       DC32 USBD_MSC_Init, USBD_MSC_DeInit, USBD_MSC_Setup, 0H, 0H
+   \              ............
+   \              000000000000
+   \              0000        
+   \   00000014   ............       DC32 USBD_MSC_DataIn, USBD_MSC_DataOut, 0H, USBD_MSC_CfgDesc
+   \              ....00000000
+   \              ........    
+     99          {
+    100            USBD_MSC_Init,
+    101            USBD_MSC_DeInit,
+    102            USBD_MSC_Setup,
+    103            NULL, /*EP0_TxSent*/  
+    104            NULL, /*EP0_RxReady*/
+    105            USBD_MSC_DataIn,
+    106            USBD_MSC_DataOut,
+    107            NULL, /*SOF */  
+    108            USBD_MSC_CfgDesc,
+    109          #ifdef USB_OTG_HS_CORE  
+    110            USBD_MSC_OtherCfgDesc,
+    111          #endif
+    112          };
+    113          
+    114          #ifdef USB_OTG_HS_INTERNAL_DMA_ENABLED 
+    115          #pragma data_alignment =  4
+    116          #endif
+    117          /* USB Mass storage device Configuration Descriptor */
+    118          /*   All Descriptors (Configuration, Interface, Endpoint, Class, Vendor */
+
+   \                                 In section .data, align 4
+    119          uint8_t USBD_MSC_CfgDesc[USB_MSC_CONFIG_DESC_SIZ] =
+   \                     USBD_MSC_CfgDesc:
+   \   00000000   090220000101       DC8 9, 2, 32, 0, 1, 1, 4, 192, 50, 9, 4, 0, 0, 2, 8, 6, 80, 5, 7, 5
+   \              04C032090400
+   \              000208065005
+   \              0705        
+   \   00000014   810240000007       DC8 129, 2, 64, 0, 0, 7, 5, 1, 2, 64, 0, 0
+   \              050102400000
+    120          {
+    121            
+    122            0x09,   /* bLength: Configuation Descriptor size */
+    123            USB_DESC_TYPE_CONFIGURATION,   /* bDescriptorType: Configuration */
+    124            USB_MSC_CONFIG_DESC_SIZ,
+    125            
+    126            0x00,
+    127            0x01,   /* bNumInterfaces: 1 interface */
+    128            0x01,   /* bConfigurationValue: */
+    129            0x04,   /* iConfiguration: */
+    130            0xC0,   /* bmAttributes: */
+    131            0x32,   /* MaxPower 100 mA */
+    132            
+    133            /********************  Mass Storage interface ********************/
+    134            0x09,   /* bLength: Interface Descriptor size */
+    135            0x04,   /* bDescriptorType: */
+    136            0x00,   /* bInterfaceNumber: Number of Interface */
+    137            0x00,   /* bAlternateSetting: Alternate setting */
+    138            0x02,   /* bNumEndpoints*/
+    139            0x08,   /* bInterfaceClass: MSC Class */
+    140            0x06,   /* bInterfaceSubClass : SCSI transparent*/
+    141            0x50,   /* nInterfaceProtocol */
+    142            0x05,          /* iInterface: */
+    143            /********************  Mass Storage Endpoints ********************/
+    144            0x07,   /*Endpoint descriptor length = 7*/
+    145            0x05,   /*Endpoint descriptor type */
+    146            MSC_IN_EP,   /*Endpoint address (IN, address 1) */
+    147            0x02,   /*Bulk endpoint type */
+    148            LOBYTE(MSC_MAX_PACKET),
+    149            HIBYTE(MSC_MAX_PACKET),
+    150            0x00,   /*Polling interval in milliseconds */
+    151            
+    152            0x07,   /*Endpoint descriptor length = 7 */
+    153            0x05,   /*Endpoint descriptor type */
+    154            MSC_OUT_EP,   /*Endpoint address (OUT, address 1) */
+    155            0x02,   /*Bulk endpoint type */
+    156            LOBYTE(MSC_MAX_PACKET),
+    157            HIBYTE(MSC_MAX_PACKET),
+    158            0x00     /*Polling interval in milliseconds*/
+    159          };
+    160          #ifdef USB_OTG_HS_CORE  
+    161          uint8_t USBD_MSC_OtherCfgDesc[USB_MSC_CONFIG_DESC_SIZ] =
+    162          {
+    163            
+    164            0x09,   /* bLength: Configuation Descriptor size */
+    165            USB_DESC_TYPE_OTHER_SPEED_CONFIGURATION,   
+    166            USB_MSC_CONFIG_DESC_SIZ,
+    167            
+    168            0x00,
+    169            0x01,   /* bNumInterfaces: 1 interface */
+    170            0x01,   /* bConfigurationValue: */
+    171            0x04,   /* iConfiguration: */
+    172            0xC0,   /* bmAttributes: */
+    173            0x32,   /* MaxPower 100 mA */
+    174            
+    175            /********************  Mass Storage interface ********************/
+    176            0x09,   /* bLength: Interface Descriptor size */
+    177            0x04,   /* bDescriptorType: */
+    178            0x00,   /* bInterfaceNumber: Number of Interface */
+    179            0x00,   /* bAlternateSetting: Alternate setting */
+    180            0x02,   /* bNumEndpoints*/
+    181            0x08,   /* bInterfaceClass: MSC Class */
+    182            0x06,   /* bInterfaceSubClass : SCSI transparent*/
+    183            0x50,   /* nInterfaceProtocol */
+    184            0x05,          /* iInterface: */
+    185            /********************  Mass Storage Endpoints ********************/
+    186            0x07,   /*Endpoint descriptor length = 7*/
+    187            0x05,   /*Endpoint descriptor type */
+    188            MSC_IN_EP,   /*Endpoint address (IN, address 1) */
+    189            0x02,   /*Bulk endpoint type */
+    190            0x40,
+    191            0x00,
+    192            0x00,   /*Polling interval in milliseconds */
+    193            
+    194            0x07,   /*Endpoint descriptor length = 7 */
+    195            0x05,   /*Endpoint descriptor type */
+    196            MSC_OUT_EP,   /*Endpoint address (OUT, address 1) */
+    197            0x02,   /*Bulk endpoint type */
+    198            0x40,
+    199            0x00,
+    200            0x00     /*Polling interval in milliseconds*/
+    201          };
+    202          #endif 
+    203          
+
+   \                                 In section .bss, align 1
+    204          static uint8_t  USBD_MSC_MaxLun = 0;
+   \                     USBD_MSC_MaxLun:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+    205          static uint8_t  USBD_MSC_AltSet = 0;
+   \                     USBD_MSC_AltSet:
+   \   00000000                      DS8 1
+    206          
+    207          /**
+    208            * @}
+    209            */ 
+    210          
+    211          
+    212          /** @defgroup MSC_CORE_Private_Functions
+    213            * @{
+    214            */ 
+    215          
+    216          /**
+    217          * @brief  USBD_MSC_Init
+    218          *         Initialize  the mass storage configuration
+    219          * @param  pdev: device instance
+    220          * @param  cfgidx: configuration index
+    221          * @retval status
+    222          */
+
+   \                                 In section .text, align 2, keep-with-next
+    223          uint8_t  USBD_MSC_Init (void  *pdev, 
+    224                                      uint8_t cfgidx)
+    225          {
+   \                     USBD_MSC_Init:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    226            USBD_MSC_DeInit(pdev , cfgidx );
+   \   00000004   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000006   2000               MOVS     R0,R4
+   \   00000008   ........           BL       USBD_MSC_DeInit
+    227            
+    228            /* Open EP IN */
+    229            DCD_EP_Open(pdev,
+    230                        MSC_IN_EP,
+    231                        MSC_EPIN_SIZE,
+    232                        USB_OTG_EP_BULK);
+   \   0000000C   0223               MOVS     R3,#+2
+   \   0000000E   D4F8E805           LDR      R0,[R4, #+1512]
+   \   00000012   C28A               LDRH     R2,[R0, #+22]
+   \   00000014   8121               MOVS     R1,#+129
+   \   00000016   2000               MOVS     R0,R4
+   \   00000018   ........           BL       DCD_EP_Open
+    233            
+    234            /* Open EP OUT */
+    235            DCD_EP_Open(pdev,
+    236                        MSC_OUT_EP,
+    237                        MSC_EPOUT_SIZE,
+    238                        USB_OTG_EP_BULK);
+   \   0000001C   0223               MOVS     R3,#+2
+   \   0000001E   D4F8E805           LDR      R0,[R4, #+1512]
+   \   00000022   B0F81D20           LDRH     R2,[R0, #+29]
+   \   00000026   0121               MOVS     R1,#+1
+   \   00000028   2000               MOVS     R0,R4
+   \   0000002A   ........           BL       DCD_EP_Open
+    239           
+    240            /* Init the BOT  layer */
+    241            MSC_BOT_Init(pdev); 
+   \   0000002E   2000               MOVS     R0,R4
+   \   00000030   ........           BL       MSC_BOT_Init
+    242            
+    243            return USBD_OK;
+   \   00000034   0020               MOVS     R0,#+0
+   \   00000036   10BD               POP      {R4,PC}          ;; return
+    244          }
+    245          
+    246          /**
+    247          * @brief  USBD_MSC_DeInit
+    248          *         DeInitilaize  the mass storage configuration
+    249          * @param  pdev: device instance
+    250          * @param  cfgidx: configuration index
+    251          * @retval status
+    252          */
+
+   \                                 In section .text, align 2, keep-with-next
+    253          uint8_t  USBD_MSC_DeInit (void  *pdev, 
+    254                                        uint8_t cfgidx)
+    255          {
+   \                     USBD_MSC_DeInit:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   0400               MOVS     R4,R0
+    256            /* Close MSC EPs */
+    257            DCD_EP_Close (pdev , MSC_IN_EP);
+   \   00000004   8121               MOVS     R1,#+129
+   \   00000006   2000               MOVS     R0,R4
+   \   00000008   ........           BL       DCD_EP_Close
+    258            DCD_EP_Close (pdev , MSC_OUT_EP);
+   \   0000000C   0121               MOVS     R1,#+1
+   \   0000000E   2000               MOVS     R0,R4
+   \   00000010   ........           BL       DCD_EP_Close
+    259            
+    260            /* Un Init the BOT layer */
+    261            MSC_BOT_DeInit(pdev);   
+   \   00000014   2000               MOVS     R0,R4
+   \   00000016   ........           BL       MSC_BOT_DeInit
+    262            return USBD_OK;
+   \   0000001A   0020               MOVS     R0,#+0
+   \   0000001C   10BD               POP      {R4,PC}          ;; return
+    263          }
+    264          /**
+    265          * @brief  USBD_MSC_Setup
+    266          *         Handle the MSC specific requests
+    267          * @param  pdev: device instance
+    268          * @param  req: USB request
+    269          * @retval status
+    270          */
+
+   \                                 In section .text, align 2, keep-with-next
+    271          uint8_t  USBD_MSC_Setup (void  *pdev, USB_SETUP_REQ *req)
+    272          {
+   \                     USBD_MSC_Setup:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+   \   00000002   0400               MOVS     R4,R0
+   \   00000004   0D00               MOVS     R5,R1
+    273            
+    274            switch (req->bmRequest & USB_REQ_TYPE_MASK)
+   \   00000006   2878               LDRB     R0,[R5, #+0]
+   \   00000008   10F06000           ANDS     R0,R0,#0x60
+   \   0000000C   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0028               CMP      R0,#+0
+   \   00000010   41D0               BEQ.N    ??USBD_MSC_Setup_0
+   \   00000012   2028               CMP      R0,#+32
+   \   00000014   7BD1               BNE.N    ??USBD_MSC_Setup_1
+    275            {
+    276          
+    277            /* Class request */
+    278            case USB_REQ_TYPE_CLASS :
+    279              switch (req->bRequest)
+   \                     ??USBD_MSC_Setup_2:
+   \   00000016   6878               LDRB     R0,[R5, #+1]
+   \   00000018   FE28               CMP      R0,#+254
+   \   0000001A   02D0               BEQ.N    ??USBD_MSC_Setup_3
+   \   0000001C   FF28               CMP      R0,#+255
+   \   0000001E   23D0               BEQ.N    ??USBD_MSC_Setup_4
+   \   00000020   34E0               B.N      ??USBD_MSC_Setup_5
+    280              {
+    281              case BOT_GET_MAX_LUN :
+    282          
+    283                if((req->wValue  == 0) && 
+    284                   (req->wLength == 1) &&
+    285                   ((req->bmRequest & 0x80) == 0x80))
+   \                     ??USBD_MSC_Setup_3:
+   \   00000022   6888               LDRH     R0,[R5, #+2]
+   \   00000024   0028               CMP      R0,#+0
+   \   00000026   1AD1               BNE.N    ??USBD_MSC_Setup_6
+   \   00000028   E888               LDRH     R0,[R5, #+6]
+   \   0000002A   0128               CMP      R0,#+1
+   \   0000002C   17D1               BNE.N    ??USBD_MSC_Setup_6
+   \   0000002E   2878               LDRB     R0,[R5, #+0]
+   \   00000030   0006               LSLS     R0,R0,#+24
+   \   00000032   14D5               BPL.N    ??USBD_MSC_Setup_6
+    286                {
+    287                  USBD_MSC_MaxLun = USBD_STORAGE_fops->GetMaxLun();
+   \   00000034   ....               LDR.N    R0,??DataTable0
+   \   00000036   0068               LDR      R0,[R0, #+0]
+   \   00000038   8069               LDR      R0,[R0, #+24]
+   \   0000003A   8047               BLX      R0
+   \   0000003C   ....               LDR.N    R1,??DataTable0_1
+   \   0000003E   0870               STRB     R0,[R1, #+0]
+    288                  if(USBD_MSC_MaxLun > 0)
+   \   00000040   ....               LDR.N    R0,??DataTable0_1
+   \   00000042   0078               LDRB     R0,[R0, #+0]
+   \   00000044   0128               CMP      R0,#+1
+   \   00000046   05D3               BCC.N    ??USBD_MSC_Setup_7
+    289                  {
+    290                     USBD_CtlSendData (pdev,
+    291                                       &USBD_MSC_MaxLun,
+    292                                        1);
+   \   00000048   0122               MOVS     R2,#+1
+   \   0000004A   ....               LDR.N    R1,??DataTable0_1
+   \   0000004C   2000               MOVS     R0,R4
+   \   0000004E   ........           BL       USBD_CtlSendData
+   \   00000052   08E0               B.N      ??USBD_MSC_Setup_8
+    293                  }
+    294                  else
+    295                  {
+    296                    USBD_CtlError(pdev , req);
+   \                     ??USBD_MSC_Setup_7:
+   \   00000054   2900               MOVS     R1,R5
+   \   00000056   2000               MOVS     R0,R4
+   \   00000058   ........           BL       USBD_CtlError
+   \   0000005C   03E0               B.N      ??USBD_MSC_Setup_8
+    297                  }
+    298                }
+    299                else
+    300                {
+    301                   USBD_CtlError(pdev , req);
+   \                     ??USBD_MSC_Setup_6:
+   \   0000005E   2900               MOVS     R1,R5
+   \   00000060   2000               MOVS     R0,R4
+   \   00000062   ........           BL       USBD_CtlError
+    302                }
+    303                break;
+   \                     ??USBD_MSC_Setup_8:
+   \   00000066   15E0               B.N      ??USBD_MSC_Setup_9
+    304                
+    305              case BOT_RESET :
+    306                if((req->wValue  == 0) && 
+    307                   (req->wLength == 0) &&
+    308                  ((req->bmRequest & 0x80) != 0x80))
+   \                     ??USBD_MSC_Setup_4:
+   \   00000068   6888               LDRH     R0,[R5, #+2]
+   \   0000006A   0028               CMP      R0,#+0
+   \   0000006C   09D1               BNE.N    ??USBD_MSC_Setup_10
+   \   0000006E   E888               LDRH     R0,[R5, #+6]
+   \   00000070   0028               CMP      R0,#+0
+   \   00000072   06D1               BNE.N    ??USBD_MSC_Setup_10
+   \   00000074   2878               LDRB     R0,[R5, #+0]
+   \   00000076   0006               LSLS     R0,R0,#+24
+   \   00000078   03D4               BMI.N    ??USBD_MSC_Setup_10
+    309                {      
+    310                   MSC_BOT_Reset(pdev);
+   \   0000007A   2000               MOVS     R0,R4
+   \   0000007C   ........           BL       MSC_BOT_Reset
+   \   00000080   03E0               B.N      ??USBD_MSC_Setup_11
+    311                }
+    312                else
+    313                {
+    314                   USBD_CtlError(pdev , req);
+   \                     ??USBD_MSC_Setup_10:
+   \   00000082   2900               MOVS     R1,R5
+   \   00000084   2000               MOVS     R0,R4
+   \   00000086   ........           BL       USBD_CtlError
+    315                }
+    316                break;
+   \                     ??USBD_MSC_Setup_11:
+   \   0000008A   03E0               B.N      ??USBD_MSC_Setup_9
+    317          
+    318              default:
+    319                 USBD_CtlError(pdev , req);
+   \                     ??USBD_MSC_Setup_5:
+   \   0000008C   2900               MOVS     R1,R5
+   \   0000008E   2000               MOVS     R0,R4
+   \   00000090   ........           BL       USBD_CtlError
+    320              }
+    321              break;
+   \                     ??USBD_MSC_Setup_9:
+   \   00000094   3BE0               B.N      ??USBD_MSC_Setup_12
+    322            /* Interface & Endpoint request */
+    323            case USB_REQ_TYPE_STANDARD:
+    324              switch (req->bRequest)
+   \                     ??USBD_MSC_Setup_0:
+   \   00000096   6878               LDRB     R0,[R5, #+1]
+   \   00000098   0128               CMP      R0,#+1
+   \   0000009A   10D0               BEQ.N    ??USBD_MSC_Setup_13
+   \   0000009C   0A28               CMP      R0,#+10
+   \   0000009E   02D0               BEQ.N    ??USBD_MSC_Setup_14
+   \   000000A0   0B28               CMP      R0,#+11
+   \   000000A2   06D0               BEQ.N    ??USBD_MSC_Setup_15
+   \   000000A4   32E0               B.N      ??USBD_MSC_Setup_16
+    325              {
+    326              case USB_REQ_GET_INTERFACE :
+    327                USBD_CtlSendData (pdev,
+    328                                  &USBD_MSC_AltSet,
+    329                                  1);
+   \                     ??USBD_MSC_Setup_14:
+   \   000000A6   0122               MOVS     R2,#+1
+   \   000000A8   ....               LDR.N    R1,??DataTable0_2
+   \   000000AA   2000               MOVS     R0,R4
+   \   000000AC   ........           BL       USBD_CtlSendData
+    330                break;
+   \   000000B0   2CE0               B.N      ??USBD_MSC_Setup_16
+    331                
+    332              case USB_REQ_SET_INTERFACE :
+    333                USBD_MSC_AltSet = (uint8_t)(req->wValue >> 8);
+   \                     ??USBD_MSC_Setup_15:
+   \   000000B2   6888               LDRH     R0,[R5, #+2]
+   \   000000B4   80B2               UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \   000000B6   000A               LSRS     R0,R0,#+8
+   \   000000B8   ....               LDR.N    R1,??DataTable0_2
+   \   000000BA   0870               STRB     R0,[R1, #+0]
+    334                break;
+   \   000000BC   26E0               B.N      ??USBD_MSC_Setup_16
+    335              
+    336              case USB_REQ_CLEAR_FEATURE:  
+    337                
+    338                /* Flush the FIFO and Clear the stall status */    
+    339                DCD_EP_Flush(pdev, (uint8_t)req->wIndex);
+   \                     ??USBD_MSC_Setup_13:
+   \   000000BE   A988               LDRH     R1,[R5, #+4]
+   \   000000C0   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   000000C2   2000               MOVS     R0,R4
+   \   000000C4   ........           BL       DCD_EP_Flush
+    340                
+    341                /* Re-activate the EP */      
+    342                DCD_EP_Close (pdev , (uint8_t)req->wIndex);
+   \   000000C8   A988               LDRH     R1,[R5, #+4]
+   \   000000CA   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   000000CC   2000               MOVS     R0,R4
+   \   000000CE   ........           BL       DCD_EP_Close
+    343                if((((uint8_t)req->wIndex) & 0x80) == 0x80)
+   \   000000D2   2879               LDRB     R0,[R5, #+4]
+   \   000000D4   C0B2               UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000D6   0006               LSLS     R0,R0,#+24
+   \   000000D8   09D5               BPL.N    ??USBD_MSC_Setup_17
+    344                {
+    345                  DCD_EP_Open(pdev,
+    346                              ((uint8_t)req->wIndex),
+    347                              MSC_EPIN_SIZE,
+    348                              USB_OTG_EP_BULK);
+   \   000000DA   0223               MOVS     R3,#+2
+   \   000000DC   D4F8E805           LDR      R0,[R4, #+1512]
+   \   000000E0   C28A               LDRH     R2,[R0, #+22]
+   \   000000E2   A988               LDRH     R1,[R5, #+4]
+   \   000000E4   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   000000E6   2000               MOVS     R0,R4
+   \   000000E8   ........           BL       DCD_EP_Open
+   \   000000EC   09E0               B.N      ??USBD_MSC_Setup_18
+    349                }
+    350                else
+    351                {
+    352                  DCD_EP_Open(pdev,
+    353                              ((uint8_t)req->wIndex),
+    354                              MSC_EPOUT_SIZE,
+    355                              USB_OTG_EP_BULK);
+   \                     ??USBD_MSC_Setup_17:
+   \   000000EE   0223               MOVS     R3,#+2
+   \   000000F0   D4F8E805           LDR      R0,[R4, #+1512]
+   \   000000F4   B0F81D20           LDRH     R2,[R0, #+29]
+   \   000000F8   A988               LDRH     R1,[R5, #+4]
+   \   000000FA   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   000000FC   2000               MOVS     R0,R4
+   \   000000FE   ........           BL       DCD_EP_Open
+    356                }
+    357                
+    358                /* Handle BOT error */
+    359                MSC_BOT_CplClrFeature(pdev, (uint8_t)req->wIndex);
+   \                     ??USBD_MSC_Setup_18:
+   \   00000102   A988               LDRH     R1,[R5, #+4]
+   \   00000104   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000106   2000               MOVS     R0,R4
+   \   00000108   ........           BL       MSC_BOT_CplClrFeature
+    360                break;
+    361                
+    362              }  
+    363              break;
+   \                     ??USBD_MSC_Setup_16:
+   \   0000010C   FFE7               B.N      ??USBD_MSC_Setup_12
+    364             
+    365            default:
+    366              break;
+    367            }
+    368            return USBD_OK;
+   \                     ??USBD_MSC_Setup_1:
+   \                     ??USBD_MSC_Setup_12:
+   \   0000010E   0020               MOVS     R0,#+0
+   \   00000110   32BD               POP      {R1,R4,R5,PC}    ;; return
+    369          }
+    370          
+    371          /**
+    372          * @brief  USBD_MSC_DataIn
+    373          *         handle data IN Stage
+    374          * @param  pdev: device instance
+    375          * @param  epnum: endpoint index
+    376          * @retval status
+    377          */
+
+   \                                 In section .text, align 2, keep-with-next
+    378          uint8_t  USBD_MSC_DataIn (void  *pdev, 
+    379                                        uint8_t epnum)
+    380          {
+   \                     USBD_MSC_DataIn:
+   \   00000000   80B5               PUSH     {R7,LR}
+    381            MSC_BOT_DataIn(pdev , epnum);
+   \   00000002   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000004   ........           BL       MSC_BOT_DataIn
+    382            return USBD_OK;
+   \   00000008   0020               MOVS     R0,#+0
+   \   0000000A   02BD               POP      {R1,PC}          ;; return
+    383          }
+    384          
+    385          /**
+    386          * @brief  USBD_MSC_DataOut
+    387          *         handle data OUT Stage
+    388          * @param  pdev: device instance
+    389          * @param  epnum: endpoint index
+    390          * @retval status
+    391          */
+
+   \                                 In section .text, align 2, keep-with-next
+    392          uint8_t  USBD_MSC_DataOut (void  *pdev, 
+    393                                         uint8_t epnum)
+    394          {
+   \                     USBD_MSC_DataOut:
+   \   00000000   80B5               PUSH     {R7,LR}
+    395            MSC_BOT_DataOut(pdev , epnum);
+   \   00000002   C9B2               UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000004   ........           BL       MSC_BOT_DataOut
+    396            return USBD_OK;
+   \   00000008   0020               MOVS     R0,#+0
+   \   0000000A   02BD               POP      {R1,PC}          ;; return
+    397          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   ........           DC32     USBD_STORAGE_fops
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   ........           DC32     USBD_MSC_MaxLun
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_2:
+   \   00000000   ........           DC32     USBD_MSC_AltSet
+    398          /**
+    399            * @}
+    400            */ 
+    401          
+    402          
+    403          /**
+    404            * @}
+    405            */ 
+    406          
+    407          
+    408          /**
+    409            * @}
+    410            */ 
+    411          
+    412          /******************* (C) COPYRIGHT 2010 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+     Function         .cstack
+     --------         -------
+     USBD_MSC_DataIn       8
+     USBD_MSC_DataOut      8
+     USBD_MSC_DeInit       8
+     USBD_MSC_Init         8
+     USBD_MSC_Setup       16
+
+
+   Section sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     MSC_cb             36
+     USBD_MSC_CfgDesc   32
+     USBD_MSC_MaxLun     1
+     USBD_MSC_AltSet     1
+     USBD_MSC_Init      56
+     USBD_MSC_DeInit    30
+     USBD_MSC_Setup    274
+     USBD_MSC_DataIn    12
+     USBD_MSC_DataOut   12
+     ??DataTable0        4
+     ??DataTable0_1      4
+     ??DataTable0_2      4
+
+ 
+   2 bytes in section .bss
+  68 bytes in section .data
+ 396 bytes in section .text
+ 
+ 396 bytes of CODE memory
+  70 bytes of DATA memory
+
+Errors: none
+Warnings: none

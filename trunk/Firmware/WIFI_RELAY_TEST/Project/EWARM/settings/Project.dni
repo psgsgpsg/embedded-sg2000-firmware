@@ -1,0 +1,71 @@
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=-1681864622
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[TraceHelper]
+Enabled=0
+ShowSource=1
+[Disassemble mode]
+mode=1
+[Breakpoints]
+Count=0
+[Log file]
+LoggingEnabled=_ 1
+LogFile=_ "$PROJ_DIR$\LogFile1.log"
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 1
+LogFile=_ "$PROJ_DIR$\TermIO.log"
+[Aliases]
+A0=_ "D:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\STM32F2xx_Å×½ºÆ®¹öÁ¯5\Libraries\STM32F2xx_StdPeriph_Driver\src\stm32f2xx_tim.c" ""
+A1=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM (12)\Project\Memory.c" ""
+A2=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM2\Libraries\STM32_USB_HOST_Library\Class\MSC\src\usbh_msc_bot.c" ""
+A3=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM2\Libraries\STM32_USB_OTG_Driver\src\usb_hcd_int.c" ""
+A4=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM2\Project\Display.c" ""
+A5=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Libraries\STM32F2xx_StdPeriph_Driver\src\stm32f2xx_i2c.c" ""
+A6=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library\Class\MSC\src\usbh_msc_core.c" ""
+A7=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Key_Process.c" ""
+A8=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Log.c" ""
+A9=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\usbh_usr.c" ""
+A10=_ "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\main.c" ""
+A11=_ "F:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library\Class\MSC\src\usbh_msc_core.c" ""
+A12=_ "F:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library\Core\src\usbh_core.c" ""
+A13=_ "F:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\main.c" "E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\main.c"
+Count=14
+SuppressDialog=1
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=146148440
+Graph=0
+Symbiont=0

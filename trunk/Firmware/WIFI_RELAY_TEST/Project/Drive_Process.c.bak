@@ -1,0 +1,173 @@
+
+#include "main.h"
+#include "Drive_Process.h"
+#include "Voice.h"
+#include "Memory.h"
+#include "Ems_System.h"
+#include "Voice.h"
+#include "RTC.h"
+#include "GraphicLcd.h"
+
+#include "usbh_usr.h"
+
+void Driver_Start(void) // 자동차 운전 시작하기 위한 준비
+{    
+     // 해더 위치 잡기
+//     Setting_Header_Information(); 
+
+     // EEPROM 에서 먼저 데이터를 읽어와야 한다.	
+     //현재 헤더를 구한다.
+
+     if( Flag.WatchDog == 0 )                // 전원 온시 와치독이 아니면 시작멘트
+          Voice_OutAdd(VOICE_DRIVE_ON);
+     
+     if( Info.EcoStatus == 0 ) // 에코모드인가
+     {          
+          LED1_OFF();		// 아님
+     }else
+     {
+          LED1_RED();      // 에코모드
+          if( Flag.WatchDog == 0 )
+               Voice_OutAdd(VOICE_ECO_ON);
+     }		     
+     
+     memset(&ECO_Driving, 0, sizeof (struct _ECO_Driving ));      //ECO 드라이브 클리어
+     
+     //     Info.Active_Flag = 1;		// 기기 활성화 플래그
+}
+
+
+void Driver_End(void) 			// 자동차 운행 종료
+{
+//#ifdef DEBUG_LOG
+     printf("save %d %d %d %d %d %d \r\n",
+            NAND_Header_Index.Header_Count,NAND_Header_Index.Page_Count,
+            NAND_Header_Info.Start_Page, NAND_Header_Info.End_Page,
+            NAND_Data_Transmit.Start_Page,NAND_Data_Transmit.End_Page
+            );
+     DTG_EMS_DataSave(NAND_Header_Index.Page_Count, Info.DTG_DataCount);	     // NAND FLASH 데이터 저장
+//#endif
+     Info.DTG_DataCount = 0;    // 페이지 처음부터 작성하기
+     memset(DTG_NAND_Binary,0, sizeof(DTG_NAND_Binary));     
+     
+     // =========================================================================  
+
+     Write_Header_EMS();                     // 누적 운행거리 저장
+         
+     NAND_Header_Info.End_Page ++;           
+     NAND_Header_Index.Page_Count ++ ;       
+     NAND_Data_Transmit.End_Page ++;         // 데이터 전송 페이지 저장
+     
+     Write_Header_Information();             // 해더 정보를 저장 	
+     
+     Write_Header_Index();                         // 해더 인덱스 정보를 저장 하고
+     
+     Write_Transmit_Header();
+     // ---- 저장을 하지 않고 계속 운행이 될경우 세팅 -------
+//     Setting_Header_Information() ; 
+     
+#ifdef DEBUG_LOG
+     printf("SEnd %d %d %d %d %d %d \r\n",
+            NAND_Header_Index.Header_Count,NAND_Header_Index.Page_Count,
+            NAND_Header_Info.Start_Page, NAND_Header_Info.End_Page,
+            NAND_Data_Transmit.Start_Page,NAND_Data_Transmit.End_Page
+            );
+#endif
+//     EEPROM_Memory.TotalDriveLength = Info.TotalDriveLength;    
+//     Save_EEPROM();
+}
+
+void Drive_Process(void)          // 운행 관련 체크 
+{
+     static u16 Drive_Timer;
+     static u8 Driver_Count;
+     static u8 Key_On_Status = 0;
+     static u8 Driver_Check = 0;
+     TM_Struct DateCheck;
+     u32 TimerData;
+     if(!CheckTimeOver(1000,Drive_Timer))
+          return;      
+     Drive_Timer = MS_TIMER;  	// 타이머 5	     
+   
+     if( (Info.Input_Status& INPUT_KEYON_FLAG)  )          // 키온이 되어있으면 운행시간 증가
+     {
+          if(Info.SPEED_Value > 0)
+             Flag.DriveOn = 1;                              // 운행을 시작 하였다.  
+          if(Info.RPM_Value > 0)
+          {
+               if(EEPROM_Memory.Driver_Index == NO_DRIVER)
+               {
+                    Driver_Count++;
+                    
+                    if( Driver_Count > 20)
+                    {
+                         if(USBH_USR_ApplicationState == USH_USR_FS_IDLE)                                                   
+                         {
+                              USBH_USR_ActionFlag = USH_USR_FS_READDRIVER;     
+                         //     Driver_Check= 1;
+                         }                         
+                    }
+                    if(Driver_Count > 30)
+                    {
+                         Voice_OutAdd(VOICE_INPUTID);      
+                         Driver_Count = 0;
+                    }
+               }
+          }
+          Lcd_Backlight_ON(); 
+          EMS_Drive_Value.Drive_Time ++;          
+          Key_On_Status = 1;
+     }else          // 키가 오프상태일때
+     {
+          if(Key_On_Status == 1)        // 키를 한번 켰었다면
+          {
+               Driver_End();            // 저장 한다.
+               Key_On_Status = 0;
+          }
+         Lcd_Backlight_OFF();           
+     }     
+     if( Flag.Driver_Change == 1 )                     // 운전자가 변경이 됬는가?
+     {
+          Driver_End();    
+          Flag.Driver_Change = 0;
+     }     
+     if( EEPROM_Memory.Driver_Index == NO_DRIVER && Driver_Check == 0)
+     {
+          if(USBH_USR_ApplicationState == USH_USR_FS_IDLE)                                                   
+          {
+               USBH_USR_ActionFlag = USH_USR_FS_READDRIVER;     
+               Driver_Check= 1;
+          }
+     }
+     
+     
+//     if( Flag.GPS_IsHome == 1 )                             // 현재 차고지에 있는가?
+//     {
+//          if(Flag.Wifi_Possibility == 0)          // 전송가능 상태가 아니라면 와이파이 주변 검사 
+//          {
+//               ;
+//               // 와이파이 주변 겸사 루팀
+//          }
+//     }
+
+     TimerData = RTC_DateToBinary(&SYSTEM_TIME);
+     if(EMS_Drive_Value.Datetime != 0)            // 맨처음이 아닌가?
+     {
+          RTC_BinaryToDate(EMS_Drive_Value.Datetime,&DateCheck);
+          if(SYSTEM_TIME.tm_mday != DateCheck.tm_mday)
+          {
+               NAND_Header_Index.Header_Count++;		// 마지막 헤더의 위치를 증가한다.          
+               Setting_Header_Information();
+               EMS_Drive_Value.Datetime = TimerData; 
+               Driver_End();                           // 하루가 지나가면 거기서 한번끝는다.
+               memset(&EMS_Drive_Value, 0 ,sizeof(EMS_Drive_Value));    // EMS 클리어 
+          }
+          EMS_Drive_Value.Datetime = TimerData;          
+     }
+     else
+     {
+          EMS_Drive_Value.Datetime = TimerData;
+     }
+     
+     
+}

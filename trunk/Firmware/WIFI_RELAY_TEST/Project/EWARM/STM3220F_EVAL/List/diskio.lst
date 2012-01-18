@@ -1,0 +1,303 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     10/Jul/2011  12:05:38 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src #
+#                    \diskio.c                                                #
+#    Command line =  "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\sr #
+#                    c\diskio.c" -D USE_STDPERIPH_DRIVER -D STM32F2XX -D      #
+#                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                   #
+#                    RTC_CLOCK_SOURCE_LSE -lC "E:\¹¬ÀÛ¾÷\[ NewDTG             #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\" #
+#                     -lA "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\E #
+#                    WARM\STM3220F_EVAL\List\" -o "E:\¹¬ÀÛ¾÷\[ NewDTG         #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\"  #
+#                    --no_cse --no_unroll --no_inline --no_code_motion        #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M3 -e --fpu=None            #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.0\arm\INC\c\DLib_Config_Full.h" -I           #
+#                    "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\CoreSupport\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG               #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMSI #
+#                    S\CM3\DeviceSupport\ST\STM32F2xx\" -I "E:\¹¬ÀÛ¾÷\[       #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librari #
+#                    es\STM32F2xx_StdPeriph_Driver\inc\" -I "E:\¹¬ÀÛ¾÷\[      #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utiliti #
+#                    es\STM32_EVAL\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\Common\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG                   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM3 #
+#                    2_EVAL\STM3220F_EVAL\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_OTG_Driver\inc\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG            #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Core\inc\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG   #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM3 #
+#                    2_USB_Device_Library\Class\msc\inc\" -I "E:\¹¬ÀÛ¾÷\[     #
+#                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\" -I   #
+#                    "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\Usb\Inc\" -I "E:\¹¬ÀÛ¾÷\[ NewDTG                      #
+#                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\src\" -I      #
+#                    "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Core\inc\" -I     #
+#                    "E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ #
+#                    ..\..\Libraries\STM32_USB_HOST_Library\Class\MSC\inc\"   #
+#                    -Ol --use_c++_inline                                     #
+#    List file    =  E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\List\diskio.lst                             #
+#    Object file  =  E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\S #
+#                    TM3220F_EVAL\Obj\diskio.o                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src\diskio.c
+      1          /*-----------------------------------------------------------------------*/
+      2          /* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2007        */
+      3          /*-----------------------------------------------------------------------*/
+      4          /* This is a stub disk I/O module that acts as front end of the existing */
+      5          /* disk I/O modules and attach it to FatFs module with common interface. */
+      6          /*-----------------------------------------------------------------------*/
+      7          
+      8          #include "diskio.h"
+      9          
+     10          /*-----------------------------------------------------------------------*/
+     11          /* Correspondence between physical drive number and physical drive.      */
+     12          
+     13          #define ATA		0
+     14          #define MMC		1
+     15          #define USB		2
+     16          
+     17          
+     18          
+     19          /*-----------------------------------------------------------------------*/
+     20          /* Inicializes a Drive                                                    */
+     21          
+     22          DSTATUS disk_initialize (BYTE drv)    /* Physical drive nmuber (0..) */
+     23          {
+     24            DSTATUS stat = STA_NOINIT;
+     25            
+     26            if(HCD_IsDeviceConnected(&USB_OTG_Core_dev))
+                                             ^
+Error[Pe020]: identifier "USB_OTG_Core_dev" is undefined
+     27            {  
+     28              stat &= ~STA_NOINIT;
+     29            }
+     30            
+     31            return stat;
+     32            
+     33          }
+     34          
+     35          
+     36          
+     37          /*-----------------------------------------------------------------------*/
+     38          /* Return Disk Status                                                    */
+     39          
+     40          DSTATUS disk_status (
+     41          	BYTE drv		/* Physical drive nmuber (0..) */
+     42          )
+     43          {
+     44          	DSTATUS stat;
+     45          	int result;
+     46          
+     47          	switch (drv) {
+     48          	case ATA :
+     49          		result = ATA_disk_status();
+                 		         ^
+Warning[Pe223]: function "ATA_disk_status" declared implicitly
+     50          		// translate the reslut code here
+     51          
+     52          		return stat;
+                 		       ^
+Warning[Pe549]: variable "stat" is used before its value is set
+     53          
+     54          	case MMC :
+     55          		result = MMC_disk_status();
+                 		         ^
+Warning[Pe223]: function "MMC_disk_status" declared implicitly
+     56          		// translate the reslut code here
+     57          
+     58          		return stat;
+     59          
+     60          	case USB :
+     61          		result = USB_disk_status();
+                 		         ^
+Warning[Pe223]: function "USB_disk_status" declared implicitly
+
+  	int result;
+  	    ^
+"E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src\diskio.c",45  Warning[Pe550]: 
+          variable "result" was set but never used
+     62          		// translate the reslut code here
+     63          
+     64          		return stat;
+     65          	}
+     66          	return STA_NOINIT;
+     67          }
+     68          
+     69          
+     70          
+     71          /*-----------------------------------------------------------------------*/
+     72          /* Read Sector(s)                                                        */
+     73          
+     74          DRESULT disk_read (
+     75          	BYTE drv,		/* Physical drive nmuber (0..) */
+     76          	BYTE *buff,		/* Data buffer to store read data */
+     77          	DWORD sector,	/* Sector address (LBA) */
+     78          	BYTE count		/* Number of sectors to read (1..255) */
+     79          )
+     80          {
+     81          	DRESULT res;
+     82          	int result;
+     83          
+     84          	switch (drv) {
+     85          	case ATA :
+     86          		result = ATA_disk_read(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "ATA_disk_read" declared implicitly
+     87          		// translate the reslut code here
+     88          
+     89          		return res;
+                 		       ^
+Warning[Pe549]: variable "res" is used before its value is set
+     90          
+     91          	case MMC :
+     92          		result = MMC_disk_read(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "MMC_disk_read" declared implicitly
+     93          		// translate the reslut code here
+     94          
+     95          		return res;
+     96          
+     97          	case USB :
+     98          		result = USB_disk_read(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "USB_disk_read" declared implicitly
+
+  	int result;
+  	    ^
+"E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src\diskio.c",82  Warning[Pe550]: 
+          variable "result" was set but never used
+     99          		// translate the reslut code here
+    100          
+    101          		return res;
+    102          	}
+    103          	return RES_PARERR;
+    104          }
+    105          
+    106          
+    107          
+    108          /*-----------------------------------------------------------------------*/
+    109          /* Write Sector(s)                                                       */
+    110          
+    111          #if _READONLY == 0
+    112          DRESULT disk_write (
+    113          	BYTE drv,			/* Physical drive nmuber (0..) */
+    114          	const BYTE *buff,	/* Data to be written */
+    115          	DWORD sector,		/* Sector address (LBA) */
+    116          	BYTE count			/* Number of sectors to write (1..255) */
+    117          )
+    118          {
+    119          	DRESULT res;
+    120          	int result;
+    121          
+    122          	switch (drv) {
+    123          	case ATA :
+    124          		result = ATA_disk_write(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "ATA_disk_write" declared implicitly
+    125          		// translate the reslut code here
+    126          
+    127          		return res;
+                 		       ^
+Warning[Pe549]: variable "res" is used before its value is set
+    128          
+    129          	case MMC :
+    130          		result = MMC_disk_write(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "MMC_disk_write" declared implicitly
+    131          		// translate the reslut code here
+    132          
+    133          		return res;
+    134          
+    135          	case USB :
+    136          		result = USB_disk_write(buff, sector, count);
+                 		         ^
+Warning[Pe223]: function "USB_disk_write" declared implicitly
+
+  	int result;
+  	    ^
+"E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src\diskio.c",120  Warning[Pe550]: 
+          variable "result" was set but never used
+    137          		// translate the reslut code here
+    138          
+    139          		return res;
+    140          	}
+    141          	return RES_PARERR;
+    142          }
+    143          #endif /* _READONLY */
+    144          
+    145          
+    146          
+    147          /*-----------------------------------------------------------------------*/
+    148          /* Miscellaneous Functions                                               */
+    149          
+    150          DRESULT disk_ioctl (
+    151          	BYTE drv,		/* Physical drive nmuber (0..) */
+    152          	BYTE ctrl,		/* Control code */
+    153          	void *buff		/* Buffer to send/receive control data */
+    154          )
+    155          {
+    156          	DRESULT res;
+    157          	int result;
+    158          
+    159          	switch (drv) {
+    160          	case ATA :
+    161          		// pre-process here
+    162          
+    163          		result = ATA_disk_ioctl(ctrl, buff);
+                 		         ^
+Warning[Pe223]: function "ATA_disk_ioctl" declared implicitly
+    164          		// post-process here
+    165          
+    166          		return res;
+                 		       ^
+Warning[Pe549]: variable "res" is used before its value is set
+    167          
+    168          	case MMC :
+    169          		// pre-process here
+    170          
+    171          		result = MMC_disk_ioctl(ctrl, buff);
+                 		         ^
+Warning[Pe223]: function "MMC_disk_ioctl" declared implicitly
+    172          		// post-process here
+    173          
+    174          		return res;
+    175          
+    176          	case USB :
+    177          		// pre-process here
+    178          
+    179          		result = USB_disk_ioctl(ctrl, buff);
+                 		         ^
+Warning[Pe223]: function "USB_disk_ioctl" declared implicitly
+
+  	int result;
+  	    ^
+"E:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\USB\src\diskio.c",157  Warning[Pe550]: 
+          variable "result" was set but never used
+    180          		// post-process here
+    181          
+    182          		return res;
+    183          	}
+    184          	return RES_PARERR;
+    185          }
+    186          
+
+Errors: 1
+Warnings: 20

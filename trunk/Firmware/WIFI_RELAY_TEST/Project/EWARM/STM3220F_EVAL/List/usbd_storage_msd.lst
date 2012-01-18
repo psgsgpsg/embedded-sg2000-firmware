@@ -1,0 +1,442 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     16/May/2011  15:24:13 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\usbd_storage_msd.c                          #
+#    Command line =  "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\usbd_storage_msd.c" -D                     #
+#                    USE_STDPERIPH_DRIVER -D STM32F2XX -D USE_STM3220F_EVAL   #
+#                    -D USE_USB_OTG_FS -D USE_ULPI_PHY -lC "D:\¹¬ÀÛ¾÷\[       #
+#                    NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_S #
+#                    tdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template #
+#                    \EWARM\STM3220F_EVAL\List\" -lA "D:\¹¬ÀÛ¾÷\[ NewDTG      #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\List\" -o "D:\¹¬ÀÛ¾÷\[ NewDTG              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    STM3220F_EVAL\Obj\" --no_cse --no_unroll --no_inline     #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
+#                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
+#                    Systems\Embedded Workbench 6.0\arm\INC\c\DLib_Config_Ful #
+#                    l.h" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                              #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\CMSIS\CM3\CoreSupport\" -I            #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\CMSIS\CM3\DeviceS #
+#                    upport\ST\STM32F2xx\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG             #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32F2xx_StdPeriph_Driver\inc\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\" -I   #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\Common #
+#                    \" -I "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib #
+#                    _V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx #
+#                    _StdPeriph_Template\EWARM\..\..\..\Utilities\STM32_EVAL\ #
+#                    STM3220F_EVAL\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                   #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_OTG_Driver\inc\" -I         #
+#                    "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0. #
+#                    4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPe #
+#                    riph_Template\EWARM\..\..\..\Libraries\STM32_USB_Device_ #
+#                    Library\Core\inc\" -I "D:\¹¬ÀÛ¾÷\[ NewDTG                #
+#                    ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPerip #
+#                    h_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\EWARM\ #
+#                    ..\..\..\Libraries\STM32_USB_Device_Library\Class\msc\in #
+#                    c\" -Ol --use_c++_inline                                 #
+#    List file    =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\List\usbd_storage_msd.l #
+#                    st                                                       #
+#    Object file  =  D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4 #
+#                    \STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPer #
+#                    iph_Template\EWARM\STM3220F_EVAL\Obj\usbd_storage_msd.o  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\usbd_storage_msd.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    usbd_storage_msd.c
+      4            * @author  MCD application Team
+      5            * @version V0.0.1
+      6            * @date    11/12/2010
+      7            * @brief   This file provides the disk operations functions.
+      8            ******************************************************************************
+      9            * @copy
+     10            *
+     11            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     12            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     13            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     14            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     15            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     16            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     17            *
+     18            * <h2><center>&copy; COPYRIGHT 2010 STMicroelectronics</center></h2>
+     19            */ 
+     20          
+     21          /* Includes ------------------------------------------------------------------*/
+     22          #include "usbd_msc_mem.h"
+     23          
+     24          /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
+     25            * @{
+     26            */
+     27          
+     28          
+     29          /** @defgroup STORAGE 
+     30            * @brief media storage application module
+     31            * @{
+     32            */ 
+     33          
+     34          /** @defgroup STORAGE_Private_TypesDefinitions
+     35            * @{
+     36            */ 
+     37          /**
+     38            * @}
+     39            */ 
+     40          
+     41          
+     42          /** @defgroup STORAGE_Private_Defines
+     43            * @{
+     44            */ 
+     45          #define STORAGE_LUN_NBR                  1 
+     46          /**
+     47            * @}
+     48            */ 
+     49          
+     50          
+     51          /** @defgroup STORAGE_Private_Macros
+     52            * @{
+     53            */ 
+     54          /**
+     55            * @}
+     56            */ 
+     57          
+     58          
+     59          /** @defgroup STORAGE_Private_Variables
+     60            * @{
+     61            */ 
+     62          /* USB Mass storage Standard Inquiry Data */
+     63          const int8_t  STORAGE_Inquirydata[] = {//36
+     64            
+     65            /* LUN 0 */
+     66            0x00,		
+     67            0x80,		
+     68            0x02,		
+     69            0x02,
+     70            (USBD_STD_INQUIRY_LENGTH - 5),
+     71            0x00,
+     72            0x00,	
+     73            0x00,
+     74            'S', 'T', 'M', ' ', ' ', ' ', ' ', ' ', /* Manufacturer : 8 bytes */
+     75            'm', 'i', 'c', 'r', 'o', 'S', 'D', ' ', /* Product      : 16 Bytes */
+     76            'F', 'l', 'a', 's', 'h', ' ', ' ', ' ',
+     77            '0', '.', '0' ,'1',                     /* Version      : 4 Bytes */
+     78          }; 
+     79          
+     80          /**
+     81            * @}
+     82            */ 
+     83          
+     84          
+     85          /** @defgroup STORAGE_Private_FunctionPrototypes
+     86            * @{
+     87            */ 
+     88          int8_t STORAGE_Init (uint8_t lun);
+     89          
+     90          int8_t STORAGE_GetCapacity (uint8_t lun, 
+     91                                     uint32_t *block_num, 
+     92                                     uint32_t *block_size);
+     93          
+     94          int8_t  STORAGE_IsReady (uint8_t lun);
+     95          
+     96          int8_t  STORAGE_IsWriteProtected (uint8_t lun);
+     97          
+     98          int8_t STORAGE_Read (uint8_t lun, 
+     99                                  uint8_t *buf, 
+    100                                  uint32_t blk_addr,
+    101                                  uint16_t blk_len);
+    102          
+    103          int8_t STORAGE_Write (uint8_t lun, 
+    104                                  uint8_t *buf, 
+    105                                  uint32_t blk_addr,
+    106                                  uint16_t blk_len);
+    107          
+    108          int8_t STORAGE_GetMaxLun (void);
+    109          
+    110          
+    111          USBD_STORAGE_cb_TypeDef USBD_MICRO_SDIO_fops =
+    112          {
+    113            STORAGE_Init,
+    114            STORAGE_GetCapacity,
+    115            STORAGE_IsReady,
+    116            STORAGE_IsWriteProtected,
+    117            STORAGE_Read,
+    118            STORAGE_Write,
+    119            STORAGE_GetMaxLun,
+    120            (int8_t *)STORAGE_Inquirydata,
+    121          };
+    122          
+    123          USBD_STORAGE_cb_TypeDef  *USBD_STORAGE_fops = &USBD_MICRO_SDIO_fops;
+    124          
+    125          /**
+    126            * @}
+    127            */ 
+    128          
+    129          
+    130          /** @defgroup STORAGE_Private_Functions
+    131            * @{
+    132            */ 
+    133          
+    134          
+    135          /**
+    136            * @brief  Initialize the storage medium
+    137            * @param  lun : logical unit number
+    138            * @retval Status
+    139            */
+    140          
+    141          int8_t STORAGE_Init (uint8_t lun)
+    142          {
+    143          #ifndef USE_STM3210C_EVAL  
+    144            NVIC_InitTypeDef NVIC_InitStructure;
+    145            NVIC_InitStructure.NVIC_IRQChannel = SDIO_IRQn;
+    146            NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority =0;
+    147            NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    148            NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    149            NVIC_Init(&NVIC_InitStructure);
+    150          #endif
+    151            if( SD_Init() != SD_OK)
+                       ^
+Warning[Pe223]: function "SD_Init" declared implicitly
+
+    if( SD_Init() != SD_OK)
+                     ^
+"D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\usbd_storage_msd.c",151  Error[Pe020]: 
+          identifier "SD_OK" is undefined
+    152            {
+    153              return (-1); 
+    154            } 
+    155          #ifndef USE_STM3210C_EVAL  
+    156            SD_SetDeviceMode(SD_DMA_MODE);
+                   ^
+Warning[Pe223]: function "SD_SetDeviceMode" declared implicitly
+
+    SD_SetDeviceMode(SD_DMA_MODE);
+                     ^
+"D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\usbd_storage_msd.c",156  Error[Pe020]: 
+          identifier "SD_DMA_MODE" is undefined
+    157            SD_EnableWideBusOperation(SDIO_BusWide_4b); 
+                   ^
+Warning[Pe223]: function "SD_EnableWideBusOperation" declared implicitly
+    158          #endif  
+    159            return (0);
+    160            
+    161          }
+    162          
+    163          /**
+    164            * @brief  return medium capacity and block size
+    165            * @param  lun : logical unit number
+    166            * @param  block_num :  number of physical block
+    167            * @param  block_size : size of a physical block
+    168            * @retval Status
+    169            */
+    170          int8_t STORAGE_GetCapacity (uint8_t lun, uint32_t *block_num, uint32_t *block_size)
+    171          {
+    172            
+    173            SD_CardInfo cardinfo;
+                   ^
+Error[Pe020]: identifier "SD_CardInfo" is undefined
+    174          #ifndef USE_STM3210C_EVAL   
+    175            if(SD_GetStatus() != 0 )
+                      ^
+Warning[Pe223]: function "SD_GetStatus" declared implicitly
+    176            {
+    177              return (-1); 
+    178            }   
+    179          #endif  
+    180            SD_GetCardInfo(&cardinfo);
+                   ^
+Warning[Pe223]: function "SD_GetCardInfo" declared implicitly
+    181          
+    182            *block_size =  512;  
+    183            *block_num =  cardinfo.CardCapacity / 512;  
+    184            
+    185            return (0);
+    186            
+    187          }
+    188          
+    189          /**
+    190            * @brief  check whether the medium is ready
+    191            * @param  lun : logical unit number
+    192            * @retval Status
+    193            */
+    194          int8_t  STORAGE_IsReady (uint8_t lun)
+    195          {
+    196            
+    197            if( SD_Init() != SD_OK)
+                       ^
+Warning[Pe223]: function "SD_Init" declared implicitly
+
+    if( SD_Init() != SD_OK)
+                     ^
+"D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Project\STM32F2xx_StdPeriph_Template\usbd_storage_msd.c",197  Error[Pe020]: 
+          identifier "SD_OK" is undefined
+    198            {
+    199              return (-1);
+    200            }
+    201          #ifndef USE_STM3210C_EVAL   
+    202            if(SD_GetStatus() != 0)
+                      ^
+Warning[Pe223]: function "SD_GetStatus" declared implicitly
+    203            {
+    204              return (-1); 
+    205            }
+    206          #endif  
+    207            return (0);
+    208          }
+    209          
+    210          /**
+    211            * @brief  check whether the medium is write-protected
+    212            * @param  lun : logical unit number
+    213            * @retval Status
+    214            */
+    215          int8_t  STORAGE_IsWriteProtected (uint8_t lun)
+    216          {
+    217            return  0;
+    218          }
+    219          
+    220          /**
+    221            * @brief  Read data from the medium
+    222            * @param  lun : logical unit number
+    223            * @param  buf : Pointer to the buffer to save data
+    224            * @param  blk_addr :  address of 1st block to be read
+    225            * @param  blk_len : nmber of blocks to be read
+    226            * @retval Status
+    227            */
+    228          int8_t STORAGE_Read (uint8_t lun, 
+    229                           uint8_t *buf, 
+    230                           uint32_t blk_addr,                       
+    231                           uint16_t blk_len)
+    232          {
+    233            
+    234            if(blk_len > 1)
+    235            {
+    236              if( SD_ReadMultiBlocks (buf, 
+                         ^
+Warning[Pe223]: function "SD_ReadMultiBlocks" declared implicitly
+    237                                      blk_addr * 512, 
+    238                                      512,
+    239                                      blk_len) != SD_OK)
+                                                         ^
+Error[Pe020]: identifier "SD_OK" is undefined
+    240              {
+    241                return -1;
+    242              }
+    243            }
+    244            else
+    245            {
+    246              if( SD_ReadBlock (buf, 
+                         ^
+Warning[Pe223]: function "SD_ReadBlock" declared implicitly
+    247                                blk_addr * 512, 
+    248                                512)!= SD_OK)
+                                              ^
+Error[Pe020]: identifier "SD_OK" is undefined
+    249              {
+    250                return -1;
+    251              }
+    252            }
+    253            return 0;
+    254            
+    255          }
+    256          /**
+    257            * @brief  Write data to the medium
+    258            * @param  lun : logical unit number
+    259            * @param  buf : Pointer to the buffer to write from
+    260            * @param  blk_addr :  address of 1st block to be written
+    261            * @param  blk_len : nmber of blocks to be read
+    262            * @retval Status
+    263            */
+    264          int8_t STORAGE_Write (uint8_t lun, 
+    265                            uint8_t *buf, 
+    266                            uint32_t blk_addr,
+    267                            uint16_t blk_len)
+    268          {
+    269            
+    270            if(blk_len > 1)
+    271            {
+    272              if( SD_WriteMultiBlocks (buf, 
+                         ^
+Warning[Pe223]: function "SD_WriteMultiBlocks" declared implicitly
+    273                                      blk_addr * 512, 
+    274                                      512,
+    275                                      blk_len) != SD_OK)
+                                                         ^
+Error[Pe020]: identifier "SD_OK" is undefined
+    276              {
+    277                return -1;
+    278              }
+    279            }
+    280            else
+    281            {
+    282              if( SD_WriteBlock (buf, 
+                         ^
+Warning[Pe223]: function "SD_WriteBlock" declared implicitly
+    283                                blk_addr * 512, 
+    284                                512)!= SD_OK)
+                                              ^
+Error[Pe020]: identifier "SD_OK" is undefined
+    285              {
+    286                return -1;
+    287              }
+    288            }
+    289            return (0);
+    290          }
+    291          
+    292          /**
+    293            * @brief  Return number of supported logical unit
+    294            * @param  None
+    295            * @retval number of logical unit
+    296            */
+    297          
+    298          int8_t STORAGE_GetMaxLun (void)
+    299          {
+    300            return (STORAGE_LUN_NBR - 1);
+    301          }
+    302          /**
+    303            * @}
+    304            */ 
+    305          
+    306          
+    307          /**
+    308            * @}
+    309            */ 
+    310          
+    311          
+    312          /**
+    313            * @}
+    314            */ 
+    315          
+    316          /******************* (C) COPYRIGHT 2010 STMicroelectronics *****END OF FILE****/
+    317          
+
+Errors: 8
+Warnings: 11
