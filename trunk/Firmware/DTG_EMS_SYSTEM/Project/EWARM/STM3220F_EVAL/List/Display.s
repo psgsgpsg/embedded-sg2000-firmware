@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:08:55 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  23:50:13 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
@@ -1618,10 +1618,10 @@ Write_Word:
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-`?<Constant " EMS_SYSTEM V000032 ">`:
+`?<Constant " EMS_SYSTEM V000033 ">`:
         ; Initializer data, 24 bytes
         DC8 32, 69, 77, 83, 95, 83, 89, 83, 84, 69
-        DC8 77, 32, 86, 48, 48, 48, 48, 51, 50, 32
+        DC8 77, 32, 86, 48, 48, 48, 48, 51, 51, 32
         DC8 0, 0, 0, 0
 
         SECTION `.text`:CODE:NOROOT(2)
@@ -1752,9 +1752,9 @@ Write_Word:
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-`?<Constant "120113-01">`:
+`?<Constant "120118-01">`:
         ; Initializer data, 12 bytes
-        DC8 49, 50, 48, 49, 49, 51, 45, 48, 49, 0
+        DC8 49, 50, 48, 49, 49, 56, 45, 48, 49, 0
         DC8 0, 0
 
         SECTION `.text`:CODE:NOROOT(2)
@@ -3864,7 +3864,7 @@ Display:
         B.N      ??Display_103
         DATA
 ??Display_60:
-        DC32     `?<Constant " EMS_SYSTEM V000032 ">`
+        DC32     `?<Constant " EMS_SYSTEM V000033 ">`
         DC32     SYSTEM_TIME
         DC32     `?<Constant "%02d/%02d/%02d %02d:%...">`
         DC32     Info
@@ -3889,7 +3889,7 @@ Display:
         DC32     `?<Constant "GPS-X %03d.%06d">`
         DC32     `?<Constant "GPS-Y %03d.%06d">`
         DC32     `?<Constant "  < \\306\\337\\277\\376\\276\\356\\271\\3`
-        DC32     `?<Constant "120113-01">`
+        DC32     `?<Constant "120118-01">`
         DC32     `?<Constant "   [ %09s ]   ">`
         DC32     `?<Constant "  < \\307\\374\\275\\304\\275\\302\\300\\3`
         DC32     SFLASH_CarInfo+0x3C

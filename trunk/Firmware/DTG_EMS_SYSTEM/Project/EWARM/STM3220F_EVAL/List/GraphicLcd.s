@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:09:04 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  23:50:14 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
@@ -1317,7 +1317,7 @@ GLcd_Init:
 //  195         
 //  196     GLcd_PutString2(0,16,Title2,1);    
         MOVS     R3,#+1
-        ADR.W    R2,`?<Constant " EMS_SYSTEM V000032 ">`
+        ADR.W    R2,`?<Constant " EMS_SYSTEM V000033 ">`
         MOVS     R1,#+16
         MOVS     R0,#+0
         BL       GLcd_PutString2
@@ -3672,10 +3672,10 @@ GLcd_RC_Input:
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-`?<Constant " EMS_SYSTEM V000032 ">`:
+`?<Constant " EMS_SYSTEM V000033 ">`:
         ; Initializer data, 24 bytes
         DC8 32, 69, 77, 83, 95, 83, 89, 83, 84, 69
-        DC8 77, 32, 86, 48, 48, 48, 48, 51, 50, 32
+        DC8 77, 32, 86, 48, 48, 48, 48, 51, 51, 32
         DC8 0, 0, 0, 0
 
         SECTION `.text`:CODE:NOROOT(1)

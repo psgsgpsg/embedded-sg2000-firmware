@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-931637280
+Checksum=1380495112
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -34,6 +34,13 @@ ActionState=1
 [TraceHelper]
 Enabled=0
 ShowSource=1
+[Disassemble mode]
+mode=1
+[Breakpoints]
+Bp0=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c}.524.16@1" 0 0 0 0 "" 0 "" 0
+Bp1=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c}.508.16@1" 0 0 0 0 "" 0 "" 0
+Bp2=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\USB\usbh_usr.c}.963.27@1" 0 0 0 0 "" 0 "" 0
+Count=3
 [Log file]
 LoggingEnabled=_ 1
 LogFile=_ "$PROJ_DIR$\LogFile1.log"
@@ -41,20 +48,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 1
 LogFile=_ "$PROJ_DIR$\TermIO.log"
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=314120312
-Graph=0
-Symbiont=0
-[Disassemble mode]
-mode=1
-[Breakpoints]
-Bp0=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c}.524.16@1" 0 0 0 0 "" 0 "" 0
-Bp1=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c}.508.16@1" 0 0 0 0 "" 0 "" 0
-Bp2=_ "STD_CODE" "{E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\USB\usbh_usr.c}.963.27@1" 1 0 0 0 "" 0 "" 0
-Count=3
 [Aliases]
 A0=_ "D:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\STM32F2xx_Å×½ºÆ®¹öÁ¯5\Libraries\STM32F2xx_StdPeriph_Driver\src\stm32f2xx_tim.c" ""
 A1=_ "D:\¹¬ÀÛ¾÷\[ NewDTG ]\ÀÚ·á\STM32F2xx_StdPeriph_Lib_V0.0.4\STM32F2xx_StdPeriph_Lib_V0.0.4\Libraries\STM32_USB_Device_Library\Core\src\usbd_ioreq.c" ""
@@ -75,3 +68,10 @@ A15=_ "F:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library
 A16=_ "F:\¹¬ÀÛ¾÷\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\main.c" ""
 Count=17
 SuppressDialog=1
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=158319808
+Graph=0
+Symbiont=0

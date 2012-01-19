@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:09:06 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  23:50:14 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
@@ -2759,7 +2759,7 @@ PC_Communication:
         SECTION `.text`:CODE:NOROOT(2)
         DATA
 ??DataTable39_12:
-        DC32     `?<Constant "120113-01">`
+        DC32     `?<Constant "120118-01">`
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
@@ -2853,9 +2853,9 @@ PC_Communication:
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-`?<Constant "120113-01">`:
+`?<Constant "120118-01">`:
         ; Initializer data, 12 bytes
-        DC8 49, 50, 48, 49, 49, 51, 45, 48, 49, 0
+        DC8 49, 50, 48, 49, 49, 56, 45, 48, 49, 0
         DC8 0, 0
 
         SECTION `.text`:CODE:NOROOT(2)

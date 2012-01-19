@@ -52344,3 +52344,228 @@ Fri Jan 13 16:06:36 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
 Fri Jan 13 16:06:36 2012: Hardware reset with strategy 0 was performed
 Fri Jan 13 16:06:36 2012: Target reset
 Fri Jan 13 16:06:54 2012: Breakpoint hit: Code @ usbh_usr.c:961.27, type: default (auto) 
+
+
+ << Logging to file resumes >> 
+
+Thu Jan 19 23:31:53 2012: Loaded macro file: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.mac
+Thu Jan 19 23:31:54 2012: JLINK command: ProjectFile = F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\settings\Project_STM3220F_EVAL.jlink, return = 0
+
+Thu Jan 19 23:31:54 2012: JLINK command: device = STM32F207xx, return = 0
+
+Thu Jan 19 23:31:54 2012: DLL version: V4.20m, compiled Oct 28 2010 09:07:34
+
+Thu Jan 19 23:31:54 2012: Firmware: J-Link ARM V8 compiled Apr 27 2011 20:42:35
+
+Thu Jan 19 23:31:54 2012: JTAG speed is initially set to: 32 kHz
+Thu Jan 19 23:31:54 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:31:54 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:31:54 2012: TPIU fitted.
+Thu Jan 19 23:31:54 2012: ETM fitted.
+Thu Jan 19 23:31:54 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:31:55 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:31:55 2012: Initial reset was performed
+Thu Jan 19 23:31:55 2012: Found 2 JTAG devices, Total IRLen = 9:
+
+Thu Jan 19 23:31:55 2012:  #0 Id: 0x4BA00477, IRLen:  4, IRPrint: 0x1 CoreSight JTAG-DP
+
+Thu Jan 19 23:31:55 2012:  #1 Id: 0x06411041, IRLen:  5, IRPrint: 0x1 STM32 Boundary Scan
+
+Thu Jan 19 23:31:55 2012: 712 bytes downloaded and verified (1.65 Kbytes/sec)
+Thu Jan 19 23:31:55 2012: Loaded debugee: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.out
+Thu Jan 19 23:31:55 2012: Target reset
+Thu Jan 19 23:32:02 2012: Downloaded F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out to flash memory.
+Thu Jan 19 23:32:02 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:32:02 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:32:02 2012: TPIU fitted.
+Thu Jan 19 23:32:02 2012: ETM fitted.
+Thu Jan 19 23:32:02 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:32:02 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:32:05 2012: 154836 bytes downloaded into FLASH and verified (15.22 Kbytes/sec)
+Thu Jan 19 23:32:05 2012: Loaded debugee: F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out
+Thu Jan 19 23:32:05 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:32:05 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:32:05 2012: TPIU fitted.
+Thu Jan 19 23:32:05 2012: ETM fitted.
+Thu Jan 19 23:32:05 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:32:05 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:32:05 2012: Target reset
+Thu Jan 19 23:33:07 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:33:07 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:33:07 2012: TPIU fitted.
+Thu Jan 19 23:33:07 2012: ETM fitted.
+Thu Jan 19 23:33:07 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:33:07 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:33:07 2012: Target reset
+
+
+ << Logging to file resumes >> 
+
+Thu Jan 19 23:35:12 2012: Loaded macro file: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.mac
+Thu Jan 19 23:35:13 2012: JLINK command: ProjectFile = F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\settings\Project_STM3220F_EVAL.jlink, return = 0
+
+Thu Jan 19 23:35:13 2012: JLINK command: device = STM32F207xx, return = 0
+
+Thu Jan 19 23:35:13 2012: DLL version: V4.20m, compiled Oct 28 2010 09:07:34
+
+Thu Jan 19 23:35:13 2012: Firmware: J-Link ARM V8 compiled Apr 27 2011 20:42:35
+
+Thu Jan 19 23:35:13 2012: JTAG speed is initially set to: 32 kHz
+Thu Jan 19 23:35:13 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:35:13 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:35:13 2012: TPIU fitted.
+Thu Jan 19 23:35:13 2012: ETM fitted.
+Thu Jan 19 23:35:13 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:35:14 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:35:14 2012: Initial reset was performed
+Thu Jan 19 23:35:14 2012: Found 2 JTAG devices, Total IRLen = 9:
+
+Thu Jan 19 23:35:14 2012:  #0 Id: 0x4BA00477, IRLen:  4, IRPrint: 0x1 CoreSight JTAG-DP
+
+Thu Jan 19 23:35:14 2012:  #1 Id: 0x06411041, IRLen:  5, IRPrint: 0x1 STM32 Boundary Scan
+
+Thu Jan 19 23:35:14 2012: 712 bytes downloaded and verified (1.65 Kbytes/sec)
+Thu Jan 19 23:35:14 2012: Loaded debugee: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.out
+Thu Jan 19 23:35:14 2012: Target reset
+Thu Jan 19 23:35:20 2012: Downloaded F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out to flash memory.
+Thu Jan 19 23:35:20 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:35:20 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:35:20 2012: TPIU fitted.
+Thu Jan 19 23:35:20 2012: ETM fitted.
+Thu Jan 19 23:35:20 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:35:20 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:35:23 2012: 154836 bytes downloaded into FLASH and verified (16.49 Kbytes/sec)
+Thu Jan 19 23:35:23 2012: Loaded debugee: F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out
+Thu Jan 19 23:35:23 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:35:24 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:35:24 2012: TPIU fitted.
+Thu Jan 19 23:35:24 2012: ETM fitted.
+Thu Jan 19 23:35:24 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:35:24 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:35:24 2012: Target reset
+Thu Jan 19 23:36:51 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:36:51 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:36:51 2012: TPIU fitted.
+Thu Jan 19 23:36:51 2012: ETM fitted.
+Thu Jan 19 23:36:51 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:36:51 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:36:51 2012: Target reset
+Thu Jan 19 23:36:56 2012: Breakpoint hit: Code @ Ems_System.c:1202.6, type: default (auto) 
+Thu Jan 19 23:37:14 2012: Failed to clear breakpoint: Target busy.
+Thu Jan 19 23:37:17 2012: Fatal error: CPU is not halted   Session aborted!
+
+
+ << Logging to file resumes >> 
+
+Thu Jan 19 23:46:00 2012: Loaded macro file: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.mac
+Thu Jan 19 23:46:01 2012: JLINK command: ProjectFile = F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\settings\Project_STM3220F_EVAL.jlink, return = 0
+
+Thu Jan 19 23:46:01 2012: JLINK command: device = STM32F207xx, return = 0
+
+Thu Jan 19 23:46:01 2012: DLL version: V4.20m, compiled Oct 28 2010 09:07:34
+
+Thu Jan 19 23:46:01 2012: Firmware: J-Link ARM V8 compiled Apr 27 2011 20:42:35
+
+Thu Jan 19 23:46:01 2012: JTAG speed is initially set to: 32 kHz
+Thu Jan 19 23:46:01 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:46:01 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:46:01 2012: TPIU fitted.
+Thu Jan 19 23:46:01 2012: ETM fitted.
+Thu Jan 19 23:46:01 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:46:02 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:46:02 2012: Initial reset was performed
+Thu Jan 19 23:46:02 2012: Found 2 JTAG devices, Total IRLen = 9:
+
+Thu Jan 19 23:46:02 2012:  #0 Id: 0x4BA00477, IRLen:  4, IRPrint: 0x1 CoreSight JTAG-DP
+
+Thu Jan 19 23:46:02 2012:  #1 Id: 0x06411041, IRLen:  5, IRPrint: 0x1 STM32 Boundary Scan
+
+Thu Jan 19 23:46:02 2012: 712 bytes downloaded and verified (1.71 Kbytes/sec)
+Thu Jan 19 23:46:02 2012: Loaded debugee: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.out
+Thu Jan 19 23:46:02 2012: Target reset
+Thu Jan 19 23:46:08 2012: Downloaded F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out to flash memory.
+Thu Jan 19 23:46:08 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:46:08 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:46:08 2012: TPIU fitted.
+Thu Jan 19 23:46:08 2012: ETM fitted.
+Thu Jan 19 23:46:08 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:46:08 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:46:11 2012: 154860 bytes downloaded into FLASH and verified (16.57 Kbytes/sec)
+Thu Jan 19 23:46:11 2012: Loaded debugee: F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out
+Thu Jan 19 23:46:11 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:46:11 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:46:11 2012: TPIU fitted.
+Thu Jan 19 23:46:11 2012: ETM fitted.
+Thu Jan 19 23:46:11 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:46:11 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:46:11 2012: Target reset
+Thu Jan 19 23:46:41 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:46:41 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:46:41 2012: TPIU fitted.
+Thu Jan 19 23:46:41 2012: ETM fitted.
+Thu Jan 19 23:46:41 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:46:41 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:46:41 2012: Target reset
+Thu Jan 19 23:47:07 2012: Breakpoint hit: Code @ Ems_System.c:959.16, type: default (auto) 
+
+
+ << Logging to file resumes >> 
+
+Thu Jan 19 23:48:25 2012: Loaded macro file: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.mac
+Thu Jan 19 23:48:25 2012: JLINK command: ProjectFile = F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\settings\Project_STM3220F_EVAL.jlink, return = 0
+
+Thu Jan 19 23:48:25 2012: JLINK command: device = STM32F207xx, return = 0
+
+Thu Jan 19 23:48:25 2012: DLL version: V4.20m, compiled Oct 28 2010 09:07:34
+
+Thu Jan 19 23:48:25 2012: Firmware: J-Link ARM V8 compiled Apr 27 2011 20:42:35
+
+Thu Jan 19 23:48:25 2012: JTAG speed is initially set to: 32 kHz
+Thu Jan 19 23:48:26 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:48:26 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:48:26 2012: TPIU fitted.
+Thu Jan 19 23:48:26 2012: ETM fitted.
+Thu Jan 19 23:48:26 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:48:26 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:48:26 2012: Initial reset was performed
+Thu Jan 19 23:48:26 2012: Found 2 JTAG devices, Total IRLen = 9:
+
+Thu Jan 19 23:48:26 2012:  #0 Id: 0x4BA00477, IRLen:  4, IRPrint: 0x1 CoreSight JTAG-DP
+
+Thu Jan 19 23:48:26 2012:  #1 Id: 0x06411041, IRLen:  5, IRPrint: 0x1 STM32 Boundary Scan
+
+Thu Jan 19 23:48:27 2012: 712 bytes downloaded and verified (1.71 Kbytes/sec)
+Thu Jan 19 23:48:27 2012: Loaded debugee: C:\Program Files\IAR Systems\Embedded Workbench 6.0\arm\config\flashloader\ST\FlashSTM32F2xxxx.out
+Thu Jan 19 23:48:27 2012: Target reset
+Thu Jan 19 23:48:33 2012: Downloaded F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out to flash memory.
+Thu Jan 19 23:48:33 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:48:33 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:48:33 2012: TPIU fitted.
+Thu Jan 19 23:48:33 2012: ETM fitted.
+Thu Jan 19 23:48:33 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:48:33 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:48:36 2012: 154860 bytes downloaded into FLASH and verified (16.72 Kbytes/sec)
+Thu Jan 19 23:48:36 2012: Loaded debugee: F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Exe\Project.out
+Thu Jan 19 23:48:36 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:48:36 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:48:36 2012: TPIU fitted.
+Thu Jan 19 23:48:36 2012: ETM fitted.
+Thu Jan 19 23:48:36 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:48:36 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:48:36 2012: Target reset
+Thu Jan 19 23:49:05 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:49:05 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:49:05 2012: TPIU fitted.
+Thu Jan 19 23:49:05 2012: ETM fitted.
+Thu Jan 19 23:49:05 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:49:05 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:49:05 2012: Target reset
+Thu Jan 19 23:49:33 2012: TotalIRLen = 9, IRPrint = 0x0011
+Thu Jan 19 23:49:33 2012: Found Cortex-M3 r2p0, Little endian.
+Thu Jan 19 23:49:33 2012: TPIU fitted.
+Thu Jan 19 23:49:33 2012: ETM fitted.
+Thu Jan 19 23:49:33 2012:   FPUnit: 6 code (BP) slots and 2 literal slots
+Thu Jan 19 23:49:33 2012: Hardware reset with strategy 0 was performed
+Thu Jan 19 23:49:33 2012: Target reset
+Thu Jan 19 23:49:47 2012: Breakpoint hit: Code @ Ems_System.c:961.21, type: default (auto) 
+Thu Jan 19 23:49:53 2012: Fatal error: CPU is not halted   Session aborted!

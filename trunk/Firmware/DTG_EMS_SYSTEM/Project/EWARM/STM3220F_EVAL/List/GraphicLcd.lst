@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     19/Jan/2012  11:09:04 #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     19/Jan/2012  23:50:14 #
 # Copyright 1999-2010 IAR Systems AB.                                         #
 #                                                                             #
 #    Cpu mode     =  thumb                                                    #
@@ -6027,7 +6027,7 @@ F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\GraphicLcd.c
     195                  
     196              GLcd_PutString2(0,16,Title2,1);    
    \   000000BC   0123               MOVS     R3,#+1
-   \   000000BE   ........           ADR.W    R2,`?<Constant " EMS_SYSTEM V000032 ">`
+   \   000000BE   ........           ADR.W    R2,`?<Constant " EMS_SYSTEM V000033 ">`
    \   000000C2   1021               MOVS     R1,#+16
    \   000000C4   0020               MOVS     R0,#+0
    \   000000C6   ........           BL       GLcd_PutString2
@@ -8442,12 +8442,12 @@ F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\GraphicLcd.c
    \   00000014   00000000           DC8 0, 0, 0, 0
 
    \                                 In section .text, align 4, keep-with-next
-   \                     `?<Constant " EMS_SYSTEM V000032 ">`:
+   \                     `?<Constant " EMS_SYSTEM V000033 ">`:
    \   00000000                      ; Initializer data, 24 bytes
    \   00000000   20454D535F53       DC8 32, 69, 77, 83, 95, 83, 89, 83, 84, 69
    \              59535445    
-   \   0000000A   4D2056303030       DC8 77, 32, 86, 48, 48, 48, 48, 51, 50, 32
-   \              30333220    
+   \   0000000A   4D2056303030       DC8 77, 32, 86, 48, 48, 48, 48, 51, 51, 32
+   \              30333320    
    \   00000014   00000000           DC8 0, 0, 0, 0
 
    \                                 In section .text, align 4, keep-with-next
@@ -8591,7 +8591,7 @@ F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\GraphicLcd.c
      ??DataTable24_11                       4
      ??DataTable25                          4
      ?<Constant "   - TEAHO TECH -   ">    24
-     ?<Constant " EMS_SYSTEM V000032 ">    24
+     ?<Constant " EMS_SYSTEM V000033 ">    24
      ??DataTable26                          4
      ??DataTable26_1                        4
      ??DataTable26_2                        4

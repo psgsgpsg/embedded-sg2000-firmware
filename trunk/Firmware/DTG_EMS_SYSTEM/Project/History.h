@@ -1,7 +1,7 @@
 #define Title1 "   - TEAHO TECH -   "
-#define Title2 " EMS_SYSTEM V000032 "
+#define Title2 " EMS_SYSTEM V000033 "
 #define Version Title2
-#define FirmVersion "120113-01"
+#define FirmVersion "120118-01"
 
 /*
 
@@ -147,4 +147,8 @@
      - 누적 [시동모터 운행거리]데이터가 깨질경우 클리어 시키는 보완 알고리즘 추가
 120113_1[V000032]
      -파라미터읽는데 기준길이 이상 못읽는증상 해결
+
+120118_1[V000033]
+     - 공회전 정지 진입시 RPM이 없을때 바로 엔진 오프릴레이를 끄는것을 2초간 기다리기로함
+     - 파킹브레이크 에러 검사시 3초간 5km가 나왔을경우에만 에러로 인정함
 */

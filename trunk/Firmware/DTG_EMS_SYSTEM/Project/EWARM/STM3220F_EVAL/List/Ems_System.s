@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:08:59 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  23:48:23 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
@@ -2943,7 +2943,7 @@ EngineOff_EMSCheck:
 //  676           }
 //  677           if( ! CheckTimeOver ( 3000 , EMSOff_Timer ) )		// 15. 모든 조건이 만족하였을때 3초대기
 ??EngineOff_EMSCheck_16:
-        LDR.W    R0,??DataTable50
+        LDR.W    R0,??DataTable49_9
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+3000
         BL       CheckTimeOver
@@ -2958,7 +2958,7 @@ EngineOff_EMSCheck:
 //  679      }
 //  680      EMSOff_Check = 0;
 ??EngineOff_EMSCheck_0:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 //  681      // 공회전 정지 동작 조건
@@ -2975,14 +2975,14 @@ EngineOff_EMSCheck:
 //  685           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  686           return ;        
         B.N      ??EngineOff_EMSCheck_18
 //  687      }
 //  688      EMSOff_Check = 1;
 ??EngineOff_EMSCheck_17:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
 //  689      if( !Info.EcoStatus )               //  에코스위치가 켜져 있는가?
@@ -3002,11 +3002,11 @@ EngineOff_EMSCheck:
 //  693           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  694           EnginOffLimit_Time = MS_TIMER_1sec;               // 3 분 공회전 대기 Clear
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  695           return;
@@ -3014,7 +3014,7 @@ EngineOff_EMSCheck:
 //  696      } 
 //  697      EMSOff_Check = 2;
 ??EngineOff_EMSCheck_19:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
 //  698      if ( !( Info.Input_Status & INPUT_KEYON_FLAG ) )    //  키가 켜져있는가?
@@ -3034,7 +3034,7 @@ EngineOff_EMSCheck:
 //  702           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  703           EnginOffLimit_Flag = 1;
         LDR.W    R0,??DataTable49_7
@@ -3042,7 +3042,7 @@ EngineOff_EMSCheck:
         STRB     R1,[R0, #+0]
 //  704           EnginOffLimit_Time = MS_TIMER_1sec;               // 3 분 공회전 대기 Clear
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  705           return;
@@ -3050,7 +3050,7 @@ EngineOff_EMSCheck:
 //  706      }    
 //  707      EMSOff_Check = 3;
 ??EngineOff_EMSCheck_20:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+3
         STRB     R1,[R0, #+0]
 //  708      if ( Info.RPM_Value == 0 )          // 현재 RPM이 있는가?
@@ -3070,7 +3070,7 @@ EngineOff_EMSCheck:
 //  712           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  713           EnginOffLimit_Flag = 1;
         LDR.W    R0,??DataTable49_7
@@ -3078,7 +3078,7 @@ EngineOff_EMSCheck:
         STRB     R1,[R0, #+0]
 //  714           EnginOffLimit_Time = MS_TIMER_1sec;               // 3 분 공회전 대기 Clear
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  715           return;
@@ -3086,7 +3086,7 @@ EngineOff_EMSCheck:
 //  716      }
 //  717      EMSOff_Check = 4;
 ??EngineOff_EMSCheck_21:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+4
         STRB     R1,[R0, #+0]
 //  718      if ( Info.SPEED_Value != 0 )        // 현재 스피드가 있는가?
@@ -3106,11 +3106,11 @@ EngineOff_EMSCheck:
 //  722           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  723           EnginOffLimit_Time = MS_TIMER_1sec;               // 3 분 공회전 대기 Clear
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  724           return;
@@ -3118,7 +3118,7 @@ EngineOff_EMSCheck:
 //  725      }
 //  726      EMSOff_Check = 5;
 ??EngineOff_EMSCheck_22:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+5
         STRB     R1,[R0, #+0]
 //  727      if ( Info.EMS_Data.GPS_Speed != 0 )     //  GPS 속도가 있다면 
@@ -3138,11 +3138,11 @@ EngineOff_EMSCheck:
 //  731           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  732           EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  733           return;     
@@ -3150,7 +3150,7 @@ EngineOff_EMSCheck:
 //  734      }
 //  735      EMSOff_Check = 6;
 ??EngineOff_EMSCheck_23:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+6
         STRB     R1,[R0, #+0]
 //  736      if ( !( Info.Input_Status & INPUT_GEAR_FLAG ) )    // 기어가 중립인가
@@ -3170,11 +3170,11 @@ EngineOff_EMSCheck:
 //  740           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  741           EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear          
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  742           return;     
@@ -3182,13 +3182,13 @@ EngineOff_EMSCheck:
 //  743      }
 //  744      EMSOff_Check = 7;     
 ??EngineOff_EMSCheck_24:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+7
         STRB     R1,[R0, #+0]
 //  745 //     if ( Info.Battery_Volt_Driving < 24000 )  //  운행중 배터리 전압체크
 //  746 //          return;
 //  747      EMSOff_Check = 8;
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+8
         STRB     R1,[R0, #+0]
 //  748      if ( Info.EMS_Data.Battery_Volt < SFLASH_Memory.EMS.Battery_Volt )  //  공회전중 정지 배터리 전압이 기준보다 작은가?
@@ -3207,7 +3207,7 @@ EngineOff_EMSCheck:
 //  752           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  753           
 //  754           return;
@@ -3215,7 +3215,7 @@ EngineOff_EMSCheck:
 //  755      }
 //  756      EMSOff_Check = 9;
 ??EngineOff_EMSCheck_25:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+9
         STRB     R1,[R0, #+0]
 //  757      if ( Info.EMS_Data.CoolWaterTemp_Volt > SFLASH_Memory.EMS.ColdWaterTemp_Volt)//5000 )  //  냉각수 온도가 기준보다 낮은가
@@ -3234,14 +3234,14 @@ EngineOff_EMSCheck:
 //  761           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  762           return;
         B.N      ??EngineOff_EMSCheck_18
 //  763      }
 //  764      EMSOff_Check = 10;
 ??EngineOff_EMSCheck_26:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+10
         STRB     R1,[R0, #+0]
 //  765      if ( Info.EMS_Data.AirPressure_Volt < SFLASH_Memory.EMS.Air_Volt) //4700 )  //  공기압이 정상이 기준보다 낮은가? 
@@ -3260,14 +3260,14 @@ EngineOff_EMSCheck:
 //  769           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  770           return;   
         B.N      ??EngineOff_EMSCheck_18
 //  771      }
 //  772      EMSOff_Check = 11;
 ??EngineOff_EMSCheck_27:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+11
         STRB     R1,[R0, #+0]
 //  773      if ( (Info.EMS_Data.Tilt_X < TILT_LOW ) || ( Info.EMS_Data.Tilt_X > TILT_HIGH ) )   //  기울기X 가 범위안에 들어가는가
@@ -3289,11 +3289,11 @@ EngineOff_EMSCheck:
 //  777           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  778           EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear  
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  779           return;  
@@ -3301,7 +3301,7 @@ EngineOff_EMSCheck:
 //  780      }
 //  781      EMSOff_Check = 12;
 ??EngineOff_EMSCheck_28:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+12
         STRB     R1,[R0, #+0]
 //  782      if ( ( Info.EMS_Data.Tilt_Y < TILT_LOW ) || ( Info.EMS_Data.Tilt_Y > TILT_HIGH ) )  //  기울기 Y가 범위안에 들어가는가?
@@ -3323,11 +3323,11 @@ EngineOff_EMSCheck:
 //  786           EMSOff_Timer = MS_TIMER;  
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  787           EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear  
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  788           return;
@@ -3335,7 +3335,7 @@ EngineOff_EMSCheck:
 //  789      }
 //  790      EMSOff_Check = 13;
 ??EngineOff_EMSCheck_29:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+13
         STRB     R1,[R0, #+0]
 //  791      if ( SFLASH_Memory.GPS_EMS_Use != 0  )  //  GPS 플래그 확인
@@ -3360,11 +3360,11 @@ EngineOff_EMSCheck:
 //  796                EMSOff_Timer = MS_TIMER;
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  797                EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear  
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  798                return;
@@ -3372,7 +3372,7 @@ EngineOff_EMSCheck:
 //  799           }
 //  800      EMSOff_Check = 14;
 ??EngineOff_EMSCheck_30:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+14
         STRB     R1,[R0, #+0]
 //  801 ///////////////////////////////////////////////////////////////////////////////////////////////////     
@@ -3384,7 +3384,7 @@ EngineOff_EMSCheck:
         BPL.N    ??EngineOff_EMSCheck_31
 //  804      {          
 //  805           EMSOff_Check = 15;
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+15
         STRB     R1,[R0, #+0]
 //  806 
@@ -3410,7 +3410,7 @@ EngineOff_EMSCheck:
 //  813                    EMSOff_Timer = MS_TIMER; 
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  814 			    return;
         B.N      ??EngineOff_EMSCheck_18
@@ -3419,12 +3419,12 @@ EngineOff_EMSCheck:
 //  817 	    }
 //  818           EMSOff_Check = 16;	    
 ??EngineOff_EMSCheck_32:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+16
         STRB     R1,[R0, #+0]
 //  819 	    
 //  820           if( ! CheckTimeOver ( 3000 , EMSOff_Timer ) )		// 15. 모든 조건이 만족하였을때 3초대기
-        LDR.W    R0,??DataTable50
+        LDR.W    R0,??DataTable49_9
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+3000
         BL       CheckTimeOver
@@ -3436,29 +3436,29 @@ EngineOff_EMSCheck:
 //  824 		    // 로그 기록단위 500ms 
 //  825 		    EMSOff_Check = 17;
 ??EngineOff_EMSCheck_33:
-        LDR.W    R0,??DataTable49_9
+        LDR.W    R0,??DataTable49_10
         MOVS     R1,#+17
         STRB     R1,[R0, #+0]
 //  826 		    if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.W    R0,??DataTable50_1
+        LDR.W    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_EMSCheck_34
 //  827 		    {
 //  828 			    sprintf((char*)Buffer,"ENGINE_OFF PARKING_BREAK CHECK \r\n "); 
-        LDR.W    R1,??DataTable50_2
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R1,??DataTable50_1
+        LDR.W    R0,??DataTable50_2
         BL       sprintf
 //  829 			    Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       Write_Log
 //  830 		    }
 //  831 		    // -----------------------------------------------------------------------------	
 //  832 		    EnginOffLimit_Time = MS_TIMER_1sec;
 ??EngineOff_EMSCheck_34:
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  833 		    EnginOffLimit_Flag = 1;
@@ -3471,13 +3471,13 @@ EngineOff_EMSCheck:
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
 //  836 		    EnginOffActionStep = 0 ;  // 공회전 정지 모드
-        LDR.W    R0,??DataTable50_4
+        LDR.W    R0,??DataTable50_3
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 //  837 		    
 //  838 //		    First_Check = 0 ;
 //  839 		    Ref_OverDrive = 0;
-        LDR.W    R0,??DataTable50_5
+        LDR.W    R0,??DataTable50_4
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
         B.N      ??EngineOff_EMSCheck_35
@@ -3530,13 +3530,13 @@ EngineOff_EMSCheck:
         STRB     R1,[R0, #+94]
 //  880           EnginOffLimit_Time = MS_TIMER_1sec;              // 3 분 공회전 대기 Clear          
         LDR.W    R0,??DataTable49_8
-        LDR.W    R1,??DataTable49_10
+        LDR.W    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
 //  881           EMSOff_Timer = MS_TIMER;
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50
+        LDR.W    R1,??DataTable49_9
         STRH     R0,[R1, #+0]
 //  882      }
 //  883 }
@@ -3585,7 +3585,7 @@ Relay_Off_Clear:
 //  887      static u16 EMS_WATCH_Timer3=0;
 //  888      
 //  889      switch( EMS_Reley_Off )          // 릴레이 오프 진입
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         LDRB     R0,[R0, #+0]
         CMP      R0,#+1
         BEQ.N    ??Relay_Off_Clear_0
@@ -3603,10 +3603,10 @@ Relay_Off_Clear:
 ??Relay_Off_Clear_0:
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_7
+        LDR.W    R1,??DataTable50_6
         STRH     R0,[R1, #+0]
 //  894                EMS_Reley_Off = 2;          
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
 //  895           }break;
@@ -3615,7 +3615,7 @@ Relay_Off_Clear:
 //  897           {
 //  898                if(!CheckTimeOver(3000, EMS_WATCH_Timer3))return;  //3000ms 후에 라이트 오프      
 ??Relay_Off_Clear_3:
-        LDR.W    R0,??DataTable50_7
+        LDR.W    R0,??DataTable50_6
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+3000
         BL       CheckTimeOver
@@ -3625,12 +3625,12 @@ Relay_Off_Clear:
 ??Relay_Off_Clear_7:
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_7
+        LDR.W    R1,??DataTable50_6
         STRH     R0,[R1, #+0]
 //  900                RESET_LIGHT();
         BL       RESET_LIGHT
 //  901                EMS_Reley_Off = 3;
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+3
         STRB     R1,[R0, #+0]
 //  902                
@@ -3640,7 +3640,7 @@ Relay_Off_Clear:
 //  905           {
 //  906                if(!CheckTimeOver(1000, EMS_WATCH_Timer3))return;  //1000ms 후에 히터 오프 
 ??Relay_Off_Clear_2:
-        LDR.W    R0,??DataTable50_7
+        LDR.W    R0,??DataTable50_6
         LDRH     R1,[R0, #+0]
         MOV      R0,#+1000
         BL       CheckTimeOver
@@ -3650,12 +3650,12 @@ Relay_Off_Clear:
 ??Relay_Off_Clear_8:
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_7
+        LDR.W    R1,??DataTable50_6
         STRH     R0,[R1, #+0]
 //  908                RESET_HITER();
         BL       RESET_HITER
 //  909                EMS_Reley_Off = 4;          
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+4
         STRB     R1,[R0, #+0]
 //  910           }break;
@@ -3664,7 +3664,7 @@ Relay_Off_Clear:
 //  912           {
 //  913                if(!CheckTimeOver(1000, EMS_WATCH_Timer3))return;  //1000ms 후에 에어컨 오프       
 ??Relay_Off_Clear_4:
-        LDR.W    R0,??DataTable50_7
+        LDR.W    R0,??DataTable50_6
         LDRH     R1,[R0, #+0]
         MOV      R0,#+1000
         BL       CheckTimeOver
@@ -3674,16 +3674,16 @@ Relay_Off_Clear:
 ??Relay_Off_Clear_9:
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_7
+        LDR.W    R1,??DataTable50_6
         STRH     R0,[R1, #+0]
 //  915                RESET_AIRCON();
         BL       RESET_AIRCON
 //  916                EMS_Reley_Off = 0;          
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 //  917                EnginOff_Flag = 0;
-        LDR.W    R0,??DataTable50_8
+        LDR.W    R0,??DataTable50_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 //  918           }break;
@@ -3692,7 +3692,7 @@ Relay_Off_Clear:
 //  920           {
 //  921                EMS_Reley_Off = 0;
 ??Relay_Off_Clear_1:
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 //  922           }          
@@ -3708,6 +3708,14 @@ Relay_Off_Clear:
         DATA
 ??DataTable46:
         DC32     INPUT_DATA
+
+        SECTION `.text`:CODE:NOROOT(2)
+        DATA
+`?<Constant "ECO_QUICK_STOP CHECK \\r\\n ">`:
+        ; Initializer data, 28 bytes
+        DC8 69, 67, 79, 95, 81, 85, 73, 67, 75, 95
+        DC8 83, 84, 79, 80, 32, 67, 72, 69, 67, 75
+        DC8 32, 13, 10, 32, 0, 0, 0, 0
 
         SECTION `.bss`:DATA:REORDER:NOROOT(1)
 ??EMS_WATCH_Timer3:
@@ -3726,128 +3734,150 @@ Emergency:
 //  928      static u16 EMS_Emc_Timer;     
 //  929      static u8 Check = 0;
 //  930      
-//  931      static u8 Drive_On = 0;
-//  932      static u8 OldGear = 0;
-//  933      static u8 CheckGear = 0;     
-//  934      if( Check == 0 )
-        LDR.W    R0,??DataTable50_9
+//  931 //     static u8 Drive_On = 0;
+//  932 //     static u8 OldGear = 0;
+//  933 //     static u8 CheckGear = 0;     
+//  934      static u16 Parking_Count = 0;
+//  935      
+//  936      if( Check == 0 )
+        LDR.W    R0,??DataTable50_8
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BNE.N    ??Emergency_0
-//  935      {
-//  936           if( GET_ENGINE_ON() == 1)       // 엔진온 출력이 나가고 있다면 타이머 
+//  937      {
+//  938           if( GET_ENGINE_ON() == 1)       // 엔진온 출력이 나가고 있다면 타이머 
         BL       GET_ENGINE_ON
         CMP      R0,#+1
         BNE.N    ??Emergency_1
-//  937           {
-//  938                EMS_Emc_Timer = MS_TIMER;
+//  939           {
+//  940                EMS_Emc_Timer = MS_TIMER;
         LDR.W    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_10
+        LDR.W    R1,??DataTable50_9
         STRH     R0,[R1, #+0]
-//  939                Check = 1;
-        LDR.W    R0,??DataTable50_9
+//  941                Check = 1;
+        LDR.W    R0,??DataTable50_8
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
         B.N      ??Emergency_1
-//  940           }
-//  941      }else          // 출력이 나가고 있다면 3초간 대기
-//  942      {
-//  943           if(GET_ENGINE_ON() == 0)
+//  942           }
+//  943      }else          // 출력이 나가고 있다면 3초간 대기
+//  944      {
+//  945           if(GET_ENGINE_ON() == 0)
 ??Emergency_0:
         BL       GET_ENGINE_ON
         CMP      R0,#+0
         BNE.N    ??Emergency_2
-//  944           {
-//  945                Check = 0;
-        LDR.W    R0,??DataTable50_9
+//  946           {
+//  947                Check = 0;
+        LDR.W    R0,??DataTable50_8
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-//  946           }
-//  947           if(CheckTimeOver(5000, EMS_Emc_Timer))            // 5초간 출력이 나가고 있다면 강제 클리어
+//  948           }
+//  949           if(CheckTimeOver(5000, EMS_Emc_Timer))            // 5초간 출력이 나가고 있다면 강제 클리어
 ??Emergency_2:
-        LDR.W    R0,??DataTable50_10
+        LDR.W    R0,??DataTable50_9
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+5000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??Emergency_1
-//  948           {
-//  949                RESET_ENGINE_ON();
+//  950           {
+//  951                RESET_ENGINE_ON();
         BL       RESET_ENGINE_ON
-//  950                Check = 0;
-        LDR.W    R0,??DataTable50_9
+//  952                Check = 0;
+        LDR.W    R0,??DataTable50_8
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-//  951           }
-//  952      }          
-//  953      if(Info.SPEED_Value > 3)
+//  953           }
+//  954      }          
+//  955      if( Info.SPEED_Value > 5 )
 ??Emergency_1:
         LDR.W    R0,??DataTable49_4
         LDRB     R0,[R0, #+44]
-        CMP      R0,#+4
+        CMP      R0,#+6
         BCC.N    ??Emergency_3
-//  954      {
-//  955           if ( (Info.Input_Status & INPUT_PARKING_BREAK_FLAG ))
+//  956      {
+//  957           if ( (Info.Input_Status & INPUT_PARKING_BREAK_FLAG ))
         LDR.W    R0,??DataTable49_4
         LDRB     R0,[R0, #+85]
         LSLS     R0,R0,#+29
-        BPL.N    ??Emergency_3
-//  956           {          
-//  957                Flag.Machine_Error = 0x01;
+        BPL.N    ??Emergency_4
+//  958           {          
+//  959                if( Parking_Count++ > 300 )       // 5km 이상 속도가 나올때 3초 이상 나오면 파킹에러 [V000033]
+        LDR.W    R0,??DataTable50_10
+        LDRH     R0,[R0, #+0]
+        ADDS     R1,R0,#+1
+        LDR.W    R2,??DataTable50_10
+        STRH     R1,[R2, #+0]
+        MOVW     R1,#+301
+        UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+        CMP      R0,R1
+        BCC.N    ??Emergency_5
+//  960                {               
+//  961                     Flag.Machine_Error = 0x01;
         LDR.W    R0,??DataTable49_6
         MOVS     R1,#+1
         STRB     R1,[R0, #+18]
-//  958           }                  
-//  959      }
-//  960      if(Info.SPEED_Value > 10)
-??Emergency_3:
-        LDR.W    R0,??DataTable49_4
-        LDRB     R0,[R0, #+44]
-        CMP      R0,#+11
-        BCC.N    ??Emergency_4
-//  961      {
-//  962           Drive_On = 1;
-        LDR.W    R0,??DataTable50_11
-        MOVS     R1,#+1
-        STRB     R1,[R0, #+0]
-//  963      }
-//  964 //     if(Info.SPEED_Value > 0 && Drive_On == 1)
-//  965 //     {
-//  966 //                      // 운행이 시작함           
-//  967 //          if(Info.Input_Status & INPUT_GEAR_FLAG )  
-//  968 //          {
-//  969 //               if(OldGear == 0)
-//  970 //               {
-//  971 //                    CheckGear = 1;
-//  972 //               }
-//  973 //               OldGear = 1;                            
-//  974 //          }
-//  975 //          else
-//  976 //          {                    
-//  977 //               if(OldGear == 1)
-//  978 //               {
-//  979 //                    CheckGear = 1;
-//  980 //               }              
-//  981 //               OldGear = 0;
-//  982 //          }
-//  983 //     }else if( Info.SPEED_Value == 0 && Drive_On == 1 )
-//  984 //     {
-//  985 //          if(CheckGear == 0)
-//  986 //               Flag.Machine_Error = 0x02;
-//  987 //          Drive_On = 0;
-//  988 //          CheckGear = 0;
-//  989 //     }
-//  990      
-//  991 //     if(Info.EMS_Data.GPS_Speed > 10)
-//  992 //     {
-//  993 //          if(Info.SPEED_Value == 0)
-//  994 //          {
-//  995 //               Flag.Machine_Error = 0x04;
-//  996 //          }
-//  997 //     }     
-//  998 }
+        B.N      ??Emergency_5
+//  962                }
+//  963           }else
+//  964           {
+//  965                Parking_Count = 0;               
 ??Emergency_4:
+        LDR.W    R0,??DataTable50_10
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+        B.N      ??Emergency_5
+//  966           }               
+//  967      }else
+//  968      {
+//  969           Parking_Count = 0;
+??Emergency_3:
+        LDR.W    R0,??DataTable50_10
+        MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+//  970      }
+//  971 //     if(Info.SPEED_Value > 10)
+//  972 //     {
+//  973 //          Drive_On = 1;
+//  974 //     }
+//  975 //     if(Info.SPEED_Value > 0 && Drive_On == 1)
+//  976 //     {
+//  977 //                      // 운행이 시작함           
+//  978 //          if(Info.Input_Status & INPUT_GEAR_FLAG )  
+//  979 //          {
+//  980 //               if(OldGear == 0)
+//  981 //               {
+//  982 //                    CheckGear = 1;
+//  983 //               }
+//  984 //               OldGear = 1;                            
+//  985 //          }
+//  986 //          else
+//  987 //          {                    
+//  988 //               if(OldGear == 1)
+//  989 //               {
+//  990 //                    CheckGear = 1;
+//  991 //               }              
+//  992 //               OldGear = 0;
+//  993 //          }
+//  994 //     }else if( Info.SPEED_Value == 0 && Drive_On == 1 )
+//  995 //     {
+//  996 //          if(CheckGear == 0)
+//  997 //               Flag.Machine_Error = 0x02;
+//  998 //          Drive_On = 0;
+//  999 //          CheckGear = 0;
+// 1000 //     }
+// 1001      
+// 1002 //     if(Info.EMS_Data.GPS_Speed > 10)
+// 1003 //     {
+// 1004 //          if(Info.SPEED_Value == 0)
+// 1005 //          {
+// 1006 //               Flag.Machine_Error = 0x04;
+// 1007 //          }
+// 1008 //     }     
+// 1009 }
+??Emergency_5:
         POP      {R0,PC}          ;; return
         CFI EndBlock cfiBlock29
 
@@ -3865,14 +3895,6 @@ Emergency:
         DATA
 ??DataTable47_2:
         DC32     EmsOnProgress
-
-        SECTION `.text`:CODE:NOROOT(2)
-        DATA
-`?<Constant "ECO_QUICK_STOP CHECK \\r\\n ">`:
-        ; Initializer data, 28 bytes
-        DC8 69, 67, 79, 95, 81, 85, 73, 67, 75, 95
-        DC8 83, 84, 79, 80, 32, 67, 72, 69, 67, 75
-        DC8 32, 13, 10, 32, 0, 0, 0, 0
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
@@ -3898,115 +3920,115 @@ Emergency:
 ??Check:
         DS8 1
 
-        SECTION `.bss`:DATA:REORDER:NOROOT(0)
-??Drive_On:
-        DS8 1
+        SECTION `.bss`:DATA:REORDER:NOROOT(1)
+??Parking_Count:
+        DS8 2
 
         SECTION `.text`:CODE:NOROOT(1)
         CFI Block cfiBlock30 Using cfiCommon0
         CFI Function EMS_Watching
         THUMB
-//  999 void EMS_Watching(void)
-// 1000 {
+// 1010 void EMS_Watching(void)
+// 1011 {
 EMS_Watching:
         PUSH     {R7,LR}
         CFI R14 Frame(CFA, -4)
         CFI CFA R13+8
-// 1001      static u16 EMS_WATCH_Timer;
-// 1002        
-// 1003      // 공회전 정지 중에 차량의 RPM과 스피드가 살아난다면 
-// 1004      // Key로 시동을 온 한것으로 간주하고
-// 1005      // 동작을 시켜준다.                
-// 1006      
-// 1007      if(EnginOff_Flag == 1)   
-        LDR.W    R0,??DataTable50_8
+// 1012      static u16 EMS_WATCH_Timer;
+// 1013        
+// 1014      // 공회전 정지 중에 차량의 RPM과 스피드가 살아난다면 
+// 1015      // Key로 시동을 온 한것으로 간주하고
+// 1016      // 동작을 시켜준다.                
+// 1017      
+// 1018      if(EnginOff_Flag == 1)   
+        LDR.W    R0,??DataTable50_7
         LDRB     R0,[R0, #+0]
         CMP      R0,#+1
         BNE.N    ??EMS_Watching_0
-// 1008      {
-// 1009           if(Info.RPM_Value > 500)    //rpm이 0이 될때 까지 기둘린다.                    
+// 1019      {
+// 1020           if(Info.RPM_Value > 500)    //rpm이 0이 될때 까지 기둘린다.                    
         LDR.W    R0,??DataTable49_4
         LDRH     R0,[R0, #+45]
         MOVW     R1,#+501
         CMP      R0,R1
         BCC.N    ??EMS_Watching_1
-// 1010           {
-// 1011                if(!CheckTimeOver(500, EMS_WATCH_Timer))return;  //500ms 간 유지할때 시동온으로 간주
-        LDR.W    R0,??DataTable50_12
+// 1021           {
+// 1022                if(!CheckTimeOver(500, EMS_WATCH_Timer))return;  //500ms 간 유지할때 시동온으로 간주
+        LDR.W    R0,??DataTable50_11
         LDRH     R1,[R0, #+0]
         MOV      R0,#+500
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??EMS_Watching_2
-// 1012                {
-// 1013                     EMS_Reley_Off = 1;
+// 1023                {
+// 1024                     EMS_Reley_Off = 1;
 ??EMS_Watching_3:
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1014                     EnginOff_Flag = 0;
-        LDR.W    R0,??DataTable50_8
+// 1025                     EnginOff_Flag = 0;
+        LDR.W    R0,??DataTable50_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
         B.N      ??EMS_Watching_4
-// 1015                }
-// 1016           }
-// 1017           else if(Info.SPEED_Value > 10)
+// 1026                }
+// 1027           }
+// 1028           else if(Info.SPEED_Value > 10)
 ??EMS_Watching_1:
         LDR.N    R0,??DataTable49_4
         LDRB     R0,[R0, #+44]
         CMP      R0,#+11
         BCC.N    ??EMS_Watching_5
-// 1018           {
-// 1019                if(!CheckTimeOver(500, EMS_WATCH_Timer))return;  //500ms 간 유지할때 시동온으로 간주                         
-        LDR.W    R0,??DataTable50_12
+// 1029           {
+// 1030                if(!CheckTimeOver(500, EMS_WATCH_Timer))return;  //500ms 간 유지할때 시동온으로 간주                         
+        LDR.W    R0,??DataTable50_11
         LDRH     R1,[R0, #+0]
         MOV      R0,#+500
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??EMS_Watching_2
-// 1020                {
-// 1021                     EMS_Reley_Off = 1;  
+// 1031                {
+// 1032                     EMS_Reley_Off = 1;  
 ??EMS_Watching_6:
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1022                     EnginOff_Flag = 0;
-        LDR.W    R0,??DataTable50_8
+// 1033                     EnginOff_Flag = 0;
+        LDR.W    R0,??DataTable50_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
         B.N      ??EMS_Watching_4
-// 1023                }               
-// 1024           }else
-// 1025           {
-// 1026                 EMS_WATCH_Timer = MS_TIMER;
+// 1034                }               
+// 1035           }else
+// 1036           {
+// 1037                 EMS_WATCH_Timer = MS_TIMER;
 ??EMS_Watching_5:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_12
+        LDR.W    R1,??DataTable50_11
         STRH     R0,[R1, #+0]
-// 1027           }          
-// 1028           if ( !( Info.Input_Status & INPUT_KEYON_FLAG ) )    //  키가 켜져있는가?
+// 1038           }          
+// 1039           if ( !( Info.Input_Status & INPUT_KEYON_FLAG ) )    //  키가 켜져있는가?
 ??EMS_Watching_4:
         LDR.N    R0,??DataTable49_4
         LDRB     R0,[R0, #+85]
         LSLS     R0,R0,#+24
         BMI.N    ??EMS_Watching_7
-// 1029           {
-// 1030                EMS_Reley_Off = 1;    
-        LDR.W    R0,??DataTable50_6
+// 1040           {
+// 1041                EMS_Reley_Off = 1;    
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1031                EnginOff_Flag = 0;
-        LDR.W    R0,??DataTable50_8
+// 1042                EnginOff_Flag = 0;
+        LDR.W    R0,??DataTable50_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
         B.N      ??EMS_Watching_7
-// 1032           }          
-// 1033      }     
-// 1034      else           // 공회전 정지 중이 아닐때 30km(조정가능)이상 되었을때 정지조건에 추가한다.
-// 1035      {
-// 1036           if( Info.SPEED_Value > SFLASH_Memory.EMS.LimitSpeed)
+// 1043           }          
+// 1044      }     
+// 1045      else           // 공회전 정지 중이 아닐때 30km(조정가능)이상 되었을때 정지조건에 추가한다.
+// 1046      {
+// 1047           if( Info.SPEED_Value > SFLASH_Memory.EMS.LimitSpeed)
 ??EMS_Watching_0:
         LDR.N    R0,??DataTable49_5
         LDRB     R0,[R0, #+147]
@@ -4014,58 +4036,58 @@ EMS_Watching:
         LDRB     R1,[R1, #+44]
         CMP      R0,R1
         BCS.N    ??EMS_Watching_8
-// 1037           {          
-// 1038                if(!CheckTimeOver(2000, EMS_WATCH_Timer))return;  // 2000ms 간 유지했을 경우 기준이상속도 체크
-        LDR.W    R0,??DataTable50_12
+// 1048           {          
+// 1049                if(!CheckTimeOver(2000, EMS_WATCH_Timer))return;  // 2000ms 간 유지했을 경우 기준이상속도 체크
+        LDR.W    R0,??DataTable50_11
         LDRH     R1,[R0, #+0]
         MOV      R0,#+2000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??EMS_Watching_2
-// 1039                {
-// 1040                     Ref_OverDrive = 1;                           // 오버 플래그 셋
+// 1050                {
+// 1051                     Ref_OverDrive = 1;                           // 오버 플래그 셋
 ??EMS_Watching_9:
-        LDR.W    R0,??DataTable50_5
+        LDR.W    R0,??DataTable50_4
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
         B.N      ??EMS_Watching_7
-// 1041                }               
-// 1042           }else
-// 1043           {
-// 1044                EMS_WATCH_Timer = MS_TIMER;
+// 1052                }               
+// 1053           }else
+// 1054           {
+// 1055                EMS_WATCH_Timer = MS_TIMER;
 ??EMS_Watching_8:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_12
+        LDR.W    R1,??DataTable50_11
         STRH     R0,[R1, #+0]
-// 1045           }
-// 1046      }
-// 1047      
-// 1048      if ( !(Info.Input_Status & INPUT_PARKING_BREAK_FLAG ))
+// 1056           }
+// 1057      }
+// 1058      
+// 1059      if ( !(Info.Input_Status & INPUT_PARKING_BREAK_FLAG ))
 ??EMS_Watching_7:
         LDR.N    R0,??DataTable49_4
         LDRB     R0,[R0, #+85]
         LSLS     R0,R0,#+29
         BMI.N    ??EMS_Watching_10
-// 1049           if( Info.SPEED_Value > SFLASH_Memory.EMS.LimitSpeed )	// 1km 이상 속도가
+// 1060           if( Info.SPEED_Value > SFLASH_Memory.EMS.LimitSpeed )	// 1km 이상 속도가
         LDR.N    R0,??DataTable49_5
         LDRB     R0,[R0, #+147]
         LDR.N    R1,??DataTable49_4
         LDRB     R1,[R1, #+44]
         CMP      R0,R1
         BCS.N    ??EMS_Watching_10
-// 1050                if( Flag.RPM1Min == 0 )  // RPM이 나타난지 1초 이후라면
+// 1061                if( Flag.RPM1Min == 0 )  // RPM이 나타난지 1초 이후라면
         LDR.N    R0,??DataTable49_6
         LDRB     R0,[R0, #+6]
         CMP      R0,#+0
         BNE.N    ??EMS_Watching_10
-// 1051                     EnginOffLimit_Flag = 0;       // 3초
+// 1062                     EnginOffLimit_Flag = 0;       // 3초
         LDR.N    R0,??DataTable49_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1052       
-// 1053 
-// 1054 }
+// 1063       
+// 1064 
+// 1065 }
 ??EMS_Watching_10:
 ??EMS_Watching_2:
         POP      {R0,PC}          ;; return
@@ -4107,36 +4129,36 @@ EMS_Watching:
         CFI Block cfiBlock31 Using cfiCommon0
         CFI Function EngineOn_Action
         THUMB
-// 1055 void EngineOn_Action(void)
-// 1056 {
+// 1066 void EngineOn_Action(void)
+// 1067 {
 EngineOn_Action:
         PUSH     {R7,LR}
         CFI R14 Frame(CFA, -4)
         CFI CFA R13+8
-// 1057      static u16 EngineOn_Timer1 = 0;
-// 1058      static u16 EngineOn_Timer2 = 0;     
-// 1059      
-// 1060      static u16 EngineOn_Fail_Timer = 0;
-// 1061      
-// 1062      static u8 EMS_Replay_FailCount = 0;
-// 1063      
-// 1064      if(!EnginOnActionFlag)
-        LDR.W    R0,??DataTable50_13
+// 1068      static u16 EngineOn_Timer1 = 0;
+// 1069      static u16 EngineOn_Timer2 = 0;     
+// 1070      
+// 1071      static u16 EngineOn_Fail_Timer = 0;
+// 1072      
+// 1073      static u8 EMS_Replay_FailCount = 0;
+// 1074      
+// 1075      if(!EnginOnActionFlag)
+        LDR.W    R0,??DataTable50_12
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BNE.N    ??EngineOn_Action_0
-// 1065      {
-// 1066           EnginOnActionStep = 0;
-        LDR.W    R0,??DataTable50_14
+// 1076      {
+// 1077           EnginOnActionStep = 0;
+        LDR.W    R0,??DataTable50_13
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1067           return;	
+// 1078           return;	
         B.N      ??EngineOn_Action_1
-// 1068      }     
-// 1069      
-// 1070      switch(EnginOnActionStep)
+// 1079      }     
+// 1080      
+// 1081      switch(EnginOnActionStep)
 ??EngineOn_Action_0:
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BEQ.N    ??EngineOn_Action_2
@@ -4147,346 +4169,346 @@ EngineOn_Action:
         BEQ.W    ??EngineOn_Action_5
         BCC.N    ??EngineOn_Action_6
         B.N      ??EngineOn_Action_7
-// 1071      {
-// 1072        case 0x00:
-// 1073           {
-// 1074                
-// 1075                if(!CheckTimeOver(50, EngineOn_Timer1))break;  //50ms 간 유지한다.              
+// 1082      {
+// 1083        case 0x00:
+// 1084           {
+// 1085                
+// 1086                if(!CheckTimeOver(50, EngineOn_Timer1))break;  //50ms 간 유지한다.              
 ??EngineOn_Action_2:
-        LDR.W    R0,??DataTable50_15
+        LDR.W    R0,??DataTable50_14
         LDRH     R1,[R0, #+0]
         MOVS     R0,#+50
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOn_Action_8
-// 1076                EngineOn_Timer1 = MS_TIMER;         
+// 1087                EngineOn_Timer1 = MS_TIMER;         
 ??EngineOn_Action_9:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_15
+        LDR.W    R1,??DataTable50_14
         STRH     R0,[R1, #+0]
-// 1077 		   
-// 1078                //Info.Battery_Volt = Info.Battery_Volt; //25;//BATTERY_Value;
-// 1079                // LOG -------------------------------------------------------------------------
-// 1080                // 로그 기록단위 500ms 
-// 1081                if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.W    R0,??DataTable50_1
+// 1088 		   
+// 1089                //Info.Battery_Volt = Info.Battery_Volt; //25;//BATTERY_Value;
+// 1090                // LOG -------------------------------------------------------------------------
+// 1091                // 로그 기록단위 500ms 
+// 1092                if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.W    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOn_Action_10
-// 1082                {
-// 1083                     sprintf((char*)Buffer,"ENGINE_ON %d step, Battery=%d \r\n ",EnginOnActionStep,Info.EMS_Data.Battery_Volt); 
+// 1093                {
+// 1094                     sprintf((char*)Buffer,"ENGINE_ON %d step, Battery=%d \r\n ",EnginOnActionStep,Info.EMS_Data.Battery_Volt); 
         LDR.N    R0,??DataTable49_4
         LDRH     R3,[R0, #+65]
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_ON %d step, Ba...">`
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       sprintf
-// 1084                     Write_Log(Buffer, NORMAL_LOG);
+// 1095                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       Write_Log
-// 1085                }            
-// 1086                // -----------------------------------------------------------------------------	
-// 1087 
-// 1088                EnginOnActionStep = 1;
+// 1096                }            
+// 1097                // -----------------------------------------------------------------------------	
+// 1098 
+// 1099                EnginOnActionStep = 1;
 ??EngineOn_Action_10:
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1089 
-// 1090           }break;
+// 1100 
+// 1101           }break;
         B.N      ??EngineOn_Action_8
-// 1091        case 0x01:
-// 1092           {               
-// 1093           //     EmsOutClear();    // 전출력 오프
-// 1094                SET_ENGINE_ON();    // 엔진 온
+// 1102        case 0x01:
+// 1103           {               
+// 1104           //     EmsOutClear();    // 전출력 오프
+// 1105                SET_ENGINE_ON();    // 엔진 온
 ??EngineOn_Action_4:
         BL       SET_ENGINE_ON
-// 1095                EngineOn_Timer1 = MS_TIMER;               
+// 1106                EngineOn_Timer1 = MS_TIMER;               
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_15
+        LDR.W    R1,??DataTable50_14
         STRH     R0,[R1, #+0]
-// 1096                // LOG -------------------------------------------------------------------------
-// 1097                // 로그 기록단위 500ms 
-// 1098                if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.W    R0,??DataTable50_1
+// 1107                // LOG -------------------------------------------------------------------------
+// 1108                // 로그 기록단위 500ms 
+// 1109                if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.W    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOn_Action_11
-// 1099                {
-// 1100                     sprintf((char*)Buffer,"ENGINE_ON %d step\r\n ",EnginOnActionStep); 
-        LDR.W    R0,??DataTable50_14
+// 1110                {
+// 1111                     sprintf((char*)Buffer,"ENGINE_ON %d step\r\n ",EnginOnActionStep); 
+        LDR.W    R0,??DataTable50_13
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_ON %d step\\r\\n ">`
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       sprintf
-// 1101                     Write_Log(Buffer, NORMAL_LOG);
+// 1112                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       Write_Log
-// 1102                }            
-// 1103                // -----------------------------------------------------------------------------	               
-// 1104                EnginOnActionStep = 2;
+// 1113                }            
+// 1114                // -----------------------------------------------------------------------------	               
+// 1115                EnginOnActionStep = 2;
 ??EngineOn_Action_11:
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
-// 1105                
-// 1106           }break;
+// 1116                
+// 1117           }break;
         B.N      ??EngineOn_Action_8
-// 1107        case 0x02:
-// 1108           {
-// 1109                // 0.5초 이내에 발생되는 신호는 노이즈로 간주한다.
-// 1110                if(!CheckTimeOver(500, EngineOn_Timer1))    // 0.5초안 시동이 켜지기를 기다린다.
+// 1118        case 0x02:
+// 1119           {
+// 1120                // 0.5초 이내에 발생되는 신호는 노이즈로 간주한다.
+// 1121                if(!CheckTimeOver(500, EngineOn_Timer1))    // 0.5초안 시동이 켜지기를 기다린다.
 ??EngineOn_Action_3:
-        LDR.W    R0,??DataTable50_15
+        LDR.W    R0,??DataTable50_14
         LDRH     R1,[R0, #+0]
         MOV      R0,#+500
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOn_Action_1
-// 1111                { 
-// 1112                     return;
-// 1113                } 
-// 1114                else
-// 1115                {
-// 1116                     EngineOn_Timer1 = MS_TIMER;
+// 1122                { 
+// 1123                     return;
+// 1124                } 
+// 1125                else
+// 1126                {
+// 1127                     EngineOn_Timer1 = MS_TIMER;
 ??EngineOn_Action_12:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_15
+        LDR.W    R1,??DataTable50_14
         STRH     R0,[R1, #+0]
-// 1117                     EnginOnActionStep = 3;
-        LDR.W    R0,??DataTable50_14
+// 1128                     EnginOnActionStep = 3;
+        LDR.W    R0,??DataTable50_13
         MOVS     R1,#+3
         STRB     R1,[R0, #+0]
-// 1118                }
-// 1119           }break;
+// 1129                }
+// 1130           }break;
         B.N      ??EngineOn_Action_8
-// 1120      case 0x03:
-// 1121           {
-// 1122                if(!CheckTimeOver(2500, EngineOn_Timer1))    // 2.5초안 시동이 켜지기를 기다린다.
+// 1131      case 0x03:
+// 1132           {
+// 1133                if(!CheckTimeOver(2500, EngineOn_Timer1))    // 2.5초안 시동이 켜지기를 기다린다.
 ??EngineOn_Action_6:
-        LDR.W    R0,??DataTable50_15
+        LDR.W    R0,??DataTable50_14
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+2500
         BL       CheckTimeOver
         CMP      R0,#+0
         BNE.N    ??EngineOn_Action_13
-// 1123                {
-// 1124                     if(Info.RPM_Value > 250)    //rpm이 0이 될때 까지 기둘린다.                    
+// 1134                {
+// 1135                     if(Info.RPM_Value > 250)    //rpm이 0이 될때 까지 기둘린다.                    
         LDR.N    R0,??DataTable49_4
         LDRH     R0,[R0, #+45]
         CMP      R0,#+251
         BCC.N    ??EngineOn_Action_14
-// 1125                     {
-// 1126                                            
-// 1127                          if(!CheckTimeOver(100, EngineOn_Timer2))break;  //     100ms 간 유지하면 시동 온으로 인정한다.
-        LDR.W    R0,??DataTable50_16
+// 1136                     {
+// 1137                                            
+// 1138                          if(!CheckTimeOver(100, EngineOn_Timer2))break;  //     100ms 간 유지하면 시동 온으로 인정한다.
+        LDR.W    R0,??DataTable50_15
         LDRH     R1,[R0, #+0]
         MOVS     R0,#+100
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOn_Action_8
-// 1128                          {
-// 1129                               RESET_ENGINE_ON();    // 엔진 온                              
+// 1139                          {
+// 1140                               RESET_ENGINE_ON();    // 엔진 온                              
 ??EngineOn_Action_15:
         BL       RESET_ENGINE_ON
-// 1130                               // LOG -------------------------------------------------------------------------
-// 1131                               // 로그  
-// 1132                               if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.W    R0,??DataTable50_1
+// 1141                               // LOG -------------------------------------------------------------------------
+// 1142                               // 로그  
+// 1143                               if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.W    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOn_Action_16
-// 1133                               {
-// 1134                                    sprintf((char*)Buffer,"ENGINE_ON %d step %d rpm \r\n ",EnginOnActionStep,Info.RPM_Value);
+// 1144                               {
+// 1145                                    sprintf((char*)Buffer,"ENGINE_ON %d step %d rpm \r\n ",EnginOnActionStep,Info.RPM_Value);
         LDR.N    R0,??DataTable49_4
         LDRH     R3,[R0, #+45]
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_ON %d step %d ...">`
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       sprintf
-// 1135                                    Write_Log(Buffer, NORMAL_LOG);
+// 1146                                    Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       Write_Log
-// 1136                               }            
-// 1137                               // -----------------------------------------------------------------------------	                              
-// 1138                               EnginOnActionStep = 4;
+// 1147                               }            
+// 1148                               // -----------------------------------------------------------------------------	                              
+// 1149                               EnginOnActionStep = 4;
 ??EngineOn_Action_16:
-        LDR.W    R0,??DataTable50_14
+        LDR.W    R0,??DataTable50_13
         MOVS     R1,#+4
         STRB     R1,[R0, #+0]
         B.N      ??EngineOn_Action_17
-// 1139                          }                        
-// 1140                     }
-// 1141                     else
-// 1142                     {
-// 1143                          EngineOn_Timer2 = MS_TIMER;
+// 1150                          }                        
+// 1151                     }
+// 1152                     else
+// 1153                     {
+// 1154                          EngineOn_Timer2 = MS_TIMER;
 ??EngineOn_Action_14:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_16
+        LDR.W    R1,??DataTable50_15
         STRH     R0,[R1, #+0]
         B.N      ??EngineOn_Action_17
-// 1144                     }
-// 1145                }
-// 1146                else   // 재시동 실패 
-// 1147                {
-// 1148                // LOG -------------------------------------------------------------------------
-// 1149                // 로그   
-// 1150                     if(LOGWRITE & LOG_EMS_ENGINE)
+// 1155                     }
+// 1156                }
+// 1157                else   // 재시동 실패 
+// 1158                {
+// 1159                // LOG -------------------------------------------------------------------------
+// 1160                // 로그   
+// 1161                     if(LOGWRITE & LOG_EMS_ENGINE)
 ??EngineOn_Action_13:
-        LDR.W    R0,??DataTable50_1
+        LDR.W    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOn_Action_18
-// 1151                     {
-// 1152                          sprintf((char*)Buffer,"ENGINE_ON FAIL %d step\r\n ",EnginOnActionStep); 
-        LDR.W    R0,??DataTable50_14
+// 1162                     {
+// 1163                          sprintf((char*)Buffer,"ENGINE_ON FAIL %d step\r\n ",EnginOnActionStep); 
+        LDR.W    R0,??DataTable50_13
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_ON FAIL %d ste...">`
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       sprintf
-// 1153                          Write_Log(Buffer, FAIL_LOG);
+// 1164                          Write_Log(Buffer, FAIL_LOG);
         MOVS     R1,#+2
-        LDR.W    R0,??DataTable50_3
+        LDR.W    R0,??DataTable50_2
         BL       Write_Log
-// 1154                     }            
-// 1155                // -----------------------------------------------------------------------------	                    
-// 1156                     RESET_ENGINE_ON();
+// 1165                     }            
+// 1166                // -----------------------------------------------------------------------------	                    
+// 1167                     RESET_ENGINE_ON();
 ??EngineOn_Action_18:
         BL       RESET_ENGINE_ON
-// 1157                     
-// 1158                     if(EMS_Replay_FailCount == 0)           // 스타트 실패시부터 1분 타이머 설정
-        LDR.W    R0,??DataTable50_17
+// 1168                     
+// 1169                     if(EMS_Replay_FailCount == 0)           // 스타트 실패시부터 1분 타이머 설정
+        LDR.W    R0,??DataTable50_16
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BNE.N    ??EngineOn_Action_19
-// 1159                     {
-// 1160                          EngineOn_Fail_Timer = MS_TIMER_1sec;
-        LDR.W    R0,??DataTable50_18
-        LDR.N    R1,??DataTable49_10
+// 1170                     {
+// 1171                          EngineOn_Fail_Timer = MS_TIMER_1sec;
+        LDR.W    R0,??DataTable50_17
+        LDR.N    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
-// 1161                          EMS_Replay_FailCount ++;
-        LDR.W    R0,??DataTable50_17
+// 1172                          EMS_Replay_FailCount ++;
+        LDR.W    R0,??DataTable50_16
         LDRB     R0,[R0, #+0]
         ADDS     R0,R0,#+1
-        LDR.W    R1,??DataTable50_17
+        LDR.W    R1,??DataTable50_16
         STRB     R0,[R1, #+0]
         B.N      ??EngineOn_Action_20
-// 1162                     }          
-// 1163                     else if( !CheckTimeOver1Sec ( 60 , EngineOn_Fail_Timer ) ) // 1분이내에 스타트 실패시 재시동금지
+// 1173                     }          
+// 1174                     else if( !CheckTimeOver1Sec ( 60 , EngineOn_Fail_Timer ) ) // 1분이내에 스타트 실패시 재시동금지
 ??EngineOn_Action_19:
-        LDR.W    R0,??DataTable50_18
+        LDR.W    R0,??DataTable50_17
         LDRH     R1,[R0, #+0]
         MOVS     R0,#+60
         BL       CheckTimeOver1Sec
         CMP      R0,#+0
         BNE.N    ??EngineOn_Action_20
-// 1164                     {
-// 1165                          EngineOn_Fail_Timer = 0;
-        LDR.W    R0,??DataTable50_18
+// 1175                     {
+// 1176                          EngineOn_Fail_Timer = 0;
+        LDR.W    R0,??DataTable50_17
         MOVS     R1,#+0
         STRH     R1,[R0, #+0]
-// 1166                          EMS_Replay_Flag = 1;               // 1분간 재시도 2회실패 플래그 셋
-        LDR.W    R0,??DataTable50_19
+// 1177                          EMS_Replay_Flag = 1;               // 1분간 재시도 2회실패 플래그 셋
+        LDR.W    R0,??DataTable50_18
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1167                     }
-// 1168                     
-// 1169                     EnginOnLimit_Time = MS_TIMER;
+// 1178                     }
+// 1179                     
+// 1180                     EnginOnLimit_Time = MS_TIMER;
 ??EngineOn_Action_20:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_20
+        LDR.W    R1,??DataTable50_19
         STRH     R0,[R1, #+0]
-// 1170                     EnginOnActionStep = 0;                                        
-        LDR.W    R0,??DataTable50_14
-        MOVS     R1,#+0
-        STRB     R1,[R0, #+0]
-// 1171                     EnginOnActionFlag = 0 ;
+// 1181                     EnginOnActionStep = 0;                                        
         LDR.W    R0,??DataTable50_13
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1172                }
-// 1173           }break;
+// 1182                     EnginOnActionFlag = 0 ;
+        LDR.W    R0,??DataTable50_12
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+// 1183                }
+// 1184           }break;
 ??EngineOn_Action_17:
         B.N      ??EngineOn_Action_8
-// 1174        case 0x04:                       // 시동온 동작 시작
-// 1175           {
-// 1176                EMS_Reley_Off = 1 ;      // 릴레이 동작 플래그
+// 1185        case 0x04:                       // 시동온 동작 시작
+// 1186           {
+// 1187                EMS_Reley_Off = 1 ;      // 릴레이 동작 플래그
 ??EngineOn_Action_5:
-        LDR.W    R0,??DataTable50_6
+        LDR.W    R0,??DataTable50_5
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1177 
-// 1178                EnginOnLimit_Time = MS_TIMER;
+// 1188 
+// 1189                EnginOnLimit_Time = MS_TIMER;
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_20
+        LDR.W    R1,??DataTable50_19
         STRH     R0,[R1, #+0]
-// 1179                EnginOffLimit_Time = MS_TIMER_1sec;
+// 1190                EnginOffLimit_Time = MS_TIMER_1sec;
         LDR.N    R0,??DataTable49_8
-        LDR.N    R1,??DataTable49_10
+        LDR.N    R1,??DataTable49_11
         LDRH     R1,[R1, #+0]
         STRH     R1,[R0, #+0]
-// 1180                EnginOffLimit_Flag = 1;
+// 1191                EnginOffLimit_Flag = 1;
         LDR.N    R0,??DataTable49_7
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1181                EnginOnActionStep = 0;                                        
-        LDR.W    R0,??DataTable50_14
-        MOVS     R1,#+0
-        STRB     R1,[R0, #+0]
-// 1182                EnginOnActionFlag = 0 ;
+// 1192                EnginOnActionStep = 0;                                        
         LDR.W    R0,??DataTable50_13
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1183                EnginOff_Flag = 0;   
-        LDR.W    R0,??DataTable50_8
+// 1193                EnginOnActionFlag = 0 ;
+        LDR.W    R0,??DataTable50_12
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1184                
-// 1185                EngineOn_Fail_Timer = 0;
-        LDR.W    R0,??DataTable50_18
-        MOVS     R1,#+0
-        STRH     R1,[R0, #+0]
-// 1186                EMS_Replay_Flag = 0;     // 공회전 1분간 2 실패체크 플래그 클리어
-        LDR.W    R0,??DataTable50_19
+// 1194                EnginOff_Flag = 0;   
+        LDR.W    R0,??DataTable50_7
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1187                EMS_Replay_FailCount = 0;               
+// 1195                
+// 1196                EngineOn_Fail_Timer = 0;
         LDR.W    R0,??DataTable50_17
         MOVS     R1,#+0
+        STRH     R1,[R0, #+0]
+// 1197                EMS_Replay_Flag = 0;     // 공회전 1분간 2 실패체크 플래그 클리어
+        LDR.W    R0,??DataTable50_18
+        MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1188           }
-// 1189           
-// 1190        default:
-// 1191           {
-// 1192                EnginOnLimit_Time = MS_TIMER;
+// 1198                EMS_Replay_FailCount = 0;               
+        LDR.W    R0,??DataTable50_16
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+// 1199           }
+// 1200           
+// 1201        default:
+// 1202           {
+// 1203                EnginOnLimit_Time = MS_TIMER;
 ??EngineOn_Action_7:
         LDR.N    R0,??DataTable49_1  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.W    R1,??DataTable50_20
+        LDR.W    R1,??DataTable50_19
         STRH     R0,[R1, #+0]
-// 1193                EnginOnActionStep = 0;                                        
-        LDR.W    R0,??DataTable50_14
-        MOVS     R1,#+0
-        STRB     R1,[R0, #+0]
-// 1194                EnginOnActionFlag = 0 ;               
+// 1204                EnginOnActionStep = 0;                                        
         LDR.W    R0,??DataTable50_13
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1195           }break;
-// 1196      }          
-// 1197 }
+// 1205                EnginOnActionFlag = 0 ;               
+        LDR.W    R0,??DataTable50_12
+        MOVS     R1,#+0
+        STRB     R1,[R0, #+0]
+// 1206           }break;
+// 1207      }          
+// 1208 }
 ??EngineOn_Action_8:
 ??EngineOn_Action_1:
         POP      {R0,PC}          ;; return
@@ -4540,11 +4562,16 @@ EngineOn_Action:
         SECTION `.text`:CODE:NOROOT(2)
         DATA
 ??DataTable49_9:
-        DC32     EMSOff_Check
+        DC32     ??EMSOff_Timer
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
 ??DataTable49_10:
+        DC32     EMSOff_Check
+
+        SECTION `.text`:CODE:NOROOT(2)
+        DATA
+??DataTable49_11:
         DC32     Timer_1Sec
 
         SECTION `.text`:CODE:NOROOT(2)
@@ -4617,31 +4644,31 @@ EngineOn_Action:
         CFI Block cfiBlock32 Using cfiCommon0
         CFI Function EngineOff_Action
         THUMB
-// 1198 void EngineOff_Action(void)
-// 1199 {
+// 1209 void EngineOff_Action(void)
+// 1210 {
 EngineOff_Action:
         PUSH     {R7,LR}
         CFI R14 Frame(CFA, -4)
         CFI CFA R13+8
-// 1200      static u16 EngineOff_Timer1 = 0;
-// 1201      static u16 EngineOff_Timer2 = 0;     
-// 1202      if(!EnginOffActionFlag)
-        LDR.N    R0,??DataTable50_21
+// 1211      static u16 EngineOff_Timer1 = 0;
+// 1212      static u16 EngineOff_Timer2 = 0;     
+// 1213      if(!EnginOffActionFlag)
+        LDR.N    R0,??DataTable50_20
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BNE.N    ??EngineOff_Action_0
-// 1203      {          
-// 1204           EnginOffActionStep = 0;    
-        LDR.N    R0,??DataTable50_4
+// 1214      {          
+// 1215           EnginOffActionStep = 0;    
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1205           return;
+// 1216           return;
         B.N      ??EngineOff_Action_1
-// 1206      }
-// 1207 	
-// 1208      switch(EnginOffActionStep)
+// 1217      }
+// 1218 	
+// 1219      switch(EnginOffActionStep)
 ??EngineOff_Action_0:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         LDRB     R0,[R0, #+0]
         CMP      R0,#+0
         BEQ.N    ??EngineOff_Action_2
@@ -4655,423 +4682,423 @@ EngineOff_Action:
         BEQ.W    ??EngineOff_Action_7
         BCC.W    ??EngineOff_Action_8
         B.N      ??EngineOff_Action_9
-// 1209      {
-// 1210 	case 0x00 : 
-// 1211            
-// 1212            // LOG -------------------------------------------------------------------------
-// 1213            // 로그 기록단위 500ms 
-// 1214            if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1220      {
+// 1221 	case 0x00 : 
+// 1222            
+// 1223            // LOG -------------------------------------------------------------------------
+// 1224            // 로그 기록단위 500ms 
+// 1225            if(LOGWRITE & LOG_EMS_ENGINE)                       
 ??EngineOff_Action_2:
-        LDR.N    R0,??DataTable50_1
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_10
-// 1215           {
-// 1216                sprintf((char*)Buffer,"ENGINE_OFF %d step\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1226           {
+// 1227                sprintf((char*)Buffer,"ENGINE_OFF %d step\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step\\r\\n ">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1217                Write_Log(Buffer, NORMAL_LOG);
+// 1228                Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1218           }            
-// 1219           // -----------------------------------------------------------------------------	
-// 1220           EmsOutClear();    // 전출력 오프  
+// 1229           }            
+// 1230           // -----------------------------------------------------------------------------	
+// 1231           EmsOutClear();    // 전출력 오프  
 ??EngineOff_Action_10:
         BL       EmsOutClear
-// 1221           SET_ENGINE_OFF();    // 엔진 온
+// 1232           SET_ENGINE_OFF();    // 엔진 온
         BL       SET_ENGINE_OFF
-// 1222           EnginOffActionStep = 1;   // 다음 스템
-        LDR.N    R0,??DataTable50_4
+// 1233           EnginOffActionStep = 1;   // 다음 스템
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1223           EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+// 1234           EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
+        BL       TIM_GetCounter
+        LDR.N    R1,??DataTable50_22
+        STRH     R0,[R1, #+0]
+// 1235           EngineOff_Timer2 = MS_TIMER;    // 10초간 대기
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
         LDR.N    R1,??DataTable50_23
         STRH     R0,[R1, #+0]
-// 1224           EngineOff_Timer2 = MS_TIMER;    // 10초간 대기
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
-        BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_24
-        STRH     R0,[R1, #+0]
-// 1225           break;
+// 1236           break;
         B.N      ??EngineOff_Action_11
-// 1226 		
-// 1227 	case 0x01 : 
-// 1228            {
-// 1229                 
-// 1230 		if(Info.RPM_Value == 0)    //rpm이 0이 될때 까지 기둘린다.
+// 1237 		
+// 1238 	case 0x01 : 
+// 1239            {
+// 1240                 
+// 1241 		if(Info.RPM_Value == 0)    //rpm이 0이 될때 까지 기둘린다.
 ??EngineOff_Action_4:
-        LDR.N    R0,??DataTable50_25
+        LDR.N    R0,??DataTable50_24
         LDRH     R0,[R0, #+45]
         CMP      R0,#+0
         BNE.N    ??EngineOff_Action_12
-// 1231           {
-// 1232                if(!CheckTimeOver(100, EngineOff_Timer1))break;  //100ms 간 유지한다.
-        LDR.N    R0,??DataTable50_23
+// 1242           {
+// 1243                if(!CheckTimeOver(2000, EngineOff_Timer1))break;  //2000ms 간 유지한다. [V000033]
+        LDR.N    R0,??DataTable50_22
         LDRH     R1,[R0, #+0]
-        MOVS     R0,#+100
+        MOV      R0,#+2000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOff_Action_11
-// 1233                EnginOffActionStep = 2;
+// 1244                EnginOffActionStep = 2;
 ??EngineOff_Action_13:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
-// 1234                // LOG -------------------------------------------------------------------------
-// 1235                // 로그 기록단위 정상적으로 종료됨
-// 1236                if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.N    R0,??DataTable50_1
+// 1245                // LOG -------------------------------------------------------------------------
+// 1246                // 로그 기록단위 정상적으로 종료됨
+// 1247                if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_14
-// 1237                {
-// 1238                     sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1248                {
+// 1249                     sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step \\r\\n ">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1239                     Write_Log(Buffer, NORMAL_LOG);
+// 1250                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
         B.N      ??EngineOff_Action_14
-// 1240                }            
-// 1241                // -----------------------------------------------------------------------------
-// 1242                
-// 1243           }
-// 1244           else        // rpm이 10초간 0으로 떨어지지 않으면 장치의 이상 
-// 1245           {
-// 1246                EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                     
+// 1251                }            
+// 1252                // -----------------------------------------------------------------------------
+// 1253                
+// 1254           }
+// 1255           else        // rpm이 10초간 0으로 떨어지지 않으면 장치의 이상 
+// 1256           {
+// 1257                EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                     
 ??EngineOff_Action_12:
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_23
+        LDR.N    R1,??DataTable50_22
         STRH     R0,[R1, #+0]
-// 1247                if(!CheckTimeOver(10000, EngineOff_Timer2))break;  //10초간 
-        LDR.N    R0,??DataTable50_24
+// 1258                if(!CheckTimeOver(10000, EngineOff_Timer2))break;  //10초간 
+        LDR.N    R0,??DataTable50_23
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+10000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOff_Action_11
-// 1248                // LOG -------------------------------------------------------------------------
-// 1249                // 로그 기록단위 Error
-// 1250                if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1259                // LOG -------------------------------------------------------------------------
+// 1260                // 로그 기록단위 Error
+// 1261                if(LOGWRITE & LOG_EMS_ENGINE)                       
 ??EngineOff_Action_15:
-        LDR.N    R0,??DataTable50_1
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_16
-// 1251                {
-// 1252                     sprintf((char*)Buffer,"ENGINE_OFF %d step RPM_TimerOut\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1262                {
+// 1263                     sprintf((char*)Buffer,"ENGINE_OFF %d step RPM_TimerOut\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step RP...">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1253                     Write_Log(Buffer, FAIL_LOG);
+// 1264                     Write_Log(Buffer, FAIL_LOG);
         MOVS     R1,#+2
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1254                }            
-// 1255                RESET_ENGINE_OFF();
+// 1265                }            
+// 1266                RESET_ENGINE_OFF();
 ??EngineOff_Action_16:
         BL       RESET_ENGINE_OFF
-// 1256                EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 10초간 딜레이
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+// 1267                EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 10초간 딜레이
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_20
+        LDR.N    R1,??DataTable50_19
         STRH     R0,[R1, #+0]
-// 1257                EnginOffActionStep = 0 ;   // step 과  Flag 클리어
-        LDR.N    R0,??DataTable50_4
+// 1268                EnginOffActionStep = 0 ;   // step 과  Flag 클리어
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1258                EnginOffActionFlag = 0 ;
-        LDR.N    R0,??DataTable50_21
+// 1269                EnginOffActionFlag = 0 ;
+        LDR.N    R0,??DataTable50_20
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1259           // -----------------------------------------------------------------------------	                     
-// 1260                      
-// 1261           }
-// 1262 
-// 1263 		EnginOffActionStep = 2;
+// 1270           // -----------------------------------------------------------------------------	                     
+// 1271                      
+// 1272           }
+// 1273 
+// 1274 		EnginOffActionStep = 2;
 ??EngineOff_Action_14:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
-// 1264 		break;
+// 1275 		break;
         B.N      ??EngineOff_Action_11
-// 1265            }
-// 1266 	case 0x02 : 
-// 1267            {
-// 1268                 RESET_ENGINE_OFF();    // 엔진 온
+// 1276            }
+// 1277 	case 0x02 : 
+// 1278            {
+// 1279                 RESET_ENGINE_OFF();    // 엔진 온
 ??EngineOff_Action_3:
         BL       RESET_ENGINE_OFF
-// 1269                 EnginOffActionStep = 3;
-        LDR.N    R0,??DataTable50_4
+// 1280                 EnginOffActionStep = 3;
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+3
         STRB     R1,[R0, #+0]
-// 1270                 EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                         
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+// 1281                 EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                         
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_23
+        LDR.N    R1,??DataTable50_22
         STRH     R0,[R1, #+0]
-// 1271 
-// 1272            // LOG -------------------------------------------------------------------------
-// 1273            // 로그 기록단위 정상적으로 종료됨
-// 1274                      if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.N    R0,??DataTable50_1
+// 1282 
+// 1283            // LOG -------------------------------------------------------------------------
+// 1284            // 로그 기록단위 정상적으로 종료됨
+// 1285                      if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_17
-// 1275                      {
-// 1276                           sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1286                      {
+// 1287                           sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step \\r\\n ">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1277                           Write_Log(Buffer, NORMAL_LOG);
+// 1288                           Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1278                      }            
-// 1279           // -----------------------------------------------------------------------------
-// 1280                  
-// 1281 		break;
+// 1289                      }            
+// 1290           // -----------------------------------------------------------------------------
+// 1291                  
+// 1292 		break;
 ??EngineOff_Action_17:
         B.N      ??EngineOff_Action_11
-// 1282            }
-// 1283 	case 0x03 : 
-// 1284            {
-// 1285                 if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //1초간 대기
+// 1293            }
+// 1294 	case 0x03 : 
+// 1295            {
+// 1296                 if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //1초간 대기
 ??EngineOff_Action_6:
-        LDR.N    R0,??DataTable50_23
+        LDR.N    R0,??DataTable50_22
         LDRH     R1,[R0, #+0]
         MOV      R0,#+1000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOff_Action_11
-// 1286                 EngineOff_Timer1 = MS_TIMER;	
+// 1297                 EngineOff_Timer1 = MS_TIMER;	
 ??EngineOff_Action_18:
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_23
+        LDR.N    R1,??DataTable50_22
         STRH     R0,[R1, #+0]
-// 1287                 SET_LIGHT();
+// 1298                 SET_LIGHT();
         BL       SET_LIGHT
-// 1288                 // LOG -------------------------------------------------------------------------
-// 1289                 // 로그 기록단위 정상적으로 종료됨
-// 1290                 if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.N    R0,??DataTable50_1
+// 1299                 // LOG -------------------------------------------------------------------------
+// 1300                 // 로그 기록단위 정상적으로 종료됨
+// 1301                 if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_19
-// 1291                 {
-// 1292                      sprintf((char*)Buffer,"ENGINE_OFF %d step SET_LIGHT_RELAY\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1302                 {
+// 1303                      sprintf((char*)Buffer,"ENGINE_OFF %d step SET_LIGHT_RELAY\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step SE...">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1293                      Write_Log(Buffer, NORMAL_LOG);
+// 1304                      Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1294                 }            
-// 1295                 // -----------------------------------------------------------------------------
-// 1296                 EnginOffActionStep = 4;		    
+// 1305                 }            
+// 1306                 // -----------------------------------------------------------------------------
+// 1307                 EnginOffActionStep = 4;		    
 ??EngineOff_Action_19:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+4
         STRB     R1,[R0, #+0]
-// 1297                 break;                                 
+// 1308                 break;                                 
         B.N      ??EngineOff_Action_11
-// 1298            }
-// 1299 	case 0x04 : 
-// 1300            {
-// 1301 		if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //500ms 후에 AIRCON
+// 1309            }
+// 1310 	case 0x04 : 
+// 1311            {
+// 1312 		if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //500ms 후에 AIRCON
 ??EngineOff_Action_5:
-        LDR.N    R0,??DataTable50_23
+        LDR.N    R0,??DataTable50_22
         LDRH     R1,[R0, #+0]
         MOV      R0,#+1000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??EngineOff_Action_11
-// 1302 		EngineOff_Timer1 = MS_TIMER;	
+// 1313 		EngineOff_Timer1 = MS_TIMER;	
 ??EngineOff_Action_20:
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_23
+        LDR.N    R1,??DataTable50_22
         STRH     R0,[R1, #+0]
-// 1303            // LOG -------------------------------------------------------------------------
-// 1304            // 로그 기록단위 정상적으로 종료됨
-// 1305                      if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.N    R0,??DataTable50_1
+// 1314            // LOG -------------------------------------------------------------------------
+// 1315            // 로그 기록단위 정상적으로 종료됨
+// 1316                      if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_21
-// 1306                      {
-// 1307                           sprintf((char*)Buffer,"ENGINE_OFF %d step SET_AIRCON_RELAY\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1317                      {
+// 1318                           sprintf((char*)Buffer,"ENGINE_OFF %d step SET_AIRCON_RELAY\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step SE...">_1`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1308                           Write_Log(Buffer, NORMAL_LOG);
+// 1319                           Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1309                      }            
-// 1310           // -----------------------------------------------------------------------------                
-// 1311 		SET_HITER();
+// 1320                      }            
+// 1321           // -----------------------------------------------------------------------------                
+// 1322 		SET_HITER();
 ??EngineOff_Action_21:
         BL       SET_HITER
-// 1312 	
-// 1313                  
-// 1314 		EnginOffActionStep = 5;
-        LDR.N    R0,??DataTable50_4
+// 1323 	
+// 1324                  
+// 1325 		EnginOffActionStep = 5;
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+5
         STRB     R1,[R0, #+0]
-// 1315                 
-// 1316 		break;
+// 1326                 
+// 1327 		break;
         B.N      ??EngineOff_Action_11
-// 1317            }
-// 1318           case 0x05 : 
-// 1319           {
-// 1320                if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //500ms 후에 AIRCON
+// 1328            }
+// 1329           case 0x05 : 
+// 1330           {
+// 1331                if(!CheckTimeOver(1000, EngineOff_Timer1))break;  //500ms 후에 AIRCON
 ??EngineOff_Action_8:
-        LDR.N    R0,??DataTable50_23
+        LDR.N    R0,??DataTable50_22
         LDRH     R1,[R0, #+0]
         MOV      R0,#+1000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.N    ??EngineOff_Action_11
-// 1321                EngineOff_Timer1 = MS_TIMER;	
+// 1332                EngineOff_Timer1 = MS_TIMER;	
 ??EngineOff_Action_22:
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_23
+        LDR.N    R1,??DataTable50_22
         STRH     R0,[R1, #+0]
-// 1322                // LOG -------------------------------------------------------------------------
-// 1323                // 로그 기록단위 정상적으로 종료됨
-// 1324                if(LOGWRITE & LOG_EMS_ENGINE)                       
-        LDR.N    R0,??DataTable50_1
+// 1333                // LOG -------------------------------------------------------------------------
+// 1334                // 로그 기록단위 정상적으로 종료됨
+// 1335                if(LOGWRITE & LOG_EMS_ENGINE)                       
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_23
-// 1325                {
-// 1326                     sprintf((char*)Buffer,"ENGINE_OFF %d step SET_AIRCON_RELAY\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1336                {
+// 1337                     sprintf((char*)Buffer,"ENGINE_OFF %d step SET_AIRCON_RELAY\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step SE...">_1`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1327                     Write_Log(Buffer, NORMAL_LOG);
+// 1338                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1328                }            
-// 1329                // -----------------------------------------------------------------------------                
-// 1330                SET_AIRCON();
+// 1339                }            
+// 1340                // -----------------------------------------------------------------------------                
+// 1341                SET_AIRCON();
 ??EngineOff_Action_23:
         BL       SET_AIRCON
-// 1331                EnginOffActionStep = 6;
-        LDR.N    R0,??DataTable50_4
+// 1342                EnginOffActionStep = 6;
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+6
         STRB     R1,[R0, #+0]
-// 1332                break;
+// 1343                break;
         B.N      ??EngineOff_Action_11
-// 1333           }          
-// 1334           case 0x06 : 
-// 1335           {
-// 1336                // LOG -------------------------------------------------------------------------
-// 1337                // 로그 기록단위 정상적으로 종료됨
-// 1338                if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1344           }          
+// 1345           case 0x06 : 
+// 1346           {
+// 1347                // LOG -------------------------------------------------------------------------
+// 1348                // 로그 기록단위 정상적으로 종료됨
+// 1349                if(LOGWRITE & LOG_EMS_ENGINE)                       
 ??EngineOff_Action_7:
-        LDR.N    R0,??DataTable50_1
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_24
-// 1339                {
-// 1340                     sprintf((char*)Buffer,"ENGINE_OFF %d step Done\r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1350                {
+// 1351                     sprintf((char*)Buffer,"ENGINE_OFF %d step Done\r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step Do...">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1341                     Write_Log(Buffer, NORMAL_LOG);
+// 1352                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1342                }            
-// 1343                // -----------------------------------------------------------------------------      	
-// 1344                EnginOffActionStep = 0;
+// 1353                }            
+// 1354                // -----------------------------------------------------------------------------      	
+// 1355                EnginOffActionStep = 0;
 ??EngineOff_Action_24:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1345                EnginOffActionFlag = 0;
-        LDR.N    R0,??DataTable50_21
+// 1356                EnginOffActionFlag = 0;
+        LDR.N    R0,??DataTable50_20
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1346                EnginOff_Flag = 1;
-        LDR.N    R0,??DataTable50_8
+// 1357                EnginOff_Flag = 1;
+        LDR.N    R0,??DataTable50_7
         MOVS     R1,#+1
         STRB     R1,[R0, #+0]
-// 1347                EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 3초간 딜레이
-        LDR.N    R0,??DataTable50_22  ;; 0x40000c00
+// 1358                EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 3초간 딜레이
+        LDR.N    R0,??DataTable50_21  ;; 0x40000c00
         BL       TIM_GetCounter
-        LDR.N    R1,??DataTable50_20
+        LDR.N    R1,??DataTable50_19
         STRH     R0,[R1, #+0]
-// 1348                EnginOffActionStep = 7;
-        LDR.N    R0,??DataTable50_4
+// 1359                EnginOffActionStep = 7;
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+7
         STRB     R1,[R0, #+0]
-// 1349                break;
+// 1360                break;
         B.N      ??EngineOff_Action_11
-// 1350           }
-// 1351 
-// 1352 	default : 
-// 1353            {
-// 1354            // LOG -------------------------------------------------------------------------
-// 1355            // 로그 기록단위 정상적으로 종료됨
-// 1356                      if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1361           }
+// 1362 
+// 1363 	default : 
+// 1364            {
+// 1365            // LOG -------------------------------------------------------------------------
+// 1366            // 로그 기록단위 정상적으로 종료됨
+// 1367                      if(LOGWRITE & LOG_EMS_ENGINE)                       
 ??EngineOff_Action_9:
-        LDR.N    R0,??DataTable50_1
+        LDR.N    R0,??DataTable50
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_25
-// 1357                      {
-// 1358                           sprintf((char*)Buffer,"ENGINE_OFF %d step / StepError \r\n ",EnginOffActionStep); 
-        LDR.N    R0,??DataTable50_4
+// 1368                      {
+// 1369                           sprintf((char*)Buffer,"ENGINE_OFF %d step / StepError \r\n ",EnginOffActionStep); 
+        LDR.N    R0,??DataTable50_3
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step / ...">`
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       sprintf
-// 1359                           Write_Log(Buffer, ERROR_LOG);
+// 1370                           Write_Log(Buffer, ERROR_LOG);
         MOVS     R1,#+4
-        LDR.N    R0,??DataTable50_3
+        LDR.N    R0,??DataTable50_2
         BL       Write_Log
-// 1360                      }            
-// 1361           // -----------------------------------------------------------------------------                      
-// 1362 		EnginOffActionStep = 0;
+// 1371                      }            
+// 1372           // -----------------------------------------------------------------------------                      
+// 1373 		EnginOffActionStep = 0;
 ??EngineOff_Action_25:
-        LDR.N    R0,??DataTable50_4
+        LDR.N    R0,??DataTable50_3
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1363 
-// 1364 		break;
-// 1365            }
-// 1366      }
-// 1367 }
+// 1374 
+// 1375 		break;
+// 1376            }
+// 1377      }
+// 1378 }
 ??EngineOff_Action_11:
 ??EngineOff_Action_1:
         POP      {R0,PC}          ;; return
@@ -5080,131 +5107,126 @@ EngineOff_Action:
         SECTION `.text`:CODE:NOROOT(2)
         DATA
 ??DataTable50:
-        DC32     ??EMSOff_Timer
-
-        SECTION `.text`:CODE:NOROOT(2)
-        DATA
-??DataTable50_1:
         DC32     LOGWRITE
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_2:
+??DataTable50_1:
         DC32     `?<Constant "ENGINE_OFF PARKING_BR...">`
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_3:
+??DataTable50_2:
         DC32     Buffer
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_4:
+??DataTable50_3:
         DC32     EnginOffActionStep
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_5:
+??DataTable50_4:
         DC32     Ref_OverDrive
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_6:
+??DataTable50_5:
         DC32     EMS_Reley_Off
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_7:
+??DataTable50_6:
         DC32     ??EMS_WATCH_Timer3
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_8:
+??DataTable50_7:
         DC32     EnginOff_Flag
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_9:
+??DataTable50_8:
         DC32     ??Check
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_10:
+??DataTable50_9:
         DC32     ??EMS_Emc_Timer
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_11:
-        DC32     ??Drive_On
+??DataTable50_10:
+        DC32     ??Parking_Count
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_12:
+??DataTable50_11:
         DC32     ??EMS_WATCH_Timer
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_13:
+??DataTable50_12:
         DC32     EnginOnActionFlag
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_14:
+??DataTable50_13:
         DC32     EnginOnActionStep
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_15:
+??DataTable50_14:
         DC32     ??EngineOn_Timer1
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_16:
+??DataTable50_15:
         DC32     ??EngineOn_Timer2
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_17:
+??DataTable50_16:
         DC32     ??EMS_Replay_FailCount
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_18:
+??DataTable50_17:
         DC32     ??EngineOn_Fail_Timer
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_19:
+??DataTable50_18:
         DC32     EMS_Replay_Flag
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_20:
+??DataTable50_19:
         DC32     EnginOnLimit_Time
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_21:
+??DataTable50_20:
         DC32     EnginOffActionFlag
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_22:
+??DataTable50_21:
         DC32     0x40000c00
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_23:
+??DataTable50_22:
         DC32     ??EngineOff_Timer1
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_24:
+??DataTable50_23:
         DC32     ??EngineOff_Timer2
 
         SECTION `.text`:CODE:NOROOT(2)
         DATA
-??DataTable50_25:
+??DataTable50_24:
         DC32     Info
 
         SECTION `.text`:CODE:NOROOT(2)
@@ -5281,11 +5303,11 @@ EngineOff_Action:
 
         END
 // 
-//   102 bytes in section .bss
-// 7 740 bytes in section .text
+//   103 bytes in section .bss
+// 7 766 bytes in section .text
 // 
-// 7 740 bytes of CODE memory
-//   102 bytes of DATA memory
+// 7 766 bytes of CODE memory
+//   103 bytes of DATA memory
 //
 //Errors: none
-//Warnings: 3
+//Warnings: none

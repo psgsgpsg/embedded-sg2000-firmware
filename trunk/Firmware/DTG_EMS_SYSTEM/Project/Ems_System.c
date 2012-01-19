@@ -928,9 +928,11 @@ void Emergency(void)
      static u16 EMS_Emc_Timer;     
      static u8 Check = 0;
      
-     static u8 Drive_On = 0;
-     static u8 OldGear = 0;
-     static u8 CheckGear = 0;     
+//     static u8 Drive_On = 0;
+//     static u8 OldGear = 0;
+//     static u8 CheckGear = 0;     
+     static u16 Parking_Count = 0;
+     
      if( Check == 0 )
      {
           if( GET_ENGINE_ON() == 1)       // 엔진온 출력이 나가고 있다면 타이머 
@@ -950,17 +952,26 @@ void Emergency(void)
                Check = 0;
           }
      }          
-     if(Info.SPEED_Value > 3)
+     if( Info.SPEED_Value > 5 )
      {
           if ( (Info.Input_Status & INPUT_PARKING_BREAK_FLAG ))
           {          
-               Flag.Machine_Error = 0x01;
-          }                  
-     }
-     if(Info.SPEED_Value > 10)
+               if( Parking_Count++ > 300 )       // 5km 이상 속도가 나올때 3초 이상 나오면 파킹에러 [V000033]
+               {               
+                    Flag.Machine_Error = 0x01;
+               }
+          }else
+          {
+               Parking_Count = 0;               
+          }               
+     }else
      {
-          Drive_On = 1;
+          Parking_Count = 0;
      }
+//     if(Info.SPEED_Value > 10)
+//     {
+//          Drive_On = 1;
+//     }
 //     if(Info.SPEED_Value > 0 && Drive_On == 1)
 //     {
 //                      // 운행이 시작함           
@@ -1229,7 +1240,7 @@ void EngineOff_Action(void)
                 
 		if(Info.RPM_Value == 0)    //rpm이 0이 될때 까지 기둘린다.
           {
-               if(!CheckTimeOver(100, EngineOff_Timer1))break;  //100ms 간 유지한다.
+               if(!CheckTimeOver(2000, EngineOff_Timer1))break;  //2000ms 간 유지한다. [V000033]
                EnginOffActionStep = 2;
                // LOG -------------------------------------------------------------------------
                // 로그 기록단위 정상적으로 종료됨
