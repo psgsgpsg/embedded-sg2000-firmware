@@ -1,60 +1,63 @@
 ###############################################################################
 #                                                                             #
-# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     13/Jan/2012  15:36:50 #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     19/Jan/2012  11:08:50 #
 # Copyright 1999-2010 IAR Systems AB.                                         #
 #                                                                             #
 #    Cpu mode     =  thumb                                                    #
 #    Endian       =  little                                                   #
-#    Source file  =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\main.c       #
-#    Command line =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\main.c -D    #
-#                    USE_STDPERIPH_DRIVER -D STM32F2XX -D USE_STM3220F_EVAL   #
-#                    -D USE_USB_OTG_FS -D RTC_CLOCK_SOURCE_LSE -lC            #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\List\ -lA E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Pr #
-#                    oject\EWARM\STM3220F_EVAL\List\ -o                       #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\Obj\ --no_cse --no_unroll --no_inline            #
-#                    --no_code_motion --no_tbaa --no_clustering               #
-#                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
-#                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
-#                    Systems\Embedded Workbench 6.0\arm\INC\c\DLib_Config_Ful #
-#                    l.h" -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWAR #
-#                    M\..\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWA #
+#    Source file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\main.c   #
+#    Command line =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\main.c   #
+#                    -D USE_STDPERIPH_DRIVER -D STM32F2XX -D                  #
+#                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                   #
+#                    RTC_CLOCK_SOURCE_LSE -lC F:\Work\S&G2000\Firmware\DTG_EM #
+#                    S_SYSTEM\Project\EWARM\STM3220F_EVAL\List\ -lA           #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\List\ -o F:\Work\S&G2000\Firmware\DTG_EMS_SY #
+#                    STEM\Project\EWARM\STM3220F_EVAL\Obj\ --no_cse           #
+#                    --no_unroll --no_inline --no_code_motion --no_tbaa       #
+#                    --no_clustering --no_scheduling --debug --endian=little  #
+#                    --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program  #
+#                    Files\IAR Systems\Embedded Workbench                     #
+#                    6.0\arm\INC\c\DLib_Config_Full.h" -I                     #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWA #
 #                    RM\..\..\Libraries\CMSIS\CM3\CoreSupport\ -I             #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\ -I       #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I             #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Utilities\STM32_EVAL\ -I E:\Work\Firmware\DTG\DTG_EMS_SY #
-#                    STEM\Project\EWARM\..\..\Utilities\STM32_EVAL\Common\    #
-#                    -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\ #
-#                    ..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I                #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_OTG_Driver\inc\ -I                   #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_Device_Library\Core\inc\ -I          #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_Device_Library\Class\msc\inc\ -I     #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\Usb #
-#                    \ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\. #
-#                    .\Usb\Inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Projec #
-#                    t\EWARM\..\Usb\src\ -I E:\Work\Firmware\DTG\DTG_EMS_SYST #
-#                    EM\Project\EWARM\..\..\Libraries\STM32_USB_HOST_Library\ #
-#                    Core\inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project #
-#                    \EWARM\..\..\Libraries\STM32_USB_HOST_Library\Class\MSC\ #
-#                    inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWAR #
-#                    M\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc #
-#                    \ -Ol --use_c++_inline                                   #
-#    List file    =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\List\main.lst                                    #
-#    Object file  =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\Obj\main.o                                       #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\ -I   #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I         #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\ -I                             #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\Common\ -I                      #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I               #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_OTG_Driver\inc\ -I               #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Core\inc\ -I      #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Class\msc\inc\    #
+#                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM #
+#                    \..\Usb\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proj #
+#                    ect\EWARM\..\Usb\Inc\ -I F:\Work\S&G2000\Firmware\DTG_EM #
+#                    S_SYSTEM\Project\EWARM\..\Usb\src\ -I                    #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_HOST_Library\Core\inc\ -I        #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_HOST_Library\Class\MSC\inc\ -I   #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\    #
+#                    -Ol --use_c++_inline                                     #
+#    List file    =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\List\main.lst                                #
+#    Object file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\Obj\main.o                                   #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\main.c
+F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\main.c
       1          /**
       2          ******************************************************************************
       3          * @file    Project/STM32F2xx_StdPeriph_Template/main.c 
@@ -3746,7 +3749,7 @@ Warning[Pa093]: implicit conversion from floating point to integer
    1410          	// Timer Settings
    1411          	//      TIM1_Config();
    1412          	//     TIM2_Config();
-   1413          	////////////////////////////////
+   1413          	/////////////////////////////////////////////////////////////////
    1414               
    1415               TIM3_Config();
    \   00000070   ........           BL       TIM3_Config
@@ -3816,71 +3819,72 @@ Warning[Pa093]: implicit conversion from floating point to integer
    1450               GLcd_Init();
    \   000000D6   ........           BL       GLcd_Init
    1451          
-   1452               //InitIWDG();              // 와치독 초기화
+   1452               InitIWDG();              // 와치독 초기화
+   \   000000DA   ........           BL       InitIWDG
    1453               
    1454               //   NAND_BuildLUT(0);
    1455               //   NAND_If_Init();
    1456               
    1457               FSMC_NAND_Reset();
-   \   000000DA   ........           BL       FSMC_NAND_Reset
+   \   000000DE   ........           BL       FSMC_NAND_Reset
    1458               
    1459               RTC_Setting(); 		// RTC 초기화
-   \   000000DE   ........           BL       RTC_Setting
+   \   000000E2   ........           BL       RTC_Setting
    1460               
    1461               //RTC_TimeRegulate();         // 시간 초기화
    1462               
    1463               //     EMS_Config();     	     // EMS 변수 초기화	
    1464               
    1465               Memory_Config();		// NAND 해더를 읽어오기
-   \   000000E2   ........           BL       Memory_Config
+   \   000000E6   ........           BL       Memory_Config
    1466               
    1467               MEMS_Init();   
-   \   000000E6   ........           BL       MEMS_Init
+   \   000000EA   ........           BL       MEMS_Init
    1468               
    1469               IWDG_ReloadCounter();                   // Clear IWDG
-   \   000000EA   ........           BL       IWDG_ReloadCounter
+   \   000000EE   ........           BL       IWDG_ReloadCounter
    1470               RTC_TimeShow(); 		// RTC 시간을 읽어서 변수에 저장 
-   \   000000EE   ........           BL       RTC_TimeShow
+   \   000000F2   ........           BL       RTC_TimeShow
    1471               
    1472               Initialize();		     // 각종 변수들 초기화		
-   \   000000F2   ........           BL       Initialize
+   \   000000F6   ........           BL       Initialize
    1473               
    1474               Driver_Start();		// 전원이 온이 된다면 온전 시작을 세팅한다.
-   \   000000F6   ........           BL       Driver_Start
+   \   000000FA   ........           BL       Driver_Start
    1475               
    1476               Wifi_Config();           // 와아파이 초기화     
-   \   000000FA   ........           BL       Wifi_Config
+   \   000000FE   ........           BL       Wifi_Config
    1477               
    1478               Kmap_init();
-   \   000000FE   ........           BL       Kmap_init
+   \   00000102   ........           BL       Kmap_init
    1479               First_Setting = 0;
-   \   00000102   0024               MOVS     R4,#+0
+   \   00000106   0024               MOVS     R4,#+0
    1480               if( GetKey() == Key_UPESC )        // TEST MODE
-   \   00000104   ........           BL       GetKey
-   \   00000108   0728               CMP      R0,#+7
-   \   0000010A   35D1               BNE.N    ??main_1
+   \   00000108   ........           BL       GetKey
+   \   0000010C   0728               CMP      R0,#+7
+   \   0000010E   35D1               BNE.N    ??main_1
    1481               {	
    1482                    sprintf( (char *)Buffer,"  DEMO PROGRAM v1 ");            
-   \   0000010C   ........           ADR.W    R1,`?<Constant "  DEMO PROGRAM v1 ">`
-   \   00000110   ........           LDR.W    R0,??DataTable41_33
-   \   00000114   ........           BL       sprintf
+   \   00000110   ........           ADR.W    R1,`?<Constant "  DEMO PROGRAM v1 ">`
+   \   00000114   ........           LDR.W    R0,??DataTable41_33
+   \   00000118   ........           BL       sprintf
    1483                    GLcd_PutString2(0,0,Buffer ,1);
-   \   00000118   0123               MOVS     R3,#+1
-   \   0000011A   ........           LDR.W    R2,??DataTable41_33
-   \   0000011E   0021               MOVS     R1,#+0
-   \   00000120   0020               MOVS     R0,#+0
-   \   00000122   ........           BL       GLcd_PutString2
+   \   0000011C   0123               MOVS     R3,#+1
+   \   0000011E   ........           LDR.W    R2,??DataTable41_33
+   \   00000122   0021               MOVS     R1,#+0
+   \   00000124   0020               MOVS     R0,#+0
+   \   00000126   ........           BL       GLcd_PutString2
    1484                    sprintf( (char *)Buffer,"  WIFI_RELAY TEST  ");        
-   \   00000126   ........           ADR.W    R1,`?<Constant "  WIFI_RELAY TEST  ">`
-   \   0000012A   ........           LDR.W    R0,??DataTable41_33
-   \   0000012E   ........           BL       sprintf
+   \   0000012A   ........           ADR.W    R1,`?<Constant "  WIFI_RELAY TEST  ">`
+   \   0000012E   ........           LDR.W    R0,??DataTable41_33
+   \   00000132   ........           BL       sprintf
    1485                    GLcd_PutString2(0,16,Buffer,1);          
-   \   00000132   0123               MOVS     R3,#+1
-   \   00000134   ........           LDR.W    R2,??DataTable41_33
-   \   00000138   1021               MOVS     R1,#+16
-   \   0000013A   0020               MOVS     R0,#+0
-   \   0000013C   ........           BL       GLcd_PutString2
-   \   00000140   FFE7               B.N      ??main_2
+   \   00000136   0123               MOVS     R3,#+1
+   \   00000138   ........           LDR.W    R2,??DataTable41_33
+   \   0000013C   1021               MOVS     R1,#+16
+   \   0000013E   0020               MOVS     R0,#+0
+   \   00000140   ........           BL       GLcd_PutString2
+   \   00000144   FFE7               B.N      ??main_2
    1486                    
    1487                    while(1)
    1488                    {
@@ -3891,38 +3895,38 @@ Warning[Pa093]: implicit conversion from floating point to integer
    1493                              continue;
    \                     ??main_3:
    \                     ??main_2:
-   \   00000142   ........           BL       Wifi_Send
-   \   00000146   ........           BL       RF_TestCommuncation
-   \   0000014A   ........           BL       SendMessage
-   \   0000014E   ....               LDR.N    R0,??DataTable41_32
-   \   00000150   0188               LDRH     R1,[R0, #+0]
-   \   00000152   0A20               MOVS     R0,#+10
-   \   00000154   ........           BL       CheckTimeOver
-   \   00000158   0028               CMP      R0,#+0
-   \   0000015A   F2D0               BEQ.N    ??main_3
+   \   00000146   ........           BL       Wifi_Send
+   \   0000014A   ........           BL       RF_TestCommuncation
+   \   0000014E   ........           BL       SendMessage
+   \   00000152   ....               LDR.N    R0,??DataTable41_32
+   \   00000154   0188               LDRH     R1,[R0, #+0]
+   \   00000156   0A20               MOVS     R0,#+10
+   \   00000158   ........           BL       CheckTimeOver
+   \   0000015C   0028               CMP      R0,#+0
+   \   0000015E   F2D0               BEQ.N    ??main_3
    1494                         
    1495                         Main_Timer = MS_TIMER;  	// 타이머 5               
-   \   0000015C   ....               LDR.N    R0,??DataTable41_31  ;; 0x40000c00
-   \   0000015E   ........           BL       TIM_GetCounter
-   \   00000162   ....               LDR.N    R1,??DataTable41_32
-   \   00000164   0880               STRH     R0,[R1, #+0]
+   \   00000160   ....               LDR.N    R0,??DataTable41_31  ;; 0x40000c00
+   \   00000162   ........           BL       TIM_GetCounter
+   \   00000166   ....               LDR.N    R1,??DataTable41_32
+   \   00000168   0880               STRH     R0,[R1, #+0]
    1496          //               if( First_Setting == 0 )      // 전원 온시 와이파이 세팅 한번하기
    1497          //               {
    1498          ////                    SettingWIFI("118.107.161.68,9513,TAEHO,taeho9901");
    1499          //                    First_Setting = 1;
    1500          //               }
    1501                         IWDG_ReloadCounter();
-   \   00000166   ........           BL       IWDG_ReloadCounter
+   \   0000016A   ........           BL       IWDG_ReloadCounter
    1502                         
    1503                         TestKey();               
-   \   0000016A   ........           BL       TestKey
+   \   0000016E   ........           BL       TestKey
    1504          
    1505                         Wifi_TestProcess();
-   \   0000016E   ........           BL       Wifi_TestProcess
+   \   00000172   ........           BL       Wifi_TestProcess
    1506                         
    1507                         Voice_Process();
-   \   00000172   ........           BL       Voice_Process
-   \   00000176   E4E7               B.N      ??main_2
+   \   00000176   ........           BL       Voice_Process
+   \   0000017A   E4E7               B.N      ??main_2
    1508                    }
    1509               }
    1510               
@@ -3969,233 +3973,233 @@ Warning[Pa093]: implicit conversion from floating point to integer
    1551                         continue;
    \                     ??main_4:
    \                     ??main_1:
-   \   00000178   ........           BL       IWDG_ReloadCounter
-   \   0000017C   ....               LDR.N    R0,??DataTable41_5
-   \   0000017E   0021               MOVS     R1,#+0
-   \   00000180   0180               STRH     R1,[R0, #+0]
-   \   00000182   ........           BL       GraphicOUT_Process
-   \   00000186   ....               LDR.N    R0,??DataTable41_5
-   \   00000188   0088               LDRH     R0,[R0, #+0]
-   \   0000018A   401C               ADDS     R0,R0,#+1
-   \   0000018C   ....               LDR.N    R1,??DataTable41_5
-   \   0000018E   0880               STRH     R0,[R1, #+0]
-   \   00000190   ........           BL       RF_Communcation
-   \   00000194   ....               LDR.N    R0,??DataTable41_5
-   \   00000196   0088               LDRH     R0,[R0, #+0]
-   \   00000198   401C               ADDS     R0,R0,#+1
-   \   0000019A   ....               LDR.N    R1,??DataTable41_5
-   \   0000019C   0880               STRH     R0,[R1, #+0]
-   \   0000019E   ........           BL       SendMessage
-   \   000001A2   ....               LDR.N    R0,??DataTable41_5
-   \   000001A4   0088               LDRH     R0,[R0, #+0]
-   \   000001A6   401C               ADDS     R0,R0,#+1
-   \   000001A8   ....               LDR.N    R1,??DataTable41_5
-   \   000001AA   0880               STRH     R0,[R1, #+0]
-   \   000001AC   ........           BL       Ems_realtime_Check
-   \   000001B0   ....               LDR.N    R0,??DataTable41_5
-   \   000001B2   0088               LDRH     R0,[R0, #+0]
-   \   000001B4   401C               ADDS     R0,R0,#+1
-   \   000001B6   ....               LDR.N    R1,??DataTable41_5
-   \   000001B8   0880               STRH     R0,[R1, #+0]
-   \   000001BA   ........           BL       GPS_Process
-   \   000001BE   ....               LDR.N    R0,??DataTable41_5
-   \   000001C0   0088               LDRH     R0,[R0, #+0]
-   \   000001C2   401C               ADDS     R0,R0,#+1
-   \   000001C4   ....               LDR.N    R1,??DataTable41_5
-   \   000001C6   0880               STRH     R0,[R1, #+0]
-   \   000001C8   ........           BL       Wifi_Send
-   \   000001CC   ....               LDR.N    R0,??DataTable41_5
-   \   000001CE   0088               LDRH     R0,[R0, #+0]
-   \   000001D0   401C               ADDS     R0,R0,#+1
-   \   000001D2   ....               LDR.N    R1,??DataTable41_5
-   \   000001D4   0880               STRH     R0,[R1, #+0]
-   \   000001D6   ........           BL       PC_Serial
-   \   000001DA   ....               LDR.N    R0,??DataTable41_5
-   \   000001DC   0088               LDRH     R0,[R0, #+0]
-   \   000001DE   401C               ADDS     R0,R0,#+1
-   \   000001E0   ....               LDR.N    R1,??DataTable41_5
-   \   000001E2   0880               STRH     R0,[R1, #+0]
-   \   000001E4   ....               LDR.N    R0,??DataTable41_22
-   \   000001E6   0078               LDRB     R0,[R0, #+0]
-   \   000001E8   0028               CMP      R0,#+0
-   \   000001EA   03D1               BNE.N    ??main_5
-   \   000001EC   ....               LDR.N    R1,??DataTable41_25
-   \   000001EE   ....               LDR.N    R0,??DataTable41_26
-   \   000001F0   ........           BL       USBH_Process
+   \   0000017C   ........           BL       IWDG_ReloadCounter
+   \   00000180   ....               LDR.N    R0,??DataTable41_5
+   \   00000182   0021               MOVS     R1,#+0
+   \   00000184   0180               STRH     R1,[R0, #+0]
+   \   00000186   ........           BL       GraphicOUT_Process
+   \   0000018A   ....               LDR.N    R0,??DataTable41_5
+   \   0000018C   0088               LDRH     R0,[R0, #+0]
+   \   0000018E   401C               ADDS     R0,R0,#+1
+   \   00000190   ....               LDR.N    R1,??DataTable41_5
+   \   00000192   0880               STRH     R0,[R1, #+0]
+   \   00000194   ........           BL       RF_Communcation
+   \   00000198   ....               LDR.N    R0,??DataTable41_5
+   \   0000019A   0088               LDRH     R0,[R0, #+0]
+   \   0000019C   401C               ADDS     R0,R0,#+1
+   \   0000019E   ....               LDR.N    R1,??DataTable41_5
+   \   000001A0   0880               STRH     R0,[R1, #+0]
+   \   000001A2   ........           BL       SendMessage
+   \   000001A6   ....               LDR.N    R0,??DataTable41_5
+   \   000001A8   0088               LDRH     R0,[R0, #+0]
+   \   000001AA   401C               ADDS     R0,R0,#+1
+   \   000001AC   ....               LDR.N    R1,??DataTable41_5
+   \   000001AE   0880               STRH     R0,[R1, #+0]
+   \   000001B0   ........           BL       Ems_realtime_Check
+   \   000001B4   ....               LDR.N    R0,??DataTable41_5
+   \   000001B6   0088               LDRH     R0,[R0, #+0]
+   \   000001B8   401C               ADDS     R0,R0,#+1
+   \   000001BA   ....               LDR.N    R1,??DataTable41_5
+   \   000001BC   0880               STRH     R0,[R1, #+0]
+   \   000001BE   ........           BL       GPS_Process
+   \   000001C2   ....               LDR.N    R0,??DataTable41_5
+   \   000001C4   0088               LDRH     R0,[R0, #+0]
+   \   000001C6   401C               ADDS     R0,R0,#+1
+   \   000001C8   ....               LDR.N    R1,??DataTable41_5
+   \   000001CA   0880               STRH     R0,[R1, #+0]
+   \   000001CC   ........           BL       Wifi_Send
+   \   000001D0   ....               LDR.N    R0,??DataTable41_5
+   \   000001D2   0088               LDRH     R0,[R0, #+0]
+   \   000001D4   401C               ADDS     R0,R0,#+1
+   \   000001D6   ....               LDR.N    R1,??DataTable41_5
+   \   000001D8   0880               STRH     R0,[R1, #+0]
+   \   000001DA   ........           BL       PC_Serial
+   \   000001DE   ....               LDR.N    R0,??DataTable41_5
+   \   000001E0   0088               LDRH     R0,[R0, #+0]
+   \   000001E2   401C               ADDS     R0,R0,#+1
+   \   000001E4   ....               LDR.N    R1,??DataTable41_5
+   \   000001E6   0880               STRH     R0,[R1, #+0]
+   \   000001E8   ....               LDR.N    R0,??DataTable41_22
+   \   000001EA   0078               LDRB     R0,[R0, #+0]
+   \   000001EC   0028               CMP      R0,#+0
+   \   000001EE   03D1               BNE.N    ??main_5
+   \   000001F0   ....               LDR.N    R1,??DataTable41_25
+   \   000001F2   ....               LDR.N    R0,??DataTable41_26
+   \   000001F4   ........           BL       USBH_Process
    \                     ??main_5:
-   \   000001F4   ....               LDR.N    R0,??DataTable41_5
-   \   000001F6   0088               LDRH     R0,[R0, #+0]
-   \   000001F8   401C               ADDS     R0,R0,#+1
-   \   000001FA   ....               LDR.N    R1,??DataTable41_5
-   \   000001FC   0880               STRH     R0,[R1, #+0]
-   \   000001FE   ....               LDR.N    R0,??DataTable41_32
-   \   00000200   0188               LDRH     R1,[R0, #+0]
-   \   00000202   0A20               MOVS     R0,#+10
-   \   00000204   ........           BL       CheckTimeOver
-   \   00000208   0028               CMP      R0,#+0
-   \   0000020A   B5D0               BEQ.N    ??main_4
+   \   000001F8   ....               LDR.N    R0,??DataTable41_5
+   \   000001FA   0088               LDRH     R0,[R0, #+0]
+   \   000001FC   401C               ADDS     R0,R0,#+1
+   \   000001FE   ....               LDR.N    R1,??DataTable41_5
+   \   00000200   0880               STRH     R0,[R1, #+0]
+   \   00000202   ....               LDR.N    R0,??DataTable41_32
+   \   00000204   0188               LDRH     R1,[R0, #+0]
+   \   00000206   0A20               MOVS     R0,#+10
+   \   00000208   ........           BL       CheckTimeOver
+   \   0000020C   0028               CMP      R0,#+0
+   \   0000020E   B5D0               BEQ.N    ??main_4
    1552          
    1553                    Main_Timer = MS_TIMER;  	// 타이머 5
-   \   0000020C   ....               LDR.N    R0,??DataTable41_31  ;; 0x40000c00
-   \   0000020E   ........           BL       TIM_GetCounter
-   \   00000212   ....               LDR.N    R1,??DataTable41_32
-   \   00000214   0880               STRH     R0,[R1, #+0]
+   \   00000210   ....               LDR.N    R0,??DataTable41_31  ;; 0x40000c00
+   \   00000212   ........           BL       TIM_GetCounter
+   \   00000216   ....               LDR.N    R1,??DataTable41_32
+   \   00000218   0880               STRH     R0,[R1, #+0]
    1554          
    1555                    //---------- ADC 읽기 -------------------------------------------
    1556                    
    1557                    Get_ADC_Data();	   // ADC에서 데이를 읽어온다.
-   \   00000216   ........           BL       Get_ADC_Data
+   \   0000021A   ........           BL       Get_ADC_Data
    1558                    SYSTEM_STEP++;
-   \   0000021A   ....               LDR.N    R0,??DataTable41_5
-   \   0000021C   0088               LDRH     R0,[R0, #+0]
-   \   0000021E   401C               ADDS     R0,R0,#+1
-   \   00000220   ....               LDR.N    R1,??DataTable41_5
-   \   00000222   0880               STRH     R0,[R1, #+0]
+   \   0000021E   ....               LDR.N    R0,??DataTable41_5
+   \   00000220   0088               LDRH     R0,[R0, #+0]
+   \   00000222   401C               ADDS     R0,R0,#+1
+   \   00000224   ....               LDR.N    R1,??DataTable41_5
+   \   00000226   0880               STRH     R0,[R1, #+0]
    1559                    //---------- 차량운행종료  -------------------------------------------
    1560                    
    1561                    Battery_Check(); 			// 자동차 운행 종료시 처리 할일을 처리한다.
-   \   00000224   ........           BL       Battery_Check
+   \   00000228   ........           BL       Battery_Check
    1562                    SYSTEM_STEP++;
-   \   00000228   ....               LDR.N    R0,??DataTable41_5
-   \   0000022A   0088               LDRH     R0,[R0, #+0]
-   \   0000022C   401C               ADDS     R0,R0,#+1
-   \   0000022E   ....               LDR.N    R1,??DataTable41_5
-   \   00000230   0880               STRH     R0,[R1, #+0]
+   \   0000022C   ....               LDR.N    R0,??DataTable41_5
+   \   0000022E   0088               LDRH     R0,[R0, #+0]
+   \   00000230   401C               ADDS     R0,R0,#+1
+   \   00000232   ....               LDR.N    R1,??DataTable41_5
+   \   00000234   0880               STRH     R0,[R1, #+0]
    1563                    // --------- 기본 기능 ----------------------------------------------
    1564          
    1565                    KeyProcess();			// 키입력을 처리한다.
-   \   00000232   ........           BL       KeyProcess
+   \   00000236   ........           BL       KeyProcess
    1566                    SYSTEM_STEP++;
-   \   00000236   ....               LDR.N    R0,??DataTable41_5
-   \   00000238   0088               LDRH     R0,[R0, #+0]
-   \   0000023A   401C               ADDS     R0,R0,#+1
-   \   0000023C   ....               LDR.N    R1,??DataTable41_5
-   \   0000023E   0880               STRH     R0,[R1, #+0]
+   \   0000023A   ....               LDR.N    R0,??DataTable41_5
+   \   0000023C   0088               LDRH     R0,[R0, #+0]
+   \   0000023E   401C               ADDS     R0,R0,#+1
+   \   00000240   ....               LDR.N    R1,??DataTable41_5
+   \   00000242   0880               STRH     R0,[R1, #+0]
    1567                    
    1568                    Display();			// LCD화면에 디스플레이 한다.
-   \   00000240   ........           BL       Display
+   \   00000244   ........           BL       Display
    1569                    SYSTEM_STEP++;           //10
-   \   00000244   ....               LDR.N    R0,??DataTable41_5
-   \   00000246   0088               LDRH     R0,[R0, #+0]
-   \   00000248   401C               ADDS     R0,R0,#+1
-   \   0000024A   ....               LDR.N    R1,??DataTable41_5
-   \   0000024C   0880               STRH     R0,[R1, #+0]
+   \   00000248   ....               LDR.N    R0,??DataTable41_5
+   \   0000024A   0088               LDRH     R0,[R0, #+0]
+   \   0000024C   401C               ADDS     R0,R0,#+1
+   \   0000024E   ....               LDR.N    R1,??DataTable41_5
+   \   00000250   0880               STRH     R0,[R1, #+0]
    1570                    
    1571                    //---------- 타이머 --------------------------------------------------
    1572                          
    1573                    RTC_TimeShow(); 		// RTC 시간을 읽어서 변수에 저장 
-   \   0000024E   ........           BL       RTC_TimeShow
+   \   00000252   ........           BL       RTC_TimeShow
    1574                    SYSTEM_STEP++;      //10
-   \   00000252   ....               LDR.N    R0,??DataTable41_5
-   \   00000254   0088               LDRH     R0,[R0, #+0]
-   \   00000256   401C               ADDS     R0,R0,#+1
-   \   00000258   ....               LDR.N    R1,??DataTable41_5
-   \   0000025A   0880               STRH     R0,[R1, #+0]
+   \   00000256   ....               LDR.N    R0,??DataTable41_5
+   \   00000258   0088               LDRH     R0,[R0, #+0]
+   \   0000025A   401C               ADDS     R0,R0,#+1
+   \   0000025C   ....               LDR.N    R1,??DataTable41_5
+   \   0000025E   0880               STRH     R0,[R1, #+0]
    1575          
    1576                    // --------- TILT Check ----------------------------------------------		
    1577                            
    1578                    Tilt_Check();
-   \   0000025C   ........           BL       Tilt_Check
+   \   00000260   ........           BL       Tilt_Check
    1579                    SYSTEM_STEP++;
-   \   00000260   ....               LDR.N    R0,??DataTable41_5
-   \   00000262   0088               LDRH     R0,[R0, #+0]
-   \   00000264   401C               ADDS     R0,R0,#+1
-   \   00000266   ....               LDR.N    R1,??DataTable41_5
-   \   00000268   0880               STRH     R0,[R1, #+0]
+   \   00000264   ....               LDR.N    R0,??DataTable41_5
+   \   00000266   0088               LDRH     R0,[R0, #+0]
+   \   00000268   401C               ADDS     R0,R0,#+1
+   \   0000026A   ....               LDR.N    R1,??DataTable41_5
+   \   0000026C   0880               STRH     R0,[R1, #+0]
    1580                    
    1581                    //--------- [인터럽트 ] SPEED & RPM & LPG_PWM 검사 -------------------
    1582                    
    1583                    SpeedCheck();			// 속도를 읽어온다.
-   \   0000026A   ........           BL       SpeedCheck
+   \   0000026E   ........           BL       SpeedCheck
    1584                    SYSTEM_STEP++;
-   \   0000026E   ....               LDR.N    R0,??DataTable41_5
-   \   00000270   0088               LDRH     R0,[R0, #+0]
-   \   00000272   401C               ADDS     R0,R0,#+1
-   \   00000274   ....               LDR.N    R1,??DataTable41_5
-   \   00000276   0880               STRH     R0,[R1, #+0]
+   \   00000272   ....               LDR.N    R0,??DataTable41_5
+   \   00000274   0088               LDRH     R0,[R0, #+0]
+   \   00000276   401C               ADDS     R0,R0,#+1
+   \   00000278   ....               LDR.N    R1,??DataTable41_5
+   \   0000027A   0880               STRH     R0,[R1, #+0]
    1585                    
    1586                    RPMCheck();			// RPM을 읽어온다.	   
-   \   00000278   ........           BL       RPMCheck
+   \   0000027C   ........           BL       RPMCheck
    1587                    SYSTEM_STEP++;
-   \   0000027C   ....               LDR.N    R0,??DataTable41_5
-   \   0000027E   0088               LDRH     R0,[R0, #+0]
-   \   00000280   401C               ADDS     R0,R0,#+1
-   \   00000282   ....               LDR.N    R1,??DataTable41_5
-   \   00000284   0880               STRH     R0,[R1, #+0]
+   \   00000280   ....               LDR.N    R0,??DataTable41_5
+   \   00000282   0088               LDRH     R0,[R0, #+0]
+   \   00000284   401C               ADDS     R0,R0,#+1
+   \   00000286   ....               LDR.N    R1,??DataTable41_5
+   \   00000288   0880               STRH     R0,[R1, #+0]
    1588                    
    1589                    LPGPWM_Check();
-   \   00000286   ........           BL       LPGPWM_Check
+   \   0000028A   ........           BL       LPGPWM_Check
    1590                    SYSTEM_STEP++;
-   \   0000028A   ....               LDR.N    R0,??DataTable41_5
-   \   0000028C   0088               LDRH     R0,[R0, #+0]
-   \   0000028E   401C               ADDS     R0,R0,#+1
-   \   00000290   ....               LDR.N    R1,??DataTable41_5
-   \   00000292   0880               STRH     R0,[R1, #+0]
+   \   0000028E   ....               LDR.N    R0,??DataTable41_5
+   \   00000290   0088               LDRH     R0,[R0, #+0]
+   \   00000292   401C               ADDS     R0,R0,#+1
+   \   00000294   ....               LDR.N    R1,??DataTable41_5
+   \   00000296   0880               STRH     R0,[R1, #+0]
    1591                    
    1592                    //---------- 보이스 출력 ----- -------------------------------------
    1593                    
    1594                    Voice_Process();
-   \   00000294   ........           BL       Voice_Process
+   \   00000298   ........           BL       Voice_Process
    1595                    SYSTEM_STEP++;
-   \   00000298   ....               LDR.N    R0,??DataTable41_5
-   \   0000029A   0088               LDRH     R0,[R0, #+0]
-   \   0000029C   401C               ADDS     R0,R0,#+1
-   \   0000029E   ....               LDR.N    R1,??DataTable41_5
-   \   000002A0   0880               STRH     R0,[R1, #+0]
+   \   0000029C   ....               LDR.N    R0,??DataTable41_5
+   \   0000029E   0088               LDRH     R0,[R0, #+0]
+   \   000002A0   401C               ADDS     R0,R0,#+1
+   \   000002A2   ....               LDR.N    R1,??DataTable41_5
+   \   000002A4   0880               STRH     R0,[R1, #+0]
    1596                    
    1597                    //---------- 와이파이 데이터 처리 ------------------------------------
    1598                    
    1599                    Wifi_Process();
-   \   000002A2   ........           BL       Wifi_Process
+   \   000002A6   ........           BL       Wifi_Process
    1600                    SYSTEM_STEP++;
-   \   000002A6   ....               LDR.N    R0,??DataTable41_5
-   \   000002A8   0088               LDRH     R0,[R0, #+0]
-   \   000002AA   401C               ADDS     R0,R0,#+1
-   \   000002AC   ....               LDR.N    R1,??DataTable41_5
-   \   000002AE   0880               STRH     R0,[R1, #+0]
+   \   000002AA   ....               LDR.N    R0,??DataTable41_5
+   \   000002AC   0088               LDRH     R0,[R0, #+0]
+   \   000002AE   401C               ADDS     R0,R0,#+1
+   \   000002B0   ....               LDR.N    R1,??DataTable41_5
+   \   000002B2   0880               STRH     R0,[R1, #+0]
    1601                              
    1602                    //---------- Serial 데이터 처리 ------------------------------------
    1603                                     
    1604                    PC_Communication();
-   \   000002B0   ........           BL       PC_Communication
+   \   000002B4   ........           BL       PC_Communication
    1605                    SYSTEM_STEP++;
-   \   000002B4   ....               LDR.N    R0,??DataTable41_5
-   \   000002B6   0088               LDRH     R0,[R0, #+0]
-   \   000002B8   401C               ADDS     R0,R0,#+1
-   \   000002BA   ....               LDR.N    R1,??DataTable41_5
-   \   000002BC   0880               STRH     R0,[R1, #+0]
+   \   000002B8   ....               LDR.N    R0,??DataTable41_5
+   \   000002BA   0088               LDRH     R0,[R0, #+0]
+   \   000002BC   401C               ADDS     R0,R0,#+1
+   \   000002BE   ....               LDR.N    R1,??DataTable41_5
+   \   000002C0   0880               STRH     R0,[R1, #+0]
    1606                    // ----------  운행 관려하여 데이터 처리 ----------------------------
    1607                    
    1608                    Drive_Process();
-   \   000002BE   ........           BL       Drive_Process
+   \   000002C2   ........           BL       Drive_Process
    1609                    SYSTEM_STEP++;
-   \   000002C2   ....               LDR.N    R0,??DataTable41_5
-   \   000002C4   0088               LDRH     R0,[R0, #+0]
-   \   000002C6   401C               ADDS     R0,R0,#+1
-   \   000002C8   ....               LDR.N    R1,??DataTable41_5
-   \   000002CA   0880               STRH     R0,[R1, #+0]
+   \   000002C6   ....               LDR.N    R0,??DataTable41_5
+   \   000002C8   0088               LDRH     R0,[R0, #+0]
+   \   000002CA   401C               ADDS     R0,R0,#+1
+   \   000002CC   ....               LDR.N    R1,??DataTable41_5
+   \   000002CE   0880               STRH     R0,[R1, #+0]
    1610                    
    1611                    //---------- Memroy [NAND] -------------------------------------------
    1612                    
    1613                    Infomation_Process();
-   \   000002CC   ........           BL       Infomation_Process
+   \   000002D0   ........           BL       Infomation_Process
    1614                    SYSTEM_STEP++;           // 메모리 저장 20
-   \   000002D0   ....               LDR.N    R0,??DataTable41_5
-   \   000002D2   0088               LDRH     R0,[R0, #+0]
-   \   000002D4   401C               ADDS     R0,R0,#+1
-   \   000002D6   ....               LDR.N    R1,??DataTable41_5
-   \   000002D8   0880               STRH     R0,[R1, #+0]
+   \   000002D4   ....               LDR.N    R0,??DataTable41_5
+   \   000002D6   0088               LDRH     R0,[R0, #+0]
+   \   000002D8   401C               ADDS     R0,R0,#+1
+   \   000002DA   ....               LDR.N    R1,??DataTable41_5
+   \   000002DC   0880               STRH     R0,[R1, #+0]
    1615                    
    1616                    Drive_Acceident_Check();
                            ^
 Warning[Pe223]: function "Drive_Acceident_Check" declared implicitly
-   \   000002DA   ........           BL       Drive_Acceident_Check
+   \   000002DE   ........           BL       Drive_Acceident_Check
    1617                    SYSTEM_STEP++;           // 메모리 저장 20
-   \   000002DE   ....               LDR.N    R0,??DataTable41_5
-   \   000002E0   0088               LDRH     R0,[R0, #+0]
-   \   000002E2   401C               ADDS     R0,R0,#+1
-   \   000002E4   ....               LDR.N    R1,??DataTable41_5
-   \   000002E6   0880               STRH     R0,[R1, #+0]
+   \   000002E2   ....               LDR.N    R0,??DataTable41_5
+   \   000002E4   0088               LDRH     R0,[R0, #+0]
+   \   000002E6   401C               ADDS     R0,R0,#+1
+   \   000002E8   ....               LDR.N    R1,??DataTable41_5
+   \   000002EA   0880               STRH     R0,[R1, #+0]
    1618                    
    1619                    Memory_Process();	     // NAND에 저장 한다.
                            ^
@@ -4203,113 +4207,113 @@ Warning[Pe223]: function "Memory_Process" declared implicitly
 
        u8 First_Setting;
           ^
-"E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\main.c",1337  Warning[Pe550]: 
+"F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\main.c",1337  Warning[Pe550]: 
           variable "First_Setting" was set but never used
-   \   000002E8   ........           BL       Memory_Process
+   \   000002EC   ........           BL       Memory_Process
    1620                    SYSTEM_STEP++;
-   \   000002EC   ....               LDR.N    R0,??DataTable41_5
-   \   000002EE   0088               LDRH     R0,[R0, #+0]
-   \   000002F0   401C               ADDS     R0,R0,#+1
-   \   000002F2   ....               LDR.N    R1,??DataTable41_5
-   \   000002F4   0880               STRH     R0,[R1, #+0]
+   \   000002F0   ....               LDR.N    R0,??DataTable41_5
+   \   000002F2   0088               LDRH     R0,[R0, #+0]
+   \   000002F4   401C               ADDS     R0,R0,#+1
+   \   000002F6   ....               LDR.N    R1,??DataTable41_5
+   \   000002F8   0880               STRH     R0,[R1, #+0]
    1621                    
    1622                    // -------- ECO 드라이빙 ---------------------------------------------
    1623                    
    1624                    ECO_Driving_Check();          // 
-   \   000002F6   ........           BL       ECO_Driving_Check
+   \   000002FA   ........           BL       ECO_Driving_Check
    1625                    SYSTEM_STEP++;
-   \   000002FA   ....               LDR.N    R0,??DataTable41_5
-   \   000002FC   0088               LDRH     R0,[R0, #+0]
-   \   000002FE   401C               ADDS     R0,R0,#+1
-   \   00000300   ....               LDR.N    R1,??DataTable41_5
-   \   00000302   0880               STRH     R0,[R1, #+0]
+   \   000002FE   ....               LDR.N    R0,??DataTable41_5
+   \   00000300   0088               LDRH     R0,[R0, #+0]
+   \   00000302   401C               ADDS     R0,R0,#+1
+   \   00000304   ....               LDR.N    R1,??DataTable41_5
+   \   00000306   0880               STRH     R0,[R1, #+0]
    1626                    
    1627                    Emergency();                       // 스타트 출력이 3초이상 계속 나가고 있을경우 강제 클리어
-   \   00000304   ........           BL       Emergency
+   \   00000308   ........           BL       Emergency
    1628                    SYSTEM_STEP++;
-   \   00000308   ....               LDR.N    R0,??DataTable41_5
-   \   0000030A   0088               LDRH     R0,[R0, #+0]
-   \   0000030C   401C               ADDS     R0,R0,#+1
-   \   0000030E   ....               LDR.N    R1,??DataTable41_5
-   \   00000310   0880               STRH     R0,[R1, #+0]
+   \   0000030C   ....               LDR.N    R0,??DataTable41_5
+   \   0000030E   0088               LDRH     R0,[R0, #+0]
+   \   00000310   401C               ADDS     R0,R0,#+1
+   \   00000312   ....               LDR.N    R1,??DataTable41_5
+   \   00000314   0880               STRH     R0,[R1, #+0]
    1629                    
    1630                    Ems_Port_Check();			     // 입력 포트를 검사한다.
-   \   00000312   ........           BL       Ems_Port_Check
+   \   00000316   ........           BL       Ems_Port_Check
    1631                    SYSTEM_STEP++;         
-   \   00000316   ....               LDR.N    R0,??DataTable41_5
-   \   00000318   0088               LDRH     R0,[R0, #+0]
-   \   0000031A   401C               ADDS     R0,R0,#+1
-   \   0000031C   ....               LDR.N    R1,??DataTable41_5
-   \   0000031E   0880               STRH     R0,[R1, #+0]
+   \   0000031A   ....               LDR.N    R0,??DataTable41_5
+   \   0000031C   0088               LDRH     R0,[R0, #+0]
+   \   0000031E   401C               ADDS     R0,R0,#+1
+   \   00000320   ....               LDR.N    R1,??DataTable41_5
+   \   00000322   0880               STRH     R0,[R1, #+0]
    1632                         EMS_Driving_Check();
-   \   00000320   ........           BL       EMS_Driving_Check
+   \   00000324   ........           BL       EMS_Driving_Check
    1633                         SYSTEM_STEP++;          
-   \   00000324   ....               LDR.N    R0,??DataTable41_5
-   \   00000326   0088               LDRH     R0,[R0, #+0]
-   \   00000328   401C               ADDS     R0,R0,#+1
-   \   0000032A   ....               LDR.N    R1,??DataTable41_5
-   \   0000032C   0880               STRH     R0,[R1, #+0]
+   \   00000328   ....               LDR.N    R0,??DataTable41_5
+   \   0000032A   0088               LDRH     R0,[R0, #+0]
+   \   0000032C   401C               ADDS     R0,R0,#+1
+   \   0000032E   ....               LDR.N    R1,??DataTable41_5
+   \   00000330   0880               STRH     R0,[R1, #+0]
    1634                    // --------- EMS ----------------------------------------------------
    1635                    if(SFLASH_Memory.EMS.USE_Enable && ( Flag.Machine_Error == 0 ) )         // EMS를 사용할지 확인한다. 
-   \   0000032E   ....               LDR.N    R0,??DataTable41_7
-   \   00000330   90F88A00           LDRB     R0,[R0, #+138]
-   \   00000334   0028               CMP      R0,#+0
-   \   00000336   3FF41FAF           BEQ.W    ??main_1
-   \   0000033A   ....               LDR.N    R0,??DataTable41_8
-   \   0000033C   807C               LDRB     R0,[R0, #+18]
-   \   0000033E   0028               CMP      R0,#+0
-   \   00000340   7FF41AAF           BNE.W    ??main_1
+   \   00000332   ....               LDR.N    R0,??DataTable41_7
+   \   00000334   90F88A00           LDRB     R0,[R0, #+138]
+   \   00000338   0028               CMP      R0,#+0
+   \   0000033A   3FF41FAF           BEQ.W    ??main_1
+   \   0000033E   ....               LDR.N    R0,??DataTable41_8
+   \   00000340   807C               LDRB     R0,[R0, #+18]
+   \   00000342   0028               CMP      R0,#+0
+   \   00000344   7FF41AAF           BNE.W    ??main_1
    1636                    {
    1637          
    1638                         EngineOn_EMSCheck(); 			// 현재 시동온동작인지 체크 한다.
-   \   00000344   ........           BL       EngineOn_EMSCheck
+   \   00000348   ........           BL       EngineOn_EMSCheck
    1639                         SYSTEM_STEP++;
-   \   00000348   ....               LDR.N    R0,??DataTable41_5
-   \   0000034A   0088               LDRH     R0,[R0, #+0]
-   \   0000034C   401C               ADDS     R0,R0,#+1
-   \   0000034E   ....               LDR.N    R1,??DataTable41_5
-   \   00000350   0880               STRH     R0,[R1, #+0]
+   \   0000034C   ....               LDR.N    R0,??DataTable41_5
+   \   0000034E   0088               LDRH     R0,[R0, #+0]
+   \   00000350   401C               ADDS     R0,R0,#+1
+   \   00000352   ....               LDR.N    R1,??DataTable41_5
+   \   00000354   0880               STRH     R0,[R1, #+0]
    1640                         EngineOn_Action();				// 시동온 동작을 시항한다.
-   \   00000352   ........           BL       EngineOn_Action
+   \   00000356   ........           BL       EngineOn_Action
    1641                         SYSTEM_STEP++;
-   \   00000356   ....               LDR.N    R0,??DataTable41_5
-   \   00000358   0088               LDRH     R0,[R0, #+0]
-   \   0000035A   401C               ADDS     R0,R0,#+1
-   \   0000035C   ....               LDR.N    R1,??DataTable41_5
-   \   0000035E   0880               STRH     R0,[R1, #+0]
+   \   0000035A   ....               LDR.N    R0,??DataTable41_5
+   \   0000035C   0088               LDRH     R0,[R0, #+0]
+   \   0000035E   401C               ADDS     R0,R0,#+1
+   \   00000360   ....               LDR.N    R1,??DataTable41_5
+   \   00000362   0880               STRH     R0,[R1, #+0]
    1642                         Relay_Off_Clear();                 // 동작 온시                
-   \   00000360   ........           BL       Relay_Off_Clear
+   \   00000364   ........           BL       Relay_Off_Clear
    1643                         SYSTEM_STEP++;
-   \   00000364   ....               LDR.N    R0,??DataTable41_5
-   \   00000366   0088               LDRH     R0,[R0, #+0]
-   \   00000368   401C               ADDS     R0,R0,#+1
-   \   0000036A   ....               LDR.N    R1,??DataTable41_5
-   \   0000036C   0880               STRH     R0,[R1, #+0]
+   \   00000368   ....               LDR.N    R0,??DataTable41_5
+   \   0000036A   0088               LDRH     R0,[R0, #+0]
+   \   0000036C   401C               ADDS     R0,R0,#+1
+   \   0000036E   ....               LDR.N    R1,??DataTable41_5
+   \   00000370   0880               STRH     R0,[R1, #+0]
    1644                         EngineOff_EMSCheck();			// 시동오프 동작체크한다.
-   \   0000036E   ........           BL       EngineOff_EMSCheck
+   \   00000372   ........           BL       EngineOff_EMSCheck
    1645                         SYSTEM_STEP++;
-   \   00000372   ....               LDR.N    R0,??DataTable41_5
-   \   00000374   0088               LDRH     R0,[R0, #+0]
-   \   00000376   401C               ADDS     R0,R0,#+1
-   \   00000378   ....               LDR.N    R1,??DataTable41_5
-   \   0000037A   0880               STRH     R0,[R1, #+0]
+   \   00000376   ....               LDR.N    R0,??DataTable41_5
+   \   00000378   0088               LDRH     R0,[R0, #+0]
+   \   0000037A   401C               ADDS     R0,R0,#+1
+   \   0000037C   ....               LDR.N    R1,??DataTable41_5
+   \   0000037E   0880               STRH     R0,[R1, #+0]
    1646                         EngineOff_Action();				// 시동오프 동작을 실행한다.               
-   \   0000037C   ........           BL       EngineOff_Action
+   \   00000380   ........           BL       EngineOff_Action
    1647                         SYSTEM_STEP++;
-   \   00000380   ....               LDR.N    R0,??DataTable41_5
-   \   00000382   0088               LDRH     R0,[R0, #+0]
-   \   00000384   401C               ADDS     R0,R0,#+1
-   \   00000386   ....               LDR.N    R1,??DataTable41_5
-   \   00000388   0880               STRH     R0,[R1, #+0]
+   \   00000384   ....               LDR.N    R0,??DataTable41_5
+   \   00000386   0088               LDRH     R0,[R0, #+0]
+   \   00000388   401C               ADDS     R0,R0,#+1
+   \   0000038A   ....               LDR.N    R1,??DataTable41_5
+   \   0000038C   0880               STRH     R0,[R1, #+0]
    1648                         EMS_Watching();				// EMS 기능을 이외의 변수(키를 검사)해서 처리
-   \   0000038A   ........           BL       EMS_Watching
+   \   0000038E   ........           BL       EMS_Watching
    1649                         SYSTEM_STEP++;
-   \   0000038E   ....               LDR.N    R0,??DataTable41_5
-   \   00000390   0088               LDRH     R0,[R0, #+0]
-   \   00000392   401C               ADDS     R0,R0,#+1
-   \   00000394   ....               LDR.N    R1,??DataTable41_5
-   \   00000396   0880               STRH     R0,[R1, #+0]
-   \   00000398   EEE6               B.N      ??main_1
+   \   00000392   ....               LDR.N    R0,??DataTable41_5
+   \   00000394   0088               LDRH     R0,[R0, #+0]
+   \   00000396   401C               ADDS     R0,R0,#+1
+   \   00000398   ....               LDR.N    R1,??DataTable41_5
+   \   0000039A   0880               STRH     R0,[R1, #+0]
+   \   0000039C   EEE6               B.N      ??main_1
    1650          
    1651                    }
    1652                     //-------------------------------------------------------------------
@@ -5039,7 +5043,7 @@ Warning[Pe223]: function "Memory_Process" declared implicitly
      MachinStatus                             64
      SetCarMaker                            1358
      USB_MODE_SELECT                          70
-     main                                    922
+     main                                    926
      Main_Timer                                2
      fputc                                    32
      Delay                                    30
@@ -5153,9 +5157,9 @@ Warning[Pe223]: function "Memory_Process" declared implicitly
 
  
  22 571 bytes in section .bss
-  7 074 bytes in section .text
+  7 078 bytes in section .text
  
-  7 040 bytes of CODE memory (+ 34 bytes shared)
+  7 044 bytes of CODE memory (+ 34 bytes shared)
  22 571 bytes of DATA memory
 
 Errors: none

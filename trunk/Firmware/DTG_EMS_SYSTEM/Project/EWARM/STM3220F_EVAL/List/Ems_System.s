@@ -1,59 +1,57 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    12/Jan/2012  04:01:41 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:08:59 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
 //    Endian       =  little                                                  /
-//    Source file  =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Ems_Sy /
-//                    stem.c                                                  /
-//    Command line =  "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Ems_S /
-//                    ystem.c" -D USE_STDPERIPH_DRIVER -D STM32F2XX -D        /
+//    Source file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\Ems_Sys /
+//                    tem.c                                                   /
+//    Command line =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\Ems_Sys /
+//                    tem.c -D USE_STDPERIPH_DRIVER -D STM32F2XX -D           /
 //                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                  /
-//                    RTC_CLOCK_SOURCE_LSE -lC "F:\묵작업\[ NewDTG            /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\ /
-//                    " -lA "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project /
-//                    \EWARM\STM3220F_EVAL\List\" -o "F:\묵작업\[ NewDTG      /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\" /
-//                     --no_cse --no_unroll --no_inline --no_code_motion      /
-//                    --no_tbaa --no_clustering --no_scheduling --debug       /
+//                    RTC_CLOCK_SOURCE_LSE -lC F:\Work\S&G2000\Firmware\DTG_E /
+//                    MS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\ -lA         /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\S /
+//                    TM3220F_EVAL\List\ -o F:\Work\S&G2000\Firmware\DTG_EMS_ /
+//                    SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\ --no_cse        /
+//                    --no_unroll --no_inline --no_code_motion --no_tbaa      /
+//                    --no_clustering --no_scheduling --debug                 /
 //                    --endian=little --cpu=Cortex-M3 -e --fpu=None           /
 //                    --dlib_config "C:\Program Files\IAR Systems\Embedded    /
 //                    Workbench 6.0\arm\INC\c\DLib_Config_Full.h" -I          /
-//                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM /
-//                    \..\" -I "F:\묵작업\[ NewDTG                            /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMS /
-//                    IS\CM3\CoreSupport\" -I "F:\묵작업\[ NewDTG             /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\CMS /
-//                    IS\CM3\DeviceSupport\ST\STM32F2xx\" -I "F:\묵작업\[     /
-//                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librar /
-//                    ies\STM32F2xx_StdPeriph_Driver\inc\" -I "F:\묵작업\[    /
-//                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilit /
-//                    ies\STM32_EVAL\" -I "F:\묵작업\[ NewDTG                 /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM /
-//                    32_EVAL\Common\" -I "F:\묵작업\[ NewDTG                 /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Utilities\STM /
-//                    32_EVAL\STM3220F_EVAL\" -I "F:\묵작업\[ NewDTG          /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM /
-//                    32_USB_OTG_Driver\inc\" -I "F:\묵작업\[ NewDTG          /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM /
-//                    32_USB_Device_Library\Core\inc\" -I "F:\묵작업\[        /
-//                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librar /
-//                    ies\STM32_USB_Device_Library\Class\msc\inc\" -I         /
-//                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM /
-//                    \..\Usb\" -I "F:\묵작업\[ NewDTG                        /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\Usb\Inc\" -I     /
-//                    "F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM /
-//                    \..\Usb\src\" -I "F:\묵작업\[ NewDTG                    /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM /
-//                    32_USB_HOST_Library\Core\inc\" -I "F:\묵작업\[ NewDTG   /
-//                    ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Libraries\STM /
-//                    32_USB_HOST_Library\Class\MSC\inc\" -I "F:\묵작업\[     /
-//                    NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\..\..\Librar /
-//                    ies\STM32_USB_Device_Library\Class\cdc\inc\" -Ol        /
-//                    --use_c++_inline                                        /
-//    List file    =  F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\EWARM\ /
-//                    STM3220F_EVAL\List\Ems_System.s                         /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\E /
+//                    WARM\..\..\Libraries\CMSIS\CM3\CoreSupport\ -I          /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\    /
+//                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWAR /
+//                    M\..\..\Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Utilities\STM32_EVAL\ -I                           /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Utilities\STM32_EVAL\Common\ -I                    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I             /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_OTG_Driver\inc\ -I             /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_Device_Library\Core\inc\ -I    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_Device_Library\Class\msc\inc\  /
+//                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWAR /
+//                    M\..\Usb\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Pr /
+//                    oject\EWARM\..\Usb\Inc\ -I                              /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\Usb\src\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\P /
+//                    roject\EWARM\..\..\Libraries\STM32_USB_HOST_Library\Cor /
+//                    e\inc\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proje /
+//                    ct\EWARM\..\..\Libraries\STM32_USB_HOST_Library\Class\M /
+//                    SC\inc\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proj /
+//                    ect\EWARM\..\..\Libraries\STM32_USB_Device_Library\Clas /
+//                    s\cdc\inc\ -Ol --use_c++_inline                         /
+//    List file    =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\S /
+//                    TM3220F_EVAL\List\Ems_System.s                          /
 //                                                                            /
 //                                                                            /
 ///////////////////////////////////////////////////////////////////////////////
@@ -147,7 +145,7 @@
         CFI R14 SameValue
         CFI EndCommon cfiCommon0
         
-// F:\묵작업\[ NewDTG ]\WORK\DTG_EMS_SYSTEM\Project\Ems_System.c
+// F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\Ems_System.c
 //    1 
 //    2 #include "Ems_System.h"
 
@@ -4712,96 +4710,96 @@ EngineOff_Action:
         LDRH     R0,[R0, #+45]
         CMP      R0,#+0
         BNE.N    ??EngineOff_Action_12
-// 1231                 {
-// 1232                      if(!CheckTimeOver(100, EngineOff_Timer1))break;  //100ms 간 유지한다.
+// 1231           {
+// 1232                if(!CheckTimeOver(100, EngineOff_Timer1))break;  //100ms 간 유지한다.
         LDR.N    R0,??DataTable50_23
         LDRH     R1,[R0, #+0]
         MOVS     R0,#+100
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOff_Action_11
-// 1233                      EnginOffActionStep = 2;
+// 1233                EnginOffActionStep = 2;
 ??EngineOff_Action_13:
         LDR.N    R0,??DataTable50_4
         MOVS     R1,#+2
         STRB     R1,[R0, #+0]
-// 1234            // LOG -------------------------------------------------------------------------
-// 1235            // 로그 기록단위 정상적으로 종료됨
-// 1236                      if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1234                // LOG -------------------------------------------------------------------------
+// 1235                // 로그 기록단위 정상적으로 종료됨
+// 1236                if(LOGWRITE & LOG_EMS_ENGINE)                       
         LDR.N    R0,??DataTable50_1
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_14
-// 1237                      {
-// 1238                           sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
+// 1237                {
+// 1238                     sprintf((char*)Buffer,"ENGINE_OFF %d step \r\n ",EnginOffActionStep); 
         LDR.N    R0,??DataTable50_4
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step \\r\\n ">`
         LDR.N    R0,??DataTable50_3
         BL       sprintf
-// 1239                           Write_Log(Buffer, NORMAL_LOG);
+// 1239                     Write_Log(Buffer, NORMAL_LOG);
         MOVS     R1,#+1
         LDR.N    R0,??DataTable50_3
         BL       Write_Log
         B.N      ??EngineOff_Action_14
-// 1240                      }            
-// 1241           // -----------------------------------------------------------------------------
-// 1242                      
-// 1243                 }
-// 1244                 else        // rpm이 10초간 0으로 떨어지지 않으면 장치의 이상 
-// 1245                 {
-// 1246                      EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                     
+// 1240                }            
+// 1241                // -----------------------------------------------------------------------------
+// 1242                
+// 1243           }
+// 1244           else        // rpm이 10초간 0으로 떨어지지 않으면 장치의 이상 
+// 1245           {
+// 1246                EngineOff_Timer1 = MS_TIMER;    // 100ms 간격을 읽기                     
 ??EngineOff_Action_12:
         LDR.N    R0,??DataTable50_22  ;; 0x40000c00
         BL       TIM_GetCounter
         LDR.N    R1,??DataTable50_23
         STRH     R0,[R1, #+0]
-// 1247                      if(!CheckTimeOver(10000, EngineOff_Timer2))break;  //10초간 
+// 1247                if(!CheckTimeOver(10000, EngineOff_Timer2))break;  //10초간 
         LDR.N    R0,??DataTable50_24
         LDRH     R1,[R0, #+0]
         MOVW     R0,#+10000
         BL       CheckTimeOver
         CMP      R0,#+0
         BEQ.W    ??EngineOff_Action_11
-// 1248            // LOG -------------------------------------------------------------------------
-// 1249            // 로그 기록단위 Error
-// 1250                      if(LOGWRITE & LOG_EMS_ENGINE)                       
+// 1248                // LOG -------------------------------------------------------------------------
+// 1249                // 로그 기록단위 Error
+// 1250                if(LOGWRITE & LOG_EMS_ENGINE)                       
 ??EngineOff_Action_15:
         LDR.N    R0,??DataTable50_1
         LDRB     R0,[R0, #+0]
         LSLS     R0,R0,#+27
         BPL.N    ??EngineOff_Action_16
-// 1251                      {
-// 1252                           sprintf((char*)Buffer,"ENGINE_OFF %d step RPM_TimerOut\r\n ",EnginOffActionStep); 
+// 1251                {
+// 1252                     sprintf((char*)Buffer,"ENGINE_OFF %d step RPM_TimerOut\r\n ",EnginOffActionStep); 
         LDR.N    R0,??DataTable50_4
         LDRB     R2,[R0, #+0]
         ADR.W    R1,`?<Constant "ENGINE_OFF %d step RP...">`
         LDR.N    R0,??DataTable50_3
         BL       sprintf
-// 1253                           Write_Log(Buffer, FAIL_LOG);
+// 1253                     Write_Log(Buffer, FAIL_LOG);
         MOVS     R1,#+2
         LDR.N    R0,??DataTable50_3
         BL       Write_Log
-// 1254                      }            
-// 1255                      RESET_ENGINE_OFF();
+// 1254                }            
+// 1255                RESET_ENGINE_OFF();
 ??EngineOff_Action_16:
         BL       RESET_ENGINE_OFF
-// 1256                      EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 10초간 딜레이
+// 1256                EnginOnLimit_Time = MS_TIMER;   // 다시 정지모드로 들어오기 10초간 딜레이
         LDR.N    R0,??DataTable50_22  ;; 0x40000c00
         BL       TIM_GetCounter
         LDR.N    R1,??DataTable50_20
         STRH     R0,[R1, #+0]
-// 1257                      EnginOffActionStep = 0 ;   // step 과  Flag 클리어
+// 1257                EnginOffActionStep = 0 ;   // step 과  Flag 클리어
         LDR.N    R0,??DataTable50_4
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
-// 1258                      EnginOffActionFlag = 0 ;
+// 1258                EnginOffActionFlag = 0 ;
         LDR.N    R0,??DataTable50_21
         MOVS     R1,#+0
         STRB     R1,[R0, #+0]
 // 1259           // -----------------------------------------------------------------------------	                     
 // 1260                      
-// 1261                 }
+// 1261           }
 // 1262 
 // 1263 		EnginOffActionStep = 2;
 ??EngineOff_Action_14:

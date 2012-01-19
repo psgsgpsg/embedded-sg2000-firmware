@@ -1,62 +1,64 @@
 ###############################################################################
 #                                                                             #
-# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     08/Jan/2012  13:10:16 #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     19/Jan/2012  11:08:54 #
 # Copyright 1999-2010 IAR Systems AB.                                         #
 #                                                                             #
 #    Cpu mode     =  thumb                                                    #
 #    Endian       =  little                                                   #
-#    Source file  =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Libraries\STM32_USB_ #
-#                    HOST_Library\Core\src\usbh_stdreq.c                      #
-#    Command line =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Libraries\STM32_USB_ #
-#                    HOST_Library\Core\src\usbh_stdreq.c -D                   #
+#    Source file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Libraries\STM32_ #
+#                    USB_HOST_Library\Core\src\usbh_stdreq.c                  #
+#    Command line =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Libraries\STM32_ #
+#                    USB_HOST_Library\Core\src\usbh_stdreq.c -D               #
 #                    USE_STDPERIPH_DRIVER -D STM32F2XX -D USE_STM3220F_EVAL   #
 #                    -D USE_USB_OTG_FS -D RTC_CLOCK_SOURCE_LSE -lC            #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\List\ -lA E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Pr #
-#                    oject\EWARM\STM3220F_EVAL\List\ -o                       #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\Obj\ --no_cse --no_unroll --no_inline            #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\List\ -lA F:\Work\S&G2000\Firmware\DTG_EMS_S #
+#                    YSTEM\Project\EWARM\STM3220F_EVAL\List\ -o               #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\Obj\ --no_cse --no_unroll --no_inline        #
 #                    --no_code_motion --no_tbaa --no_clustering               #
 #                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
 #                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
 #                    Systems\Embedded Workbench 6.0\arm\INC\c\DLib_Config_Ful #
-#                    l.h" -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWAR #
-#                    M\..\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWA #
-#                    RM\..\..\Libraries\CMSIS\CM3\CoreSupport\ -I             #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\ -I       #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I             #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Utilities\STM32_EVAL\ -I E:\Work\Firmware\DTG\DTG_EMS_SY #
-#                    STEM\Project\EWARM\..\..\Utilities\STM32_EVAL\Common\    #
-#                    -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\ #
-#                    ..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I                #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_OTG_Driver\inc\ -I                   #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_Device_Library\Core\inc\ -I          #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\..\ #
-#                    Libraries\STM32_USB_Device_Library\Class\msc\inc\ -I     #
-#                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\Usb #
-#                    \ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\. #
-#                    .\Usb\Inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Projec #
-#                    t\EWARM\..\Usb\src\ -I E:\Work\Firmware\DTG\DTG_EMS_SYST #
-#                    EM\Project\EWARM\..\..\Libraries\STM32_USB_HOST_Library\ #
-#                    Core\inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project #
-#                    \EWARM\..\..\Libraries\STM32_USB_HOST_Library\Class\MSC\ #
-#                    inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWAR #
-#                    M\..\..\Libraries\STM32_USB_Device_Library\Class\cdc\inc #
-#                    \ -Ol --use_c++_inline                                   #
-#    List file    =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\List\usbh_stdreq.lst                             #
-#    Object file  =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM322 #
-#                    0F_EVAL\Obj\usbh_stdreq.o                                #
+#                    l.h" -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\ #
+#                    EWARM\..\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Pro #
+#                    ject\EWARM\..\..\Libraries\CMSIS\CM3\CoreSupport\ -I     #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\ -I   #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I         #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\ -I                             #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\Common\ -I                      #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I               #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_OTG_Driver\inc\ -I               #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Core\inc\ -I      #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Class\msc\inc\    #
+#                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM #
+#                    \..\Usb\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proj #
+#                    ect\EWARM\..\Usb\Inc\ -I F:\Work\S&G2000\Firmware\DTG_EM #
+#                    S_SYSTEM\Project\EWARM\..\Usb\src\ -I                    #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_HOST_Library\Core\inc\ -I        #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_HOST_Library\Class\MSC\inc\ -I   #
+#                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\.. #
+#                    \..\Libraries\STM32_USB_Device_Library\Class\cdc\inc\    #
+#                    -Ol --use_c++_inline                                     #
+#    List file    =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\List\usbh_stdreq.lst                         #
+#    Object file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\ST #
+#                    M3220F_EVAL\Obj\usbh_stdreq.o                            #
 #                                                                             #
 #                                                                             #
 ###############################################################################
 
-E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library\Core\src\usbh_stdreq.c
+F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Libraries\STM32_USB_HOST_Library\Core\src\usbh_stdreq.c
       1          /**
       2            ******************************************************************************
       3            * @file    usbh_stdreq.c 

@@ -1,54 +1,57 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                                                                            /
-// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    13/Jan/2012  16:10:34 /
+// IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM    19/Jan/2012  11:09:06 /
 // Copyright 1999-2010 IAR Systems AB.                                        /
 //                                                                            /
 //    Cpu mode     =  thumb                                                   /
 //    Endian       =  little                                                  /
-//    Source file  =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c    /
-//    Command line =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c    /
-//                    -D USE_STDPERIPH_DRIVER -D STM32F2XX -D                 /
+//    Source file  =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\PC_COM. /
+//                    c                                                       /
+//    Command line =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\PC_COM. /
+//                    c -D USE_STDPERIPH_DRIVER -D STM32F2XX -D               /
 //                    USE_STM3220F_EVAL -D USE_USB_OTG_FS -D                  /
-//                    RTC_CLOCK_SOURCE_LSE -lC E:\Work\Firmware\DTG\DTG_EMS_S /
-//                    YSTEM\Project\EWARM\STM3220F_EVAL\List\ -lA             /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM32 /
-//                    20F_EVAL\List\ -o E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\P /
-//                    roject\EWARM\STM3220F_EVAL\Obj\ --no_cse --no_unroll    /
-//                    --no_inline --no_code_motion --no_tbaa --no_clustering  /
-//                    --no_scheduling --debug --endian=little                 /
-//                    --cpu=Cortex-M3 -e --fpu=None --dlib_config             /
-//                    "C:\Program Files\IAR Systems\Embedded Workbench        /
-//                    6.0\arm\INC\c\DLib_Config_Full.h" -I                    /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\   /
-//                    -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\.. /
-//                    \..\Libraries\CMSIS\CM3\CoreSupport\ -I                 /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\ -I     /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I           /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Utilities\STM32_EVAL\ -I E:\Work\Firmware\DTG\DTG_EMS_ /
-//                    SYSTEM\Project\EWARM\..\..\Utilities\STM32_EVAL\Common\ /
-//                     -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    RTC_CLOCK_SOURCE_LSE -lC F:\Work\S&G2000\Firmware\DTG_E /
+//                    MS_SYSTEM\Project\EWARM\STM3220F_EVAL\List\ -lA         /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\S /
+//                    TM3220F_EVAL\List\ -o F:\Work\S&G2000\Firmware\DTG_EMS_ /
+//                    SYSTEM\Project\EWARM\STM3220F_EVAL\Obj\ --no_cse        /
+//                    --no_unroll --no_inline --no_code_motion --no_tbaa      /
+//                    --no_clustering --no_scheduling --debug                 /
+//                    --endian=little --cpu=Cortex-M3 -e --fpu=None           /
+//                    --dlib_config "C:\Program Files\IAR Systems\Embedded    /
+//                    Workbench 6.0\arm\INC\c\DLib_Config_Full.h" -I          /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\E /
+//                    WARM\..\..\Libraries\CMSIS\CM3\CoreSupport\ -I          /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\    /
+//                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWAR /
+//                    M\..\..\Libraries\STM32F2xx_StdPeriph_Driver\inc\ -I    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Utilities\STM32_EVAL\ -I                           /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Utilities\STM32_EVAL\Common\ -I                    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
 //                    .\..\Utilities\STM32_EVAL\STM3220F_EVAL\ -I             /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Libraries\STM32_USB_OTG_Driver\inc\ -I                 /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Libraries\STM32_USB_Device_Library\Core\inc\ -I        /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\.. /
-//                    \Libraries\STM32_USB_Device_Library\Class\msc\inc\ -I   /
-//                    E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\..\Us /
-//                    b\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM /
-//                    \..\Usb\Inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Pro /
-//                    ject\EWARM\..\Usb\src\ -I E:\Work\Firmware\DTG\DTG_EMS_ /
-//                    SYSTEM\Project\EWARM\..\..\Libraries\STM32_USB_HOST_Lib /
-//                    rary\Core\inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\P /
-//                    roject\EWARM\..\..\Libraries\STM32_USB_HOST_Library\Cla /
-//                    ss\MSC\inc\ -I E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Proj /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_OTG_Driver\inc\ -I             /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_Device_Library\Core\inc\ -I    /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\..\Libraries\STM32_USB_Device_Library\Class\msc\inc\  /
+//                    -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWAR /
+//                    M\..\Usb\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Pr /
+//                    oject\EWARM\..\Usb\Inc\ -I                              /
+//                    F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\. /
+//                    .\Usb\src\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\P /
+//                    roject\EWARM\..\..\Libraries\STM32_USB_HOST_Library\Cor /
+//                    e\inc\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proje /
+//                    ct\EWARM\..\..\Libraries\STM32_USB_HOST_Library\Class\M /
+//                    SC\inc\ -I F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Proj /
 //                    ect\EWARM\..\..\Libraries\STM32_USB_Device_Library\Clas /
 //                    s\cdc\inc\ -Ol --use_c++_inline                         /
-//    List file    =  E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\EWARM\STM32 /
-//                    20F_EVAL\List\PC_COM.s                                  /
+//    List file    =  F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\EWARM\S /
+//                    TM3220F_EVAL\List\PC_COM.s                              /
 //                                                                            /
 //                                                                            /
 ///////////////////////////////////////////////////////////////////////////////
@@ -169,7 +172,7 @@
         CFI R14 SameValue
         CFI EndCommon cfiCommon0
         
-// E:\Work\Firmware\DTG\DTG_EMS_SYSTEM\Project\PC_COM.c
+// F:\Work\S&G2000\Firmware\DTG_EMS_SYSTEM\Project\PC_COM.c
 //    1 #include "main.h"
 
         SECTION `.text`:CODE:REORDER:NOROOT(1)
